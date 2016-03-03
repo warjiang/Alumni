@@ -10,32 +10,33 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 public abstract class BasisAdapter<T, K> extends BaseAdapter {
-    private List<T> mEntities;
-    private Context mContext;
+
+    private List<T> entities;
+    private Context context;
     private Class<K> classType;
 
-    public void setmEntities(List<T> mEntities) {
-        this.mEntities = mEntities;
+    public void setEntities(List<T> entities) {
+        this.entities = entities;
     }
 
-    public void addEntities(List<T> mEntities){
-        this.mEntities.addAll(mEntities);
+    public void addEntities(List<T> entities){
+        this.entities.addAll(entities);
     }
 
-    public BasisAdapter(Context mContext, List<T> mEntities, Class<K> classType) {
-        this.mContext = mContext;
-        this.mEntities = mEntities;
+    public BasisAdapter(Context context, List<T> entities, Class<K> classType) {
+        this.context = context;
+        this.entities = entities;
         this.classType = classType;
     }
 
     @Override
     public int getCount() {
-        return mEntities.size();
+        return entities.size();
     }
 
     @Override
     public T getItem(int position) {
-        return mEntities.get(position);
+        return entities.get(position);
     }
 
     @Override
@@ -48,7 +49,7 @@ public abstract class BasisAdapter<T, K> extends BaseAdapter {
 
         K holder = null;
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(getItemLayout(), parent, false);
+            convertView = LayoutInflater.from(context).inflate(getItemLayout(), parent, false);
             try {
                 holder = classType.newInstance();
                 Log.i("INFO", "Complete");
@@ -64,7 +65,7 @@ public abstract class BasisAdapter<T, K> extends BaseAdapter {
         } else {
             holder = (K) convertView.getTag();
         }
-        T entity = mEntities.get(position);
+        T entity = entities.get(position);
         setDataIntoView(holder, entity);
         return convertView;
     }
@@ -76,26 +77,15 @@ public abstract class BasisAdapter<T, K> extends BaseAdapter {
     public abstract int getItemLayout();
 
     public void removeItem(int position) {
-//        Animation animation= AnimationUtils.loadAnimation(mContext,android.R.anim.slide_out_right);
-//        view.startAnimation(animation);
-        mEntities.remove(position);
+        entities.remove(position);
         notifyDataSetChanged();
-
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mEntities.remove(position);
-//                notifyDataSetChanged();
-//            }
-//        },2000);
     }
 
-    public Context getmContext() {
-        return mContext;
+    public Context getContext() {
+        return context;
     }
 
-
-    public List<T> getmEntities(){
-        return  mEntities;
+    public List<T> getEntities(){
+        return  entities;
     }
 }

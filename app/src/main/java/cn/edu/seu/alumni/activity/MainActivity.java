@@ -15,6 +15,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.constant.Overall;
 import cn.edu.seu.alumni.fragment.CircleFragment;
 import cn.edu.seu.alumni.fragment.ContactsFragment;
 import cn.edu.seu.alumni.fragment.MyFragment;
@@ -65,6 +66,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void initial() {
+
+        Overall.applicationContext = getApplicationContext();
+
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
