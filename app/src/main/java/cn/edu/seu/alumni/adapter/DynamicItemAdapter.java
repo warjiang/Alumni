@@ -1,7 +1,6 @@
 package cn.edu.seu.alumni.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.model.DynamicItem;
+import cn.edu.seu.alumni.javabean.DynamicItem;
 
 public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAdapter.viewHolder> {
 

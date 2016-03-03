@@ -33,7 +33,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-import cn.edu.seu.alumni.model.Error;
+import cn.edu.seu.alumni.javabean.Error;
 //import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit.RetrofitError;
 
