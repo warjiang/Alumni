@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Alumni.iml" filepath="$PROJECT_DIR$/Alumni.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leanchatlib/leanchatlib.iml" filepath="$PROJECT_DIR$/leanchatlib/leanchatlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/swipeback_library/swipeback_library.iml" filepath="$PROJECT_DIR$/swipeback_library/swipeback_library.iml" />
     </modules>
   </component>

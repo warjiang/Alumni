@@ -1,11 +1,16 @@
 package cn.edu.seu.alumni.fragment;
 
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.avoscloud.leanchatlib.activity.AVChatActivity;
+import com.avoscloud.leanchatlib.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,6 +96,14 @@ public class ContactsFragment extends BaseFragment implements View.OnClickListen
         listView.addHeaderView(headView);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), AVChatActivity.class);
+                intent.putExtra(Constants.MEMBER_ID, sourceDataList.get(position).getName());
+                getContext().startActivity(intent);
+            }
+        });
 
         sidebar.setTextView(letter);
         //设置右侧触摸监听
