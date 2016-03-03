@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 为了支持swipeback而添加 -->
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 </resources>
