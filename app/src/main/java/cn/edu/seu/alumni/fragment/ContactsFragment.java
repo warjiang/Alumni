@@ -119,7 +119,7 @@ public class ContactsFragment extends BaseFragment implements View.OnClickListen
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getContext(), AVChatActivity.class);
-                intent.putExtra(Constants.MEMBER_ID, sourceDataList.get(position).getName());
+                intent.putExtra(Constants.MEMBER_ID, sourceDataList.get(position-1).getName());
                 getContext().startActivity(intent);
             }
         });
