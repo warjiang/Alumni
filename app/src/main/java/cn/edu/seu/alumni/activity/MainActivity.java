@@ -55,6 +55,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Bind(R.id.my_textview)
     protected TextView myTextView;
 
+
+
     private List<Fragment> fragments = new ArrayList<Fragment>();
     private FragmentStatePagerAdapter adapter;
     private int currentIndex = 0;

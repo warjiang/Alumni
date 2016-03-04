@@ -32,26 +32,21 @@
         </activity>
     </application>
     -->
-
-
     <!-- 基础模块 END -->
-    <application android:name="test.pc.leancloud.demo.App"
+    <application
+        android:name="test.pc.leancloud.demo.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activity.MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name="test.pc.SwipeBackDemoActivity">
 
             <!--
@@ -80,6 +75,7 @@
         <activity android:name="com.avos.avoscloud.feedback.ThreadActivity" />
         <!-- 反馈组件 END -->
         <activity android:name="test.pc.MyLeanCloudDemoMainActivity">
+
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -88,6 +84,7 @@
             </intent-filter>
             -->
         </activity>
+        <activity android:name="test.pc.leancloud.demo.ConversationListActivity"></activity>
     </application>
 
 </manifest>
