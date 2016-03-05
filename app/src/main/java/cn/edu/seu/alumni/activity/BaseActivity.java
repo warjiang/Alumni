@@ -24,14 +24,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(getContentViewId());
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         ButterKnife.bind(this);
-
         initial();
 
     }
@@ -107,6 +104,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.unbind(this);
     }
 
+    /**
+     * 按返回键，实现从左向右切换Activity动画
+     * MainActivity需要覆盖该方法
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -34,7 +34,7 @@
     -->
     <!-- 基础模块 END -->
     <application
-        android:name="test.pc.leancloud.demo.App"
+        android:name="thirdpart.leancloud.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -74,7 +74,7 @@
         <!-- 反馈组件（若使用该功能，需添加以下声明）START -->
         <activity android:name="com.avos.avoscloud.feedback.ThreadActivity" />
         <!-- 反馈组件 END -->
-        <activity android:name="test.pc.MyLeanCloudDemoMainActivity">
+        <activity android:name="thirdpart.leancloud.MyLeanCloudDemoMainActivity">
 
             <!--
             <intent-filter>
@@ -84,7 +84,7 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="test.pc.leancloud.demo.ConversationListActivity"></activity>
+        <activity android:name="thirdpart.leancloud.ConversationListActivity"></activity>
     </application>
 
 </manifest>

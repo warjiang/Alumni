@@ -1,4 +1,4 @@
-package test.pc.leancloud.demo;
+package thirdpart.leancloud;
 
 import android.app.Application;
 import android.content.Context;

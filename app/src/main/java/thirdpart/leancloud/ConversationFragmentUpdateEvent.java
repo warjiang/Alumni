@@ -1,4 +1,4 @@
-package test.pc.leancloud.demo;
+package thirdpart.leancloud;
 
 /**
  * Created by Dell on 2016/3/4.

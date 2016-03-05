@@ -1,5 +1,7 @@
 package cn.edu.seu.alumni.fragment;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -41,13 +43,30 @@ public class CircleFragment extends BaseFragment {
 
 
 
+    //上拉加载更多
+    private void onPullUp() {
 
-    private void onPullUp() { //上拉刷新，加载更多
-        circleListView.setLoading(false);
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                circleListView.setLoading(false);
+            }
+        }, 2000);
+
+
     }
 
     private void onPullDown() {
-        swipeRefreshLayout.setRefreshing(false);
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        }, 2000);
+
     }
 
     @OnClick(R.id.circle_topic_cardview)

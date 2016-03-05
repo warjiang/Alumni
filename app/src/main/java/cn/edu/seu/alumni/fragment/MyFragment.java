@@ -1,14 +1,13 @@
 package cn.edu.seu.alumni.fragment;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
-import test.pc.leancloud.demo.ConversationListActivity;
+import thirdpart.leancloud.ConversationListActivity;
 
 /**
  * 我

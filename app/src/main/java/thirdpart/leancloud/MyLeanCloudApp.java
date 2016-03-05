@@ -1,7 +1,6 @@
-package test.pc;
+package thirdpart.leancloud;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
 

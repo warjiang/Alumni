@@ -1,4 +1,4 @@
-package test.pc.leancloud.demo;
+package thirdpart.leancloud;
 
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -27,7 +27,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import butterknife.Bind;
 import cn.edu.seu.alumni.R;
 import de.greenrobot.event.EventBus;
 

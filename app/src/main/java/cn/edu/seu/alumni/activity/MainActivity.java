@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private List<Fragment> fragments = new ArrayList<Fragment>();
     private FragmentStatePagerAdapter adapter;
     private int currentIndex = 0;
+
+    /**
+     * 记录上一次按返回键的时间
+     */
+    private long exitTime = 0;
 
     @Override
     protected int getContentViewId() {
@@ -205,4 +211,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            Toast.makeText(this, "再按一次退出校友圈", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+        }
+    }
+
 }
