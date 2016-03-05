@@ -42,7 +42,8 @@ dependencies {
     compile 'com.bigkoo:alertview:1.0.2'
     compile 'com.bigkoo:pickerview:2.0.8'
     compile 'biz.kasual:materialnumberpicker:1.2.0'
-    compile 'com.android.support:support-v4:21.0.3'
+
+
     //avoscloud-sdk 为 LeanCloud基础包
     compile 'cn.leancloud.android:avoscloud-sdk:v3.+'
     //avoscloud-push 为推送与实时聊天需要的包
@@ -58,4 +59,5 @@ dependencies {
     compile 'cn.leancloud.android:avoscloud-search:v3.+@aar'
     compile project(':swipeback_library')
     compile project(':leanchatlib')
+
 }

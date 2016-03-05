@@ -4,9 +4,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ScrollView;
+import android.widget.Toast;
+
 
 
 import java.util.ArrayList;
@@ -20,6 +24,8 @@ import cn.edu.seu.alumni.adapter.DynamicItemAdapter;
 import cn.edu.seu.alumni.javabean.DynamicItem;
 import cn.edu.seu.alumni.widget.LoadMoreListView;
 import cn.edu.seu.alumni.widget.ScrollLoadMoreListView;
+
+
 
 /**
  * 圈子
@@ -42,10 +48,8 @@ public class CircleFragment extends BaseFragment {
     private BasisAdapter adapter;
 
 
-
     //上拉加载更多
     private void onPullUp() {
-
         Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
@@ -83,32 +87,52 @@ public class CircleFragment extends BaseFragment {
 
     @Override
     protected void initial() {
-        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
-                android.R.color.holo_green_light, android.R.color.holo_orange_light,
-                android.R.color.holo_red_light);
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_red_light,
+                android.R.color.holo_orange_light,  android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light);
+
+
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 onPullDown();
             }
         });
-        circleListView.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
+
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onLoadMore() {
-                onPullUp();
+            public boolean onTouch(View v, MotionEvent event) {
+                View childView = scrollView.getChildAt(0);
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_UP:
+                        if (childView  != null && childView .getMeasuredHeight() <= scrollView.getScrollY() + scrollView.getHeight()) {
+
+                            /**
+                             * 此处添加加载更多的代码
+                             */
+                            Toast.makeText(CircleFragment.this.getActivity(), "onLoadMore", Toast.LENGTH_SHORT).show();
+                            circleListView.setLoading(true);
+                            Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    circleListView.setLoading(false);
+                                }
+                            }, 2000);
+                        }
+                        else if (scrollView.getScrollY() == 0) {
+
+                        }
+                        break;
+                }
+                return false;
             }
         });
-        circleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                TLog.i("INFO", "position" + position);
-//                readyGo(DynamicTextActivity.class);
-            }
-        });
-        circleListView.setFocusable(false);
+
+
 
         List<DynamicItem> entities = new ArrayList<DynamicItem>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 5; i++) {
             entities.add(new DynamicItem());
         }
         adapter = new DynamicItemAdapter(getActivity());

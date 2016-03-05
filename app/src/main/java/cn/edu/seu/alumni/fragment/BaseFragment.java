@@ -1,6 +1,5 @@
 package cn.edu.seu.alumni.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
-import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.BaseActivity;
 
 /**
@@ -21,7 +19,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        activity = (BaseActivity)getActivity();
 
         View view = inflater.inflate(getContentViewId(), container, false);
 
@@ -41,6 +38,8 @@ public abstract class BaseFragment extends Fragment {
      * 初始化
      */
     protected abstract void initial();
+
+
 
     public void jumpTo(Class<?> clazz, Bundle bundle) {
         activity.jumpTo(clazz, bundle);
@@ -63,4 +62,6 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
+
 }

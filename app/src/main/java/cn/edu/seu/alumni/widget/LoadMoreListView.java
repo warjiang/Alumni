@@ -19,16 +19,16 @@ public class LoadMoreListView extends ListView implements OnScrollListener {
     private static final String TAG = LoadMoreListView.class
             .getSimpleName();
 
-    private OnScrollListener mOnScrollListener;
-    private LayoutInflater mInflater;
+    private OnScrollListener onScrollListener;
+    private LayoutInflater inflater;
 
-    private View mFooterView;
-    private View mLoadMoreStatusView;
+    private View footerView;
+    private View loadMoreStatusView;
 
-    private OnLoadMoreListener mOnLoadMoreListener;
+    private OnLoadMoreListener onLoadMoreListener;
 
-    private boolean mIsLoadingMore = false;
-    private int mCurrentScrollState;
+    private boolean isLoadingMore = false;
+    private int currentScrollState;
 
     public LoadMoreListView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -43,42 +43,34 @@ public class LoadMoreListView extends ListView implements OnScrollListener {
     @Override
     public void setAdapter(ListAdapter adapter) {
 
-//        mFooterView = (RelativeLayout) mInflater.inflate(R.layout.load_more_footer,
-//                this, false);
-//        mLoadMoreStatusView = mFooterView.findViewById(R.id.load_more_progress_bar);
-//        addFooterView(mFooterView);
-//        setLoading(false);
-
         super.setAdapter(adapter);
     }
 
     private void init(Context context) {
 
-        mInflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        mFooterView = (RelativeLayout) mInflater.inflate(R.layout.load_more_footer,
-                this, false);
-        mLoadMoreStatusView = mFooterView.findViewById(R.id.load_more_progress_bar);
-        addFooterView(mFooterView);
+        footerView = (RelativeLayout) inflater.inflate(R.layout.load_more_footer, this, false);
+        loadMoreStatusView = footerView.findViewById(R.id.load_more_progress_bar);
+        addFooterView(footerView);
         setLoading(false);
         super.setOnScrollListener(this);
     }
 
     public void setLoadMoreStatusView(View v, int statusViewId) {
-        removeFooterView(mFooterView);
+        removeFooterView(footerView);
 
-        mFooterView = v;
-        mLoadMoreStatusView = mFooterView.findViewById(statusViewId);
-        addFooterView(mFooterView);
+        footerView = v;
+        loadMoreStatusView = footerView.findViewById(statusViewId);
+        addFooterView(footerView);
     }
 
     public void setLoadMoreStatusView(View v) {
-        removeFooterView(mFooterView);
+        removeFooterView(footerView);
 
-        mFooterView = v;
-        mLoadMoreStatusView = mFooterView.findViewById(R.id.load_more_progress_bar);
-        addFooterView(mFooterView);
+        footerView = v;
+        loadMoreStatusView = footerView.findViewById(R.id.load_more_progress_bar);
+        addFooterView(footerView);
     }
 
     /**
@@ -89,7 +81,7 @@ public class LoadMoreListView extends ListView implements OnScrollListener {
      */
     @Override
     public void setOnScrollListener(OnScrollListener l) {
-        mOnScrollListener = l;
+        onScrollListener = l;
     }
 
     /**
@@ -100,30 +92,30 @@ public class LoadMoreListView extends ListView implements OnScrollListener {
      */
 
     public void setOnLoadMoreListener(OnLoadMoreListener onLoadMoreListener) {
-        mOnLoadMoreListener = onLoadMoreListener;
+        onLoadMoreListener = onLoadMoreListener;
     }
 
     public void onScroll(AbsListView view, int firstVisibleItem,
                          int visibleItemCount, int totalItemCount) {
 
-        if (mOnScrollListener != null) {
-            mOnScrollListener.onScroll(view, firstVisibleItem, visibleItemCount,
+        if (onScrollListener != null) {
+            onScrollListener.onScroll(view, firstVisibleItem, visibleItemCount,
                     totalItemCount);
         }
 
         if (visibleItemCount == totalItemCount) {
-            if (mLoadMoreStatusView != null) {
-                mLoadMoreStatusView.setVisibility(View.GONE);
+            if (loadMoreStatusView != null) {
+                loadMoreStatusView.setVisibility(View.GONE);
             }
             return;
         }
 
-        if (mOnLoadMoreListener != null) {
+        if (onLoadMoreListener != null) {
 
             boolean loadMore = firstVisibleItem + visibleItemCount >= totalItemCount;
 
-            if (!mIsLoadingMore && loadMore
-                    && mCurrentScrollState != SCROLL_STATE_IDLE) {
+            if (!isLoadingMore && loadMore
+                    && currentScrollState != SCROLL_STATE_IDLE) {
                 setLoading(true);
                 onLoadMore();
             }
@@ -131,24 +123,24 @@ public class LoadMoreListView extends ListView implements OnScrollListener {
     }
 
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-        mCurrentScrollState = scrollState;
+        currentScrollState = scrollState;
 
-        if (mOnScrollListener != null) {
-            mOnScrollListener.onScrollStateChanged(view, scrollState);
+        if (onScrollListener != null) {
+            onScrollListener.onScrollStateChanged(view, scrollState);
         }
     }
 
     public void setLoading(boolean loading) {
         Log.d(TAG, "setLoading: " + loading);
 
-        mIsLoadingMore = loading;
-        mLoadMoreStatusView.setVisibility(loading ? View.VISIBLE : View.GONE);
+        isLoadingMore = loading;
+        loadMoreStatusView.setVisibility(loading ? View.VISIBLE : View.GONE);
     }
 
     public void onLoadMore() {
         Log.d(TAG, "onLoadMore");
-        if (mOnLoadMoreListener != null) {
-            mOnLoadMoreListener.onLoadMore();
+        if (onLoadMoreListener != null) {
+            onLoadMoreListener.onLoadMore();
         }
     }
 

@@ -18,6 +18,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,6 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ButterKnife.bind(this);
         initial();
 
@@ -113,4 +115,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
         overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
     }
+
+
 }

@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Bind(R.id.viewpager)
     protected ViewPager viewPager;
 
+
     @Bind(R.id.circle_linearlayout)
     protected LinearLayout circleLinearLayout;
 
