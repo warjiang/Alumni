@@ -20,10 +20,13 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
 
         setContentView(getContentViewId());
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(hasToolBar()){
+            toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
 
         ButterKnife.bind(this);
 
@@ -35,6 +38,11 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
      * 设置布局文件
      */
     protected abstract int getContentViewId();
+
+    /**
+     * 是否有ToolBar
+     */
+    protected abstract boolean hasToolBar();
 
     /**
      * 初始化

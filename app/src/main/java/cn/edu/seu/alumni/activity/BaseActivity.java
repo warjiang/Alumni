@@ -23,10 +23,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(getContentViewId());
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(hasToolBar()){
+            toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         ButterKnife.bind(this);
         initial();
@@ -37,6 +39,11 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 设置布局文件
      */
     protected abstract int getContentViewId();
+
+    /**
+     * 是否有ToolBar
+     */
+    protected abstract boolean hasToolBar();
 
     /**
      * 初始化

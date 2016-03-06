@@ -47,6 +47,11 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     }
 
     @Override
+    protected boolean hasToolBar() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
         toolbarTitle.setVisibility(View.VISIBLE);
         toolbarTitle.setText(R.string.register);

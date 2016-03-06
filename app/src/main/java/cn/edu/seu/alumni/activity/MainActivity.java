@@ -73,6 +73,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     @Override
+    protected boolean hasToolBar() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
 
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);

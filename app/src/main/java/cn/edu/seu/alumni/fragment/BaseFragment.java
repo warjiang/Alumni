@@ -17,8 +17,6 @@ import cn.edu.seu.alumni.activity.BaseActivity;
  */
 public abstract class BaseFragment extends Fragment {
 
-    private BaseActivity activity;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
