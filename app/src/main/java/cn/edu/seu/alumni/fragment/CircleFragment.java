@@ -121,8 +121,6 @@ public class CircleFragment extends BaseFragment {
             }
         });
 
-
-
         List<DynamicItem> entities = new ArrayList<DynamicItem>();
         for (int i = 0; i < 5; i++) {
             entities.add(new DynamicItem());
