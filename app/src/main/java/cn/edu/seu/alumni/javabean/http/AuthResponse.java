@@ -1,17 +1,14 @@
 package cn.edu.seu.alumni.javabean.http;
 
-/**
- * Alumni登录方式响应
- */
-public class LoginAlumniResponse {
+public class AuthResponse {
 
     private String user_id;
     private String access_token;
 
-    public LoginAlumniResponse() {
+    public AuthResponse() {
     }
 
-    public LoginAlumniResponse(String user_id, String access_token) {
+    public AuthResponse(String user_id, String access_token) {
         this.user_id = user_id;
         this.access_token = access_token;
     }

@@ -2,7 +2,6 @@ package cn.edu.seu.alumni.fragment;
 
 
 import android.content.Intent;
-import android.text.TextUtils;
 
 import android.view.LayoutInflater;
 import android.view.View;

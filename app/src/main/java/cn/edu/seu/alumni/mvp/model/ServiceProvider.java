@@ -9,7 +9,7 @@ import retrofit.RestAdapter;
 
 public final class ServiceProvider {
 
-    private static final String BASE = "http://api2.hloli.me:4096";
+    private static final String BASE = "http://api.yoyocampus.com:4096/";
     private static IService service = null;
     static volatile RestAdapter restAdapter = null;
 

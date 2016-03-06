@@ -2,66 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.edu.seu.alumni">
 
-    <!-- 基础模块（必须加入以下声明）START -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <!--
+
     <application
+        android:name=".application.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
 
-        <activity android:name=".activity.MainActivity">
-
+        <!-- 主活动 -->
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/ActivityTheme">
         </activity>
 
-        <activity android:name="test.pc.SwipeBackDemoActivity">
-
+        <!-- 注册 -->
+        <activity android:name=".activity.RegisterActivity"
+            android:theme="@style/ActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-    </application>
-    -->
-    <!-- 基础模块 END -->
-    <application
-        android:name="thirdpart.leancloud.App"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="test.pc.SwipeBackDemoActivity">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-
-        </activity>
-
-        <!-- 实时通信模块、推送（若使用该功能，需添加以下声明）START -->
+        <!-- 实时通信模块、推送 START -->
         <service android:name="com.avos.avoscloud.PushService" />
-
         <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -71,20 +41,19 @@
         <!-- 实时通信模块、推送 END -->
 
 
-        <!-- 反馈组件（若使用该功能，需添加以下声明）START -->
-        <activity android:name="com.avos.avoscloud.feedback.ThreadActivity" />
+        <!-- 反馈组件 START -->
+        <activity android:name="com.avos.avoscloud.feedback.ThreadActivity"
+            android:theme="@style/ActivityTheme"/>
         <!-- 反馈组件 END -->
-        <activity android:name="thirdpart.leancloud.MyLeanCloudDemoMainActivity">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name="thirdpart.leancloud.ConversationListActivity"></activity>
+        <!-- test START-->
+        <activity android:name="thirdpart.leancloud.MyLeanCloudDemoMainActivity"
+            android:theme="@style/ActivityTheme"/>
+        <activity android:name="thirdpart.leancloud.ConversationListActivity"
+            android:theme="@style/ActivityTheme"/>
+        <!-- test END-->
+
     </application>
 
 </manifest>

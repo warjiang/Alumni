@@ -7,9 +7,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.util.CommonUtils;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
-import retrofit.RetrofitError;
 
 public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
 
@@ -43,7 +41,7 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
      */
     protected abstract void initial();
 
-    public void jumpTo(Class<?> clazz, Bundle bundle) {
+    public void jump(Class<?> clazz, Bundle bundle) {
         Intent intent = new Intent(this, clazz);
         if (bundle != null) {
             intent.putExtras(bundle);
@@ -52,21 +50,21 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
         overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
     }
 
-    public void jumpTo(Class<?> clazz) {
-        this.jumpTo(clazz, null);
+    public void jump(Class<?> clazz) {
+        this.jump(clazz, null);
     }
 
-    public void jumpToThenFinish(Class<?> clazz, Bundle bundle) {
-        this.jumpTo(clazz, bundle);
+    public void jumpThenFinish(Class<?> clazz, Bundle bundle) {
+        this.jump(clazz, bundle);
         this.finish();
     }
 
 
-    public void jumpToThenFinish(Class<?> clazz) {
-        this.jumpToThenFinish(clazz, null);
+    public void jumpThenFinish(Class<?> clazz) {
+        this.jumpThenFinish(clazz, null);
     }
 
-    public void jumpToForResult(Class<?> clazz, int requestCode, Bundle bundle) {
+    public void jumpForResult(Class<?> clazz, int requestCode, Bundle bundle) {
         Intent intent = new Intent(this, clazz);
         if (null != bundle) {
             intent.putExtras(bundle);
@@ -75,27 +73,12 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
         overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
     }
 
-    public void jumpToForResult(Class<?> clazz, int requestCode) {
-        this.jumpToForResult(clazz, requestCode, null);
+    public void jumpForResult(Class<?> clazz, int requestCode) {
+        this.jumpForResult(clazz, requestCode, null);
     }
 
-    protected void showMsg(String msg) {
-        if (null != msg && !CommonUtils.isEmpty(msg)) {
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    protected void showNetWorkError() {
-        showMsg(getResources().getString(R.string.network_error_tips));
-    }
-
-    protected void showInnerError(RetrofitError error) {
-        if (error != null)
-            if(error.getBody() == null){
-                showMsg(getString(R.string.request_time_out));
-            }else{
-                showMsg(CommonUtils.getErrorInfo(error).getReason());
-            }
+    protected void showToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override

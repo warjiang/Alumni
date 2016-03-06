@@ -1,4 +1,4 @@
-package thirdpart.leancloud;
+package cn.edu.seu.alumni.application;
 
 import android.app.Application;
 import android.content.Context;
@@ -17,25 +17,36 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
-/**
- * Created by Dell on 2016/3/3.
- */
+import thirdpart.leancloud.CustomUserProvider;
+
 public class App extends Application {
 
     private final String TAG = App.class.getSimpleName();
 
-    private final String clientId = "pczhou";
+    private static Context context;
+
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        App.context = getApplicationContext();
+
+        initialLeanCloud();
+    }
+
+    public static Context getContext(){
+        return context;
+    }
+
+    private void initialLeanCloud(){
         AVOSCloud.initialize(this, "fqNPI26vuducBhtSjQGsNfnW-gzGzoHsz", "9ubA50d0guhY4cbAPpDbJDpK");
         ChatManager.setDebugEnabled(true);// tag leanchatlib
         AVOSCloud.setDebugLogEnabled(true);  // set false when release
         initImageLoader(this);
 
+        String clientId = "pczhou";
         ThirdPartUserUtils.setThirdPartUserProvider(new CustomUserProvider());
-
         initChatManager(clientId);
         ChatManager.getInstance().openClient(new AVIMClientCallback() {
             @Override
@@ -49,7 +60,7 @@ public class App extends Application {
         });
     }
 
-    public static void initImageLoader(Context context) {
+    private static void initImageLoader(Context context) {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
                 context)
                 .threadPoolSize(3).threadPriority(Thread.NORM_PRIORITY - 2)

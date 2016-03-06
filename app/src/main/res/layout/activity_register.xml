@@ -37,7 +37,7 @@
                     android:textColor="@color/text_help" />
 
                 <EditText
-                    android:id="@+id/register_phonen_num_et"
+                    android:id="@+id/telephone_number_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_16_margin"
@@ -69,7 +69,7 @@
                     android:textColor="@color/text_help" />
 
                 <EditText
-                    android:id="@+id/register_password_et"
+                    android:id="@+id/password_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_16_margin"
@@ -93,7 +93,7 @@
             android:paddingTop="@dimen/activity_8_margin">
 
             <LinearLayout
-                android:id="@+id/register_enroll_year_ll"
+                android:id="@+id/enroll_year_linearlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -106,7 +106,7 @@
                     android:textColor="@color/text_help" />
 
                 <TextView
-                    android:id="@+id/register_enroll_year_tv"
+                    android:id="@+id/enroll_year_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_16_margin"
@@ -137,7 +137,7 @@
             android:paddingTop="@dimen/activity_8_margin">
 
             <LinearLayout
-                android:id="@+id/register_college_ll"
+                android:id="@+id/department_linearlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -150,7 +150,7 @@
                     android:textColor="@color/text_help" />
 
                 <TextView
-                    android:id="@+id/register_college_tv"
+                    android:id="@+id/department_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_16_margin"
@@ -181,7 +181,7 @@
             android:paddingTop="@dimen/activity_8_margin">
 
             <LinearLayout
-                android:id="@+id/register_prof_ll"
+                android:id="@+id/major_linearlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -195,7 +195,7 @@
                     android:textColor="@color/text_help" />
 
                 <TextView
-                    android:id="@+id/register_major_tv"
+                    android:id="@+id/major_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_16_margin"
@@ -217,12 +217,23 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/register_btn"
+            android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_24_margin"
             android:background="@drawable/button_bg"
             android:text="@string/register_1"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/tmp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="@dimen/activity_24_margin"
+            android:text="我是可爱的临时按钮，点我跳转至MainActivity"
+            android:background="#ff0000"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
