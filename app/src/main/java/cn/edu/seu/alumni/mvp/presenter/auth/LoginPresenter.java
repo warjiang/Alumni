@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 
+import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.application.App;
 import cn.edu.seu.alumni.javabean.http.AuthResponse;
 import cn.edu.seu.alumni.javabean.http.LoginAlumniRequest;
@@ -12,7 +13,7 @@ import cn.edu.seu.alumni.javabean.http.LoginWeixinRequest;
 import cn.edu.seu.alumni.mvp.model.IService;
 import cn.edu.seu.alumni.mvp.model.ServiceProvider;
 import cn.edu.seu.alumni.mvp.view.auth.ILoginView;
-import cn.edu.seu.alumni.util.CommonUtils;
+import cn.edu.seu.alumni.util.CommonUtil;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -33,6 +34,16 @@ public class LoginPresenter implements ILoginPresenter {
 
     private void login(int loginType, String param1, String param2){
 
+        if(!CommonUtil.Network.isConnected(App.getContext())){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    iLoginView.doLoginFailure(App.getContext().getString(R.string.error_reason_network));
+                }
+            });
+            return;
+        }
+
         IService service = ServiceProvider.getService(App.getContext());
         Callback<AuthResponse> callback = new Callback<AuthResponse>() {
             @Override
@@ -51,7 +62,7 @@ public class LoginPresenter implements ILoginPresenter {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iLoginView.doLoginFailure(CommonUtils.getErrorReason(error));
+                        iLoginView.doLoginFailure(CommonUtil.Retrofit.getErrorReason(error));
                     }
                 });
             }

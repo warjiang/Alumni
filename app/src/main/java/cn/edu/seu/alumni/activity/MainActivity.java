@@ -213,7 +213,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onBackPressed() {
         if (System.currentTimeMillis() - exitTime > 2000) {
-            Toast.makeText(this, "再按一次退出校友圈", Toast.LENGTH_SHORT).show();
+            showToast("再按一次退出校友圈");
             exitTime = System.currentTimeMillis();
         } else {
             finish();

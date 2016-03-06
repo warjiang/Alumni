@@ -7,9 +7,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.util.CommonUtils;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
-import retrofit.RetrofitError;
 
 public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
 

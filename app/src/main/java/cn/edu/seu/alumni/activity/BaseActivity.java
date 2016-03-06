@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.util.CommonUtils;
-import retrofit.RetrofitError;
 
 /**
  *  Activity基类
@@ -64,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    public void jumpToThenFinish(Class<?> clazz) {
+    public void jumpThenFinish(Class<?> clazz) {
         this.jumpThenFinish(clazz, null);
     }
 

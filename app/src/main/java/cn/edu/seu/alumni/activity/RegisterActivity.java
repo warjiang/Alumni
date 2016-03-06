@@ -1,11 +1,10 @@
 package cn.edu.seu.alumni.activity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,8 +16,8 @@ import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.presenter.auth.IRegisterPresenter;
+import cn.edu.seu.alumni.mvp.presenter.auth.RegisterPresenter;
 import cn.edu.seu.alumni.mvp.view.auth.IRegisterView;
-import cn.edu.seu.alumni.util.NetUtils;
 
 public class RegisterActivity extends BaseActivity implements IRegisterView{
 
@@ -51,6 +50,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     protected void initial() {
         toolbarTitle.setVisibility(View.VISIBLE);
         toolbarTitle.setText(R.string.register);
+        iRegisterPresenter = new RegisterPresenter(this);
     }
 
     /**
@@ -98,55 +98,33 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     }
 
-//    /**
-//     * 注册按钮
-//     */
-//    @OnClick(R.id.register_button)
-//    void registerButtonOnClick() {
-//
-//        RegisterAlumniRequest request = new RegisterAlumniRequest();
-//        request.setPhone_num(telephoneNumberEditText.getText().toString());
-//        request.setPassword(passwordEditText.getText().toString());
-//        request.setEnroll_year(enrollYearTextView.getText().toString());
-//        request.setSchool(departmentTextView.getText().toString());
-//        request.setMajor(majorTextView.getText().toString());
-//
-//        if (NetUtils.isNetworkConnected(this)) {
-//
-//            iRegisterPresenter.registerAlumni();
-//
-//            ApiManager.getService(this).register(req, new Callback<LoginRes>() {
-//                @Override
-//                public void success(LoginRes loginRes, Response response) {
-//                    TLog.i("Register",loginRes.getAccess_token()+" "+loginRes.getUser_id());
-//                    saveUserInfo(loginRes);
-//                    readyGoThenKill(MainActivity.class);
-//                }
-//                @Override
-//                public void failure(RetrofitError error) {
-//                    showInnerError(error);
-//                }
-//            });
-//        }else {
-//            showNetWorkError();
-//        }
-//    }
+    /**
+     * 注册按钮
+     */
+    @OnClick(R.id.register_button)
+    void registerButtonOnClick() {
+        iRegisterPresenter.registerAlumni(new RegisterAlumniRequest(telephoneNumberEditText.getText().toString(),
+                enrollYearTextView.getText().toString(), departmentTextView.getText().toString(),
+                majorTextView.getText().toString(), passwordEditText.getText().toString()));
+    }
 
 
-//    private void saveUserInfo(LoginRes res) {
-//        PreferenceUtils.putString(RegisterActivity.this.getApplicationContext(),
-//                PreferenceUtils.Key.ACCESS, res.getAccess_token());
-//        PreferenceUtils.putString(RegisterActivity.this.getApplicationContext(),
-//                PreferenceUtils.Key.USER_ID, res.getUser_id());
-//    }
 
     @Override
     public void doRegisterFailure(String reason) {
-
+        showToast("注册失败");
     }
 
     @Override
     public void doRegisterSucceed() {
+        showToast("注册成功");
+        jumpThenFinish(MainActivity.class);
+    }
 
+    @Bind(R.id.tmp)
+    Button tmp;
+    @OnClick((R.id.tmp))
+    void tmpButtonOnClick(){
+        jumpThenFinish(MainActivity.class);
     }
 }

@@ -3,13 +3,14 @@ package cn.edu.seu.alumni.mvp.presenter.auth;
 import android.os.Handler;
 import android.os.Looper;
 
+import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.application.App;
 import cn.edu.seu.alumni.javabean.http.AuthResponse;
 import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.model.IService;
 import cn.edu.seu.alumni.mvp.model.ServiceProvider;
 import cn.edu.seu.alumni.mvp.view.auth.IRegisterView;
-import cn.edu.seu.alumni.util.CommonUtils;
+import cn.edu.seu.alumni.util.CommonUtil;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -26,6 +27,17 @@ public class RegisterPresenter implements  IRegisterPresenter{
 
     @Override
     public void registerAlumni(RegisterAlumniRequest registerAlumniRequest) {
+
+        if(!CommonUtil.Network.isConnected(App.getContext())){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    iRegisterView.doRegisterFailure(App.getContext().getString(R.string.error_reason_network));
+                }
+            });
+            return;
+        }
+
         IService service = ServiceProvider.getService(App.getContext());
         service.registerAlumni(registerAlumniRequest, new Callback<AuthResponse>() {
             @Override
@@ -43,7 +55,7 @@ public class RegisterPresenter implements  IRegisterPresenter{
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iRegisterView.doRegisterFailure(CommonUtils.getErrorReason(error));
+                        iRegisterView.doRegisterFailure(CommonUtil.Retrofit.getErrorReason(error));
                     }
                 });
             }
