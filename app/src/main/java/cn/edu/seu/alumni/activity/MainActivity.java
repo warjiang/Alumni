@@ -1,5 +1,6 @@
 package cn.edu.seu.alumni.activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.king.photo.activity.PublishDynamicActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +24,13 @@ import cn.edu.seu.alumni.fragment.CircleFragment;
 import cn.edu.seu.alumni.fragment.ContactsFragment;
 import cn.edu.seu.alumni.fragment.MyFragment;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Bind(R.id.toolbar_title)
     protected TextView toolbarTitle;
 
     @Bind(R.id.viewpager)
     protected ViewPager viewPager;
-
 
     @Bind(R.id.circle_linearlayout)
     protected LinearLayout circleLinearLayout;
@@ -57,8 +59,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Bind(R.id.my_textview)
     protected TextView myTextView;
 
-
-
     private List<Fragment> fragments = new ArrayList<Fragment>();
     private FragmentStatePagerAdapter adapter;
     private int currentIndex = 0;
@@ -83,7 +83,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbarTitle.setVisibility(View.VISIBLE);
 
-
         fragments.add(new CircleFragment());
         fragments.add(new ContactsFragment());
         fragments.add(new MyFragment());
@@ -101,7 +100,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         viewPager.setOffscreenPageLimit(fragments.size());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -142,7 +140,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         }
     }
 
-    private void onSelected(int selectedItemId){
+    private void onSelected(int selectedItemId) {
         circleImageView.setImageResource(R.drawable.circle_default);
         circleTextView.setTextColor(getResources().getColor(R.color.main_text_normal));
         contactsImageView.setImageResource(R.drawable.contacts_default);
@@ -150,7 +148,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         myImageView.setImageResource(R.drawable.my_default);
         myTextView.setTextColor(getResources().getColor(R.color.main_text_normal));
 
-        switch(selectedItemId){
+        switch (selectedItemId) {
             case 0:
                 circleImageView.setImageResource(R.drawable.circle_selected);
                 circleTextView.setTextColor(getResources().getColor(R.color.main_text_selected));
@@ -167,7 +165,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -208,6 +205,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 //            case R.id.edit:
 //                readyGo(PublishDynamicActivity.class);
 //                break;
+            case R.id.edit:
+                startActivity(new Intent(this, PublishDynamicActivity.class));
+                break;
         }
 
         return super.onOptionsItemSelected(item);

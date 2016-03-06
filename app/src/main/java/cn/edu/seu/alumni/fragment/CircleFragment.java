@@ -4,14 +4,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ScrollView;
 import android.widget.Toast;
-
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +18,7 @@ import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.adapter.BasisAdapter;
 import cn.edu.seu.alumni.adapter.DynamicItemAdapter;
 import cn.edu.seu.alumni.javabean.DynamicItem;
-import cn.edu.seu.alumni.widget.LoadMoreListView;
 import cn.edu.seu.alumni.widget.ScrollLoadMoreListView;
-
-
 
 /**
  * 圈子
@@ -46,7 +39,6 @@ public class CircleFragment extends BaseFragment {
     SwipeRefreshLayout swipeRefreshLayout;
 
     private BasisAdapter adapter;
-
 
     //上拉加载更多
     private void onPullUp() {

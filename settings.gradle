@@ -1,2 +1,3 @@
 include ':swipeback_library', ':leanchatlib', ':app'
 
+include ':photo'

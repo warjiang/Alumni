@@ -115,6 +115,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
         overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
     }
-
-
 }
