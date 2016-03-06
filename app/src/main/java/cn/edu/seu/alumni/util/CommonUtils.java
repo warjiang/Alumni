@@ -40,6 +40,17 @@ import retrofit.RetrofitError;
 
 public class CommonUtils {
 
+    public static String getErrorReason(RetrofitError retrofitError){
+
+        if(retrofitError == null || retrofitError.getBody() == null){
+            return "未知错误";
+        }
+        Error error = (Error) retrofitError.getBodyAs(Error.class);
+        if(error == null || error.getReason() == null || error.getReason().equals(""))
+            return "未知错误";
+        return error.getReason();
+    }
+
     /**
      * return if str is empty
      *
@@ -53,6 +64,8 @@ public class CommonUtils {
             return false;
         }
     }
+
+
     public static Error getErrorInfo(RetrofitError error){
         return (Error) error.getBodyAs(Error.class);
     }

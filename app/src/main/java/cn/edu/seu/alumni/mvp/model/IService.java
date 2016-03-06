@@ -2,11 +2,13 @@ package cn.edu.seu.alumni.mvp.model;
 
 
 
+import android.telecom.Call;
+
+import cn.edu.seu.alumni.javabean.http.AuthResponse;
 import cn.edu.seu.alumni.javabean.http.LoginAlumniRequest;
-import cn.edu.seu.alumni.javabean.http.LoginAlumniResponse;
-import cn.edu.seu.alumni.javabean.http.LoginWeiboOrWeixinResponse;
 import cn.edu.seu.alumni.javabean.http.LoginWeiboRequest;
 import cn.edu.seu.alumni.javabean.http.LoginWeixinRequest;
+import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
 import retrofit.Callback;
 import retrofit.http.Body;
 import retrofit.http.POST;
@@ -16,17 +18,21 @@ import retrofit.http.POST;
  */
 public interface IService {
 
+    //Alumni注册
+    @POST("/v1.0/user/")
+    void registerAlumni(@Body RegisterAlumniRequest request, Callback<AuthResponse> callback);
+
     //Alumni登录
     @POST("/v1.0/auth/login/")
-    void loginAlumni(@Body LoginAlumniRequest request, Callback<LoginAlumniResponse> callback);
+    void loginAlumni(@Body LoginAlumniRequest request, Callback<AuthResponse> callback);
 
     //Weibo登录
     @POST("/v1.0/auth/weibo/login/")
-    void loginWeibo(@Body LoginWeiboRequest request, Callback<LoginWeiboOrWeixinResponse> callback);
+    void loginWeibo(@Body LoginWeiboRequest request, Callback<AuthResponse> callback);
 
     //Weixin登录
     @POST("/v1.0/auth/weixin/login/")
-    void loginWeixin(@Body LoginWeixinRequest request, Callback<LoginWeiboOrWeixinResponse> callback);
+    void loginWeixin(@Body LoginWeixinRequest request, Callback<AuthResponse> callback);
 
 
 

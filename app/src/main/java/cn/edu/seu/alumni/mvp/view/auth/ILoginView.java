@@ -1,7 +1,8 @@
 package cn.edu.seu.alumni.mvp.view.auth;
 
-/**
- * Created by my on 2016/3/3.
- */
 public interface ILoginView {
+
+    public void doLoginSucceed();
+
+    public void doLoginFailure(String reason);
 }
