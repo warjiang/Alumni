@@ -91,12 +91,10 @@
         <cn.edu.seu.alumni.widget.MyGridView
             android:id="@+id/circle_dynamic_list_card_view_grid_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:gravity="center"
             android:horizontalSpacing="10dp"
             android:scrollbars="none"
-            android:stretchMode="columnWidth"
             android:verticalSpacing="10dp" />
     </LinearLayout>
 
