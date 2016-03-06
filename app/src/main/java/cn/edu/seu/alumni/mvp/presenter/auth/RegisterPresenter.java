@@ -3,7 +3,7 @@ package cn.edu.seu.alumni.mvp.presenter.auth;
 import android.os.Handler;
 import android.os.Looper;
 
-import cn.edu.seu.alumni.constant.Overall;
+import cn.edu.seu.alumni.application.App;
 import cn.edu.seu.alumni.javabean.http.AuthResponse;
 import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.model.IService;
@@ -26,7 +26,7 @@ public class RegisterPresenter implements  IRegisterPresenter{
 
     @Override
     public void registerAlumni(RegisterAlumniRequest registerAlumniRequest) {
-        IService service = ServiceProvider.getService(Overall.applicationContext);
+        IService service = ServiceProvider.getService(App.getContext());
         service.registerAlumni(registerAlumniRequest, new Callback<AuthResponse>() {
             @Override
             public void success(AuthResponse authResponse, Response response) {

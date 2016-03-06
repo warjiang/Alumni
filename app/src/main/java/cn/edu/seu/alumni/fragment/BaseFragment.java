@@ -1,12 +1,15 @@
 package cn.edu.seu.alumni.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
+import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.BaseActivity;
 
 /**
@@ -41,20 +44,35 @@ public abstract class BaseFragment extends Fragment {
 
 
 
-    public void jumpTo(Class<?> clazz, Bundle bundle) {
-        activity.jumpTo(clazz, bundle);
+    public void jump(Class<?> clazz, Bundle bundle) {
+        Intent intent = new Intent(getActivity(), clazz);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        getActivity().startActivity(intent);
+        getActivity().overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
     }
 
-    public void jumpTo(Class<?> clazz) {
-        activity.jumpTo(clazz, null);
+    public void jump(Class<?> clazz) {
+
+        this.jump(clazz, null);
     }
 
-    public void jumpToForResult(Class<?> clazz, int requestCode, Bundle bundle) {
-        activity.jumpToForResult(clazz, requestCode, bundle);
+    public void jumpForResult(Class<?> clazz, int requestCode, Bundle bundle) {
+        Intent intent = new Intent(getActivity(), clazz);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        getActivity().startActivityForResult(intent, requestCode);
+        getActivity().overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
     }
 
-    public void jumpToForResult(Class<?> clazz, int requestCode) {
-        activity.jumpToForResult(clazz, requestCode, null);
+    public void jumpForResult(Class<?> clazz, int requestCode) {
+        this.jumpForResult(clazz, requestCode, null);
+    }
+
+    protected void showToast(String msg) {
+        Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -62,6 +80,5 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
-
 
 }

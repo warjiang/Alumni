@@ -17,4 +17,44 @@ public class RegisterAlumniRequest {
         this.major = major;
         this.password = password;
     }
+
+    public String getPhone_num() {
+        return phone_num;
+    }
+
+    public void setPhone_num(String phone_num) {
+        this.phone_num = phone_num;
+    }
+
+    public String getEnroll_year() {
+        return enroll_year;
+    }
+
+    public void setEnroll_year(String enroll_year) {
+        this.enroll_year = enroll_year;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

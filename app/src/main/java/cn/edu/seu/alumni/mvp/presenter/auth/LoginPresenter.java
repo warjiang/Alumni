@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 
-import cn.edu.seu.alumni.constant.Overall;
+import cn.edu.seu.alumni.application.App;
 import cn.edu.seu.alumni.javabean.http.AuthResponse;
 import cn.edu.seu.alumni.javabean.http.LoginAlumniRequest;
 import cn.edu.seu.alumni.javabean.http.LoginWeiboRequest;
@@ -33,7 +33,7 @@ public class LoginPresenter implements ILoginPresenter {
 
     private void login(int loginType, String param1, String param2){
 
-        IService service = ServiceProvider.getService(Overall.applicationContext);
+        IService service = ServiceProvider.getService(App.getContext());
         Callback<AuthResponse> callback = new Callback<AuthResponse>() {
             @Override
             public void success(AuthResponse authResponse, Response response) {
