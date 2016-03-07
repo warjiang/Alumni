@@ -33,11 +33,13 @@ public class App extends Application {
         App.context = getApplicationContext();
 
         initialLeanCloud();
+
     }
 
     public static Context getContext(){
         return context;
     }
+
 
     private void initialLeanCloud(){
         AVOSCloud.initialize(this, "fqNPI26vuducBhtSjQGsNfnW-gzGzoHsz", "9ubA50d0guhY4cbAPpDbJDpK");
