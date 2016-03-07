@@ -5,4 +5,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/plugin_camera_preview_pressed" />
     <item android:state_selected="true" android:drawable="@drawable/plugin_camera_preview_pressed" />
     <item android:drawable="@drawable/plugin_camera_preview_unselected" />
-</selector><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/drawable/plugin_camera_title_btn_preview.xml --><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/bundles/debug/res/drawable/plugin_camera_title_btn_preview.xml -->
+</selector><!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/drawable/plugin_camera_title_btn_preview.xml --><!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/build/intermediates/bundles/debug/res/drawable/plugin_camera_title_btn_preview.xml -->

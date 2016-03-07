@@ -1,8 +1,10 @@
 package cn.edu.seu.alumni.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import java.util.Calendar;
 
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
@@ -40,6 +43,13 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     @Bind(R.id.major_textview)
     TextView majorTextView;
+
+    @Bind(R.id.btn_activity_qrcode_decode)
+    Button btn_activity_qrcode_decode;
+    @Bind(R.id.btn_activity_qrcode_generate)
+    Button btn_activity_qrcode_generate;
+    @Bind(R.id.btn_activity_qrcode_scan)
+    Button btn_activity_qrcode_scan;
 
     @Override
     protected int getContentViewId() {
@@ -108,7 +118,24 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
                 majorTextView.getText().toString(), passwordEditText.getText().toString()));
     }
 
+    @OnClick(R.id.btn_activity_qrcode_scan)
+    void scanQRCode(){
 
+        Log.d("aa","scanQRCode");
+        startActivity(new Intent(this,ScanActivity.class));
+    }
+    @OnClick(R.id.btn_activity_qrcode_generate)
+    void generateQRCode(){
+
+        Log.d("aa","generateQRCode");
+        startActivity(new Intent(this,GenerateActivity.class));
+    }
+    @OnClick(R.id.btn_activity_qrcode_decode)
+    void decodeQRCode(){
+
+        Log.d("aa","decodeQRCode");
+        startActivity(new Intent(this,DecodeActivity.class));
+    }
 
     @Override
     public void doRegisterFailure(String reason) {

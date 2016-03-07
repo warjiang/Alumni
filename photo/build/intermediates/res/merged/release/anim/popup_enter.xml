@@ -16,4 +16,4 @@
         android:interpolator="@android:anim/decelerate_interpolator"
         android:toAlpha="1.0" />
 
-</set><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/anim/popup_enter.xml -->
+</set><!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/anim/popup_enter.xml -->
