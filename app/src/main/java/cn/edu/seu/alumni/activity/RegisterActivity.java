@@ -117,7 +117,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     @Override
     public void doRegisterFailure(String reason) {
-        showToast("注册失败");
+        showToast(reason);
     }
 
     @Override

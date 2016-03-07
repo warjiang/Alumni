@@ -14,6 +14,7 @@ import cn.edu.seu.alumni.mvp.model.IService;
 import cn.edu.seu.alumni.mvp.model.ServiceProvider;
 import cn.edu.seu.alumni.mvp.view.auth.ILoginView;
 import cn.edu.seu.alumni.util.CommonUtil;
+import cn.edu.seu.alumni.util.InputChecker;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -83,16 +84,46 @@ public class LoginPresenter implements ILoginPresenter {
 
     @Override
     public void loginAlumni(String phone_num, String password) {
+        final InputChecker.CheckResult checkResult = InputChecker.check(new LoginAlumniRequest(phone_num, password));
+        if(!checkResult.isLegal()){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    iLoginView.doLoginFailure(checkResult.getErrorReason());
+                }
+            });
+            return;
+        }
         login(LOGIN_ALUMNI, phone_num, password);
     }
 
     @Override
     public void loginWeibo(String uid, String access_token) {
+        final InputChecker.CheckResult checkResult = InputChecker.check(new LoginWeiboRequest(uid, access_token));
+        if(!checkResult.isLegal()){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    iLoginView.doLoginFailure(checkResult.getErrorReason());
+                }
+            });
+            return;
+        }
         login(LOGIN_WEIBO, uid, access_token);
     }
 
     @Override
     public void loginWeixin(String open_id, String access_token) {
+        final InputChecker.CheckResult checkResult = InputChecker.check(new LoginWeixinRequest(open_id, access_token));
+        if(!checkResult.isLegal()){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    iLoginView.doLoginFailure(checkResult.getErrorReason());
+                }
+            });
+            return;
+        }
         login(LOGIN_WEIXIN, open_id, access_token);
     }
 }
