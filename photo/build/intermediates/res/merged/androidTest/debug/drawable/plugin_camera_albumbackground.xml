@@ -5,4 +5,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/plugin_camera_choose_back" />
     <item android:state_selected="true" android:drawable="@drawable/plugin_camera_choose_back" />
 	
-</selector><!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/drawable/plugin_camera_albumbackground.xml --><!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/bundles/debug/res/drawable/plugin_camera_albumbackground.xml -->
+</selector><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/drawable/plugin_camera_albumbackground.xml --><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/bundles/debug/res/drawable/plugin_camera_albumbackground.xml -->
