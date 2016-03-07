@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import cn.edu.seu.alumni.javabean.Error;
 import retrofit.RetrofitError;
 
@@ -80,9 +83,20 @@ public class CommonUtil {
             int state = getNetworkState(context);
             return state == DATA || state == WIFI;
         }
-
-
     }
+
+    /**
+     * 正则表达式
+     */
+    public static class Regex{
+        public static boolean match(java.lang.String regex, java.lang.String text){
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(text);
+            return matcher.find();
+        }
+    }
+
+
 
 
 
