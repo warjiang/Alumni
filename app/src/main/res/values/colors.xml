@@ -42,7 +42,7 @@
     <color name="gplus_color_4">#b23424</color>
     
     <!-- base color-->
-    <color name="main_color">#008cc8</color>
+    <color name="main_color">#008cc9</color>
     <color name="divider_low">#e5e5e5</color>
     <color name="divider_high">#cccccc</color>
     <color name="main_text_normal">#cdcdcd</color>
@@ -53,7 +53,7 @@
     <color name="bottom_default">#0179AD</color>
     <color name="text_main">#333333</color>
     <color name="text_help">#666666</color>
-    <color name="text_hint">#999999</color>
+    <color name="text_hint">#d8d8d8</color>
 
 
     <color name="popup_main_background">#b0000000</color>

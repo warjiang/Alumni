@@ -1,8 +1,10 @@
 package cn.edu.seu.alumni.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import java.util.Calendar;
 
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
@@ -23,8 +26,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     private IRegisterPresenter iRegisterPresenter;
 
-    @Bind(R.id.toolbar_title)
-    TextView toolbarTitle;
+//    @Bind(R.id.toolbar_title)
+//    TextView toolbarTitle;
 
     @Bind(R.id.telephone_number_edittext)
     EditText telephoneNumberEditText;
@@ -47,9 +50,14 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     }
 
     @Override
+    protected boolean hasToolBar() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
-        toolbarTitle.setVisibility(View.VISIBLE);
-        toolbarTitle.setText(R.string.register);
+        setToolbarTitle(getString(R.string.register));
+//        toolbarTitle.setText(R.string.register);
         iRegisterPresenter = new RegisterPresenter(this);
     }
 
@@ -112,7 +120,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     @Override
     public void doRegisterFailure(String reason) {
-        showToast("注册失败");
+        showToast(reason);
     }
 
     @Override
@@ -121,10 +129,5 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
         jumpThenFinish(MainActivity.class);
     }
 
-    @Bind(R.id.tmp)
-    Button tmp;
-    @OnClick((R.id.tmp))
-    void tmpButtonOnClick(){
-        jumpThenFinish(MainActivity.class);
-    }
+
 }

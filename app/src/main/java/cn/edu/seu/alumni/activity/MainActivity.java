@@ -24,8 +24,8 @@ import cn.edu.seu.alumni.fragment.MyFragment;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.toolbar_title)
-    protected TextView toolbarTitle;
+//    @Bind(R.id.toolbar_title)
+//    protected TextView toolbarTitle;
 
     @Bind(R.id.viewpager)
     protected ViewPager viewPager;
@@ -72,12 +72,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     @Override
-    protected void initial() {
+    protected boolean hasToolBar() {
+        return true;
+    }
 
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbarTitle.setVisibility(View.VISIBLE);
+    @Override
+    protected void initial() {
 
         fragments.add(new CircleFragment());
         fragments.add(new ContactsFragment());
@@ -163,29 +163,29 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem addItem = menu.findItem(R.id.add);
-        MenuItem editItem = menu.findItem(R.id.edit);
+        MenuItem addFriendItem = menu.findItem(R.id.add_friend);
+        MenuItem sendNewStatusItem = menu.findItem(R.id.send_new_status);
         switch (currentIndex) {
             case 0:
-                editItem.setVisible(true);
-                addItem.setVisible(false);
-                toolbarTitle.setText(getResources().getText(R.string.alumni_circle));
+                sendNewStatusItem.setVisible(true);
+                addFriendItem.setVisible(false);
+                setToolbarTitle(getString(R.string.alumni_circle));
                 break;
             case 1:
-                editItem.setVisible(false);
-                addItem.setVisible(true);
-                toolbarTitle.setText(getResources().getText(R.string.contacts));
+                sendNewStatusItem.setVisible(false);
+                addFriendItem.setVisible(true);
+                setToolbarTitle(getString(R.string.contacts));
                 break;
             case 2:
-                editItem.setVisible(false);
-                addItem.setVisible(false);
-                toolbarTitle.setText(getResources().getText(R.string.alumni_circle));
+                sendNewStatusItem.setVisible(false);
+                addFriendItem.setVisible(false);
+                setToolbarTitle(getString(R.string.alumni_circle));
                 break;
         }
         return super.onPrepareOptionsMenu(menu);
@@ -194,14 +194,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.add:
-//                readyGo(AddFriendsActivity.class);
-//                break;
-//            case R.id.edit:
-//                readyGo(PublishDynamicActivity.class);
-//                break;
-            case R.id.edit:
+            case R.id.send_new_status:
                 startActivity(new Intent(this, PublishDynamicActivity.class));
+                break;
+            case R.id.add_friend:
                 break;
         }
 
