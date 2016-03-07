@@ -26,9 +26,6 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     private IRegisterPresenter iRegisterPresenter;
 
-//    @Bind(R.id.toolbar_title)
-//    TextView toolbarTitle;
-
     @Bind(R.id.telephone_number_edittext)
     EditText telephoneNumberEditText;
 
@@ -57,7 +54,6 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     @Override
     protected void initial() {
         setToolbarTitle(getString(R.string.register));
-//        toolbarTitle.setText(R.string.register);
         iRegisterPresenter = new RegisterPresenter(this);
     }
 

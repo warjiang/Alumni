@@ -24,9 +24,6 @@ import cn.edu.seu.alumni.fragment.MyFragment;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
-//    @Bind(R.id.toolbar_title)
-//    protected TextView toolbarTitle;
-
     @Bind(R.id.viewpager)
     protected ViewPager viewPager;
 

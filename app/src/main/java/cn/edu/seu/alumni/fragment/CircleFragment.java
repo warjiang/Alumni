@@ -18,7 +18,7 @@ import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.adapter.BasisAdapter;
 import cn.edu.seu.alumni.adapter.DynamicItemAdapter;
 import cn.edu.seu.alumni.javabean.DynamicItem;
-import cn.edu.seu.alumni.widget.ScrollLoadMoreListView;
+import cn.edu.seu.alumni.widget.LoadMoreListView;
 
 /**
  * 圈子
@@ -29,7 +29,7 @@ public class CircleFragment extends BaseFragment {
     CardView topicCardView;
 
     @Bind(R.id.circle_listview)
-    ScrollLoadMoreListView circleListView;
+    LoadMoreListView circleListView;
 
     @Bind(R.id.circle_scrollview)
     ScrollView scrollView;

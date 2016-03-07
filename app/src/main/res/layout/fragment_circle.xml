@@ -39,7 +39,7 @@
                 android:layout_marginLeft="@dimen/activity_8_margin"
                 android:layout_marginRight="@dimen/activity_8_margin">
 
-                <cn.edu.seu.alumni.widget.ScrollLoadMoreListView
+                <cn.edu.seu.alumni.widget.LoadMoreListView
                     android:id="@+id/circle_listview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
