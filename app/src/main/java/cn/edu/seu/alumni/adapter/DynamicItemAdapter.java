@@ -1,9 +1,6 @@
 package cn.edu.seu.alumni.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +9,9 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.bumptech.glide.BitmapTypeRequest;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -25,29 +25,25 @@ import cn.edu.seu.alumni.widget.MyGridView;
 public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAdapter.viewHolder> {
 
     private Context context;
-    private int[] images = new int[9];
+    private String[] images = {
+            //"http://img3.imgtn.bdimg.com/it/u=2671181954,1302198727&fm=21&gp=0.jpg",
+            //"http://img3.imgtn.bdimg.com/it/u=2284434357,2830498318&fm=21&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=3527020364,2054046693&fm=23&gp=0.jpg",
+            "http://img4.imgtn.bdimg.com/it/u=2015527637,3623972403&fm=21&gp=0.jpg"};
 
     //用于gridview的图片缓存
-    private HashMap<String, Bitmap> bitmapBuff = new HashMap<>();
-    private ArrayDeque<String> bitmapKeysQueue = new ArrayDeque<>();
+    private HashMap<String, BitmapTypeRequest<String>> imageBuff = new HashMap<>();
+    private ArrayDeque<String> imageKeysQueue = new ArrayDeque<>();
     private final int MAX_BUFF_SIZE = 5;
 
     public DynamicItemAdapter(Context mContext) {
         super(mContext, new ArrayList<DynamicItem>(), viewHolder.class);
         context = mContext;
-
-        for (int i = 0; i < images.length; ++i) {
-            images[i] = R.drawable.test_image;
-        }
     }
 
     public DynamicItemAdapter(Context mContext, List<DynamicItem> mEntities, Class<viewHolder> classType) {
         super(mContext, mEntities, classType);
         context = mContext;
-
-        for (int i = 0; i < images.length; ++i) {
-            images[i] = R.drawable.test_image;
-        }
     }
 
     @Override
@@ -110,91 +106,42 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
 
         @Override
         public long getItemId(int position) {
-            return 0;
+            return position;
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
+        public View getView(int pos, View convertView, ViewGroup parent) {
+            final ImageView imageView;
             if (null == convertView) {
                 imageView = new ImageView(context);
             } else {
                 imageView = (ImageView) convertView;
             }
-
-            if(bitmapBuff.containsKey(Integer.toString(position))){
-                if(images.length>=3){
-                    imageView.setScaleType(ImageView.ScaleType.CENTER);
-                }
-                imageView.setImageBitmap(bitmapBuff.get(Integer.toString(position)));
-            }else{
-                DisplayMetrics dm = imageView.getResources().getDisplayMetrics();
-                int screenWidthDip = dm.widthPixels;
-
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeResource(imageView.getResources(), images[position], options);
-                int imageHeight = options.outHeight;
-                int imageWidth = options.outWidth;
-
-                Bitmap bitmap = null;
-                if (1 == images.length || 2 == images.length) {
-                    int x = imageHeight * screenWidthDip / imageWidth;
-                    x = x < screenWidthDip ? x : screenWidthDip;
-                    x /= images.length;
-                    bitmap = decodeSampledBitmapFromResource(imageView.getResources(), images[position], x, x);
-                    imageView.setImageBitmap(bitmap);
-                } else {
-                    imageView.setScaleType(ImageView.ScaleType.CENTER);
-                    bitmap = decodeSampledBitmapFromResource(imageView.getResources(), images[position], screenWidthDip / 3, screenWidthDip / 3);
-                    imageView.setImageBitmap(bitmap);
-                }
-                if(bitmapKeysQueue.size()>=MAX_BUFF_SIZE){
-                    bitmapBuff.remove(bitmapKeysQueue.pop());
-                }
-                bitmapBuff.put(Integer.toString(position), bitmap);
-                bitmapKeysQueue.push(Integer.toString(position));
+            DisplayMetrics dm = imageView.getResources().getDisplayMetrics();
+            int screenWidthDip = dm.widthPixels;
+            int width;
+            int height;
+            if (images.length >= 3) {
+                width = height = screenWidthDip / 3;
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            } else {
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                width = height = screenWidthDip / images.length;
             }
-
+            if (imageBuff.containsKey(images[pos])) {
+                imageBuff.get(images[pos]).override(width, height).into(imageView);
+            } else {
+                BitmapTypeRequest<String> btr = Glide.with(context).load(images[pos]).asBitmap();
+                btr.override(width, height).into(imageView);
+                if (imageKeysQueue.size() >= MAX_BUFF_SIZE) {
+                    imageBuff.remove(imageKeysQueue.pop());
+                }
+                imageKeysQueue.push(images[pos]);
+                imageBuff.put(images[pos], btr);
+            }
             return imageView;
         }
 
-        private int calculateInSampleSize(
-                BitmapFactory.Options options, int reqWidth, int reqHeight) {
-            // 原始图片的宽高
-            final int height = options.outHeight;
-            final int width = options.outWidth;
-            int inSampleSize = 1;
-
-            if (height > reqHeight || width > reqWidth) {
-
-                final int halfHeight = height / 2;
-                final int halfWidth = width / 2;
-
-                while ((halfHeight / inSampleSize) > reqHeight
-                        || (halfWidth / inSampleSize) > reqWidth) {
-                    inSampleSize *= 2;
-                }
-            }
-
-            return inSampleSize;
-        }
-
-        private Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                       int reqWidth, int reqHeight) {
-
-            // 首先设置 inJustDecodeBounds=true 来获取图片尺寸
-            final BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inJustDecodeBounds = true;
-            BitmapFactory.decodeResource(res, resId, options);
-
-            // 计算 inSampleSize 的值
-            options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-            // 根据计算出的 inSampleSize 来解码图片生成Bitmap
-            options.inJustDecodeBounds = false;
-            return BitmapFactory.decodeResource(res, resId, options);
-        }
     }
 
     public static class viewHolder {
