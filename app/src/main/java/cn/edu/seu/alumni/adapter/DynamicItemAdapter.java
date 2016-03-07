@@ -28,8 +28,9 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
     private String[] images = {
             //"http://img3.imgtn.bdimg.com/it/u=2671181954,1302198727&fm=21&gp=0.jpg",
             //"http://img3.imgtn.bdimg.com/it/u=2284434357,2830498318&fm=21&gp=0.jpg",
+            "http://img4.imgtn.bdimg.com/it/u=2015527637,3623972403&fm=21&gp=0.jpg",
             "http://img1.imgtn.bdimg.com/it/u=3527020364,2054046693&fm=23&gp=0.jpg",
-            "http://img4.imgtn.bdimg.com/it/u=2015527637,3623972403&fm=21&gp=0.jpg"};
+    };
 
     //用于gridview的图片缓存
     private HashMap<String, BitmapTypeRequest<String>> imageBuff = new HashMap<>();
@@ -121,18 +122,24 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             int screenWidthDip = dm.widthPixels;
             int width;
             int height;
-            if (images.length >= 3) {
-                width = height = screenWidthDip / 3;
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            } else {
-                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                width = height = screenWidthDip / images.length;
+            switch (images.length) {
+                case 1:
+                    width = height = screenWidthDip;
+                    imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                    break;
+                case 2:
+                    width = height = screenWidthDip / 2;
+                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    break;
+                default:
+                    width = height = screenWidthDip / 3;
+                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             if (imageBuff.containsKey(images[pos])) {
-                imageBuff.get(images[pos]).override(width, height).into(imageView);
+                imageBuff.get(images[pos]).placeholder(R.drawable.placeholder).override(width, height).into(imageView);
             } else {
                 BitmapTypeRequest<String> btr = Glide.with(context).load(images[pos]).asBitmap();
-                btr.override(width, height).into(imageView);
+                btr.placeholder(R.drawable.placeholder).override(width, height).into(imageView);
                 if (imageKeysQueue.size() >= MAX_BUFF_SIZE) {
                     imageBuff.remove(imageKeysQueue.pop());
                 }
