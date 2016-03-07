@@ -13,7 +13,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
@@ -23,7 +25,12 @@ import cn.edu.seu.alumni.widget.MyGridView;
 public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAdapter.viewHolder> {
 
     private Context context;
-    private int[] images = new int[5];
+    private int[] images = new int[10];
+
+    //用于gridview的图片缓存
+    private HashMap<String, Bitmap> bitmapBuff = new HashMap<>();
+    private ArrayDeque<String> bitmapKeysQueue = new ArrayDeque<>();
+    private final int MAX_BUFF_SIZE = 5;
 
     public DynamicItemAdapter(Context mContext) {
         super(mContext, new ArrayList<DynamicItem>(), viewHolder.class);
@@ -114,24 +121,36 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             } else {
                 imageView = (ImageView) convertView;
             }
-            DisplayMetrics dm = imageView.getResources().getDisplayMetrics();
-            int screenWidthDip = dm.widthPixels;
 
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inJustDecodeBounds = true;
-            BitmapFactory.decodeResource(imageView.getResources(), images[position], options);
-            int imageHeight = options.outHeight;
-            int imageWidth = options.outWidth;
+            if(bitmapBuff.containsKey(Integer.toString(position))){
+                imageView.setImageBitmap(bitmapBuff.get(Integer.toString(position)));
+            }else{
+                DisplayMetrics dm = imageView.getResources().getDisplayMetrics();
+                int screenWidthDip = dm.widthPixels;
 
-            if (1 == images.length || 2 == images.length) {
-                int x = imageHeight * screenWidthDip / imageWidth;
-                x = x < screenWidthDip ? x : screenWidthDip;
-                x /= images.length;
-                imageView.setImageBitmap(decodeSampledBitmapFromResource(imageView.getResources(), images[position], x, x));
-            } else {
-                imageView.setScaleType(ImageView.ScaleType.CENTER);
-                imageView.setImageBitmap(decodeSampledBitmapFromResource(imageView.getResources(),
-                        images[position], screenWidthDip / 3, screenWidthDip / 3));
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeResource(imageView.getResources(), images[position], options);
+                int imageHeight = options.outHeight;
+                int imageWidth = options.outWidth;
+
+                Bitmap bitmap = null;
+                if (1 == images.length || 2 == images.length) {
+                    int x = imageHeight * screenWidthDip / imageWidth;
+                    x = x < screenWidthDip ? x : screenWidthDip;
+                    x /= images.length;
+                    bitmap = decodeSampledBitmapFromResource(imageView.getResources(), images[position], x, x);
+                    imageView.setImageBitmap(bitmap);
+                } else {
+                    imageView.setScaleType(ImageView.ScaleType.CENTER);
+                    bitmap = decodeSampledBitmapFromResource(imageView.getResources(), images[position], screenWidthDip / 3, screenWidthDip / 3);
+                    imageView.setImageBitmap(bitmap);
+                }
+                if(bitmapKeysQueue.size()>=MAX_BUFF_SIZE){
+                    bitmapBuff.remove(bitmapKeysQueue.pop());
+                }
+                bitmapBuff.put(Integer.toString(position), bitmap);
+                bitmapKeysQueue.push(Integer.toString(position));
             }
 
             return imageView;

@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.king.photo.activity.PublishDynamicActivity;
 
@@ -164,7 +163,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 myTextView.setTextColor(getResources().getColor(R.color.main_text_selected));
                 break;
         }
-
 
     }
 

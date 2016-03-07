@@ -25,7 +25,6 @@ import cn.edu.seu.alumni.widget.ScrollLoadMoreListView;
  */
 public class CircleFragment extends BaseFragment {
 
-
     @Bind(R.id.circle_topic_cardview)
     CardView topicCardView;
 
@@ -69,7 +68,6 @@ public class CircleFragment extends BaseFragment {
     void topTopicView() {
 //        readyGo(CircleTopicActivity.class);
     }
-
 
     @Override
     protected int getContentViewId() {
