@@ -232,9 +232,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginTop="@dimen/activity_24_margin"
-            android:text="我是可爱的临时按钮，点我跳转至MainActivity"
-            android:background="#ff0000"
-            android:textColor="@color/white"
+            android:text="点我跳转至MainActivity"
             android:textSize="20sp" />
         <LinearLayout
             android:orientation="horizontal"

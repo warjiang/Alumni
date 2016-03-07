@@ -59,7 +59,7 @@ public class WelcomeActivity extends BaseActivity{
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            jumpThenFinish(RegisterActivity.class);
+                            jumpThenFinish(LoginActivity.class);
                         }
                     });
                     running = false;
@@ -71,7 +71,7 @@ public class WelcomeActivity extends BaseActivity{
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    jumpThenFinish(RegisterActivity.class);
+                    jumpThenFinish(LoginActivity.class);
                 }
             });
             running = false;

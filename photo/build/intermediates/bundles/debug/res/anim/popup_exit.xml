@@ -16,4 +16,4 @@
         android:interpolator="@android:anim/decelerate_interpolator"
         android:toAlpha="0.0" />
 
-</set><!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/anim/popup_exit.xml -->
+</set><!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/anim/popup_exit.xml -->

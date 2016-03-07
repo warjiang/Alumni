@@ -167,4 +167,5 @@ public class DecodeActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "图片解析失败", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

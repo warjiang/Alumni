@@ -5,4 +5,4 @@
 			android:drawable="@drawable/plubin_camera_del_focused" />
 		<item
 			android:drawable="@drawable/plugin_camera_del_unfocused" />
-</selector><!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/drawable/plugin_camera_del_state.xml --><!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/build/intermediates/bundles/debug/res/drawable/plugin_camera_del_state.xml -->
+</selector><!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/drawable/plugin_camera_del_state.xml --><!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/bundles/debug/res/drawable/plugin_camera_del_state.xml -->

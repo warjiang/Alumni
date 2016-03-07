@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="albumback">#E1E0DE</color>
     <color name="aliceblue">#f0f8ff</color>
@@ -155,12 +155,12 @@
     <color name="white">#ffffff</color>
     <color name="whitesmoke">#f5f5f5</color>
     <color name="yellow">#ffff00</color>
-    <!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/values/dimens.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="ui_10_dip">10dip</dimen>
-    <!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="album">相册</string>
     <string name="app_name">SharePhoto</string>
@@ -172,7 +172,7 @@
     <string name="photo">选择相册</string>
     <string name="preview">预览</string>
     <string name="unfinished">完成</string>
-    <!-- From: file:/C:/Users/dingwenjiang/Desktop/android/Alumni/photo/src/main/res/values/styles.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style mce_bogus="1" name="PopupAnimation" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/activity_translate_in</item>

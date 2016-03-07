@@ -9,19 +9,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="@dimen/activity_8_margin"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="25dp"
             android:src="@drawable/logo" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_16_margin"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/text_bg"
             android:orientation="vertical">
 
@@ -29,18 +30,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="@dimen/activity_12_margin">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_20_margin"
+                    android:layout_marginRight="@dimen/activity_32_margin"
                     android:src="@drawable/user" />
 
                 <EditText
-                    android:id="@+id/login_phone_num_et"
+                    android:id="@+id/account_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_64_margin"
                     android:background="@null"
                     android:hint="@string/user_hint"
                     android:maxLength="15"
@@ -58,18 +60,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="@dimen/activity_12_margin">
+                android:padding="15dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_20_margin"
+                    android:layout_marginRight="@dimen/activity_32_margin"
                     android:src="@drawable/password" />
 
                 <EditText
-                    android:id="@+id/login_password_et"
+                    android:id="@+id/password_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_64_margin"
                     android:background="@null"
                     android:hint="@string/password"
                     android:inputType="textPassword"
@@ -82,11 +85,11 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_16_margin"
-            android:layout_marginRight="@dimen/activity_16_margin"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
             android:background="@drawable/login_btn_bg"
             android:gravity="center"
             android:textSize="20sp"
@@ -110,7 +113,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/login_agree" />
+                android:text="@string/login_agree"
+                android:textColor="#c9c9c9"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -128,14 +132,15 @@
             android:padding="@dimen/activity_8_margin">
 
             <LinearLayout
+                android:id="@+id/weixin_login_linearlayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:paddingRight="@dimen/activity_6_margin"
                     android:src="@drawable/weixin" />
 
@@ -149,10 +154,12 @@
             <View
                 android:layout_width="@dimen/activity_1_margin"
                 android:layout_height="match_parent"
-                android:background="@color/divider_high" />
+                android:background="@color/divider_high"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
 
             <LinearLayout
-                android:id="@+id/register_linear_layout"
+                android:id="@+id/register_linearlayout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

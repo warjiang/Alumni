@@ -33,6 +33,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.LoginActivity"
+            android:theme="@style/ActivityTheme">
+        </activity>
+
         <!-- 主活动 -->
         <activity android:name=".activity.MainActivity"
             android:theme="@style/ActivityTheme">
