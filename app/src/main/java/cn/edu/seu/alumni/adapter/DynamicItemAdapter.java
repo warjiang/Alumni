@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.bumptech.glide.BitmapTypeRequest;
+import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayDeque;
@@ -33,7 +33,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
     };
 
     //用于gridview的图片缓存
-    private HashMap<String, BitmapTypeRequest<String>> imageBuff = new HashMap<>();
+    private HashMap<String, DrawableRequestBuilder<String>> imageBuff = new HashMap<>();
     private ArrayDeque<String> imageKeysQueue = new ArrayDeque<>();
     private final int MAX_BUFF_SIZE = 5;
 
@@ -136,15 +136,15 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
                     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             if (imageBuff.containsKey(images[pos])) {
-                imageBuff.get(images[pos]).placeholder(R.drawable.placeholder).override(width, height).into(imageView);
+                imageBuff.get(images[pos]).crossFade().override(width, height).into(imageView);
             } else {
-                BitmapTypeRequest<String> btr = Glide.with(context).load(images[pos]).asBitmap();
-                btr.placeholder(R.drawable.placeholder).override(width, height).into(imageView);
+                DrawableRequestBuilder<String> drb = Glide.with(context).load(images[pos]).placeholder(R.drawable.placeholder);
+                drb.crossFade().override(width, height).into(imageView);
                 if (imageKeysQueue.size() >= MAX_BUFF_SIZE) {
                     imageBuff.remove(imageKeysQueue.pop());
                 }
                 imageKeysQueue.push(images[pos]);
-                imageBuff.put(images[pos], btr);
+                imageBuff.put(images[pos], drb);
             }
             return imageView;
         }
