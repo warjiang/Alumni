@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package test.dwj;
 
 import android.content.Context;
 import android.content.Intent;
