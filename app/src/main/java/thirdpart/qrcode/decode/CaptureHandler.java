@@ -3,7 +3,7 @@ package thirdpart.qrcode.decode;
 import android.os.Handler;
 import android.os.Message;
 
-import cn.edu.seu.alumni.activity.ScanActivity;
+import test.dwj.ScanActivity;
 import thirdpart.qrcode.camera.CameraManager;
 
 //import jiang.seu.edu.qrcode.ScanActivity;

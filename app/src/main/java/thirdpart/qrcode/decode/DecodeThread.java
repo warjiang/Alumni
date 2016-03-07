@@ -5,7 +5,7 @@ import android.os.Looper;
 
 import java.util.concurrent.CountDownLatch;
 
-import cn.edu.seu.alumni.activity.ScanActivity;
+import test.dwj.ScanActivity;
 
 //import jiang.seu.edu.qrcode.ScanActivity;
 

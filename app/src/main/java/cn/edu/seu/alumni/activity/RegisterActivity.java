@@ -26,8 +26,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     private IRegisterPresenter iRegisterPresenter;
 
-    @Bind(R.id.toolbar_title)
-    TextView toolbarTitle;
+//    @Bind(R.id.toolbar_title)
+//    TextView toolbarTitle;
 
     @Bind(R.id.telephone_number_edittext)
     EditText telephoneNumberEditText;
@@ -44,13 +44,6 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     @Bind(R.id.major_textview)
     TextView majorTextView;
 
-    @Bind(R.id.btn_activity_qrcode_decode)
-    Button btn_activity_qrcode_decode;
-    @Bind(R.id.btn_activity_qrcode_generate)
-    Button btn_activity_qrcode_generate;
-    @Bind(R.id.btn_activity_qrcode_scan)
-    Button btn_activity_qrcode_scan;
-
     @Override
     protected int getContentViewId() {
         return R.layout.activity_register;
@@ -63,8 +56,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     @Override
     protected void initial() {
-        toolbarTitle.setVisibility(View.VISIBLE);
-        toolbarTitle.setText(R.string.register);
+        setToolbarTitle(getString(R.string.register));
+//        toolbarTitle.setText(R.string.register);
         iRegisterPresenter = new RegisterPresenter(this);
     }
 
@@ -123,24 +116,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
                 majorTextView.getText().toString(), passwordEditText.getText().toString()));
     }
 
-    @OnClick(R.id.btn_activity_qrcode_scan)
-    void scanQRCode(){
 
-        Log.d("aa","scanQRCode");
-        startActivity(new Intent(this,ScanActivity.class));
-    }
-    @OnClick(R.id.btn_activity_qrcode_generate)
-    void generateQRCode(){
-
-        Log.d("aa","generateQRCode");
-        startActivity(new Intent(this,GenerateActivity.class));
-    }
-    @OnClick(R.id.btn_activity_qrcode_decode)
-    void decodeQRCode(){
-
-        Log.d("aa","decodeQRCode");
-        startActivity(new Intent(this,DecodeActivity.class));
-    }
 
     @Override
     public void doRegisterFailure(String reason) {
@@ -153,10 +129,5 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
         jumpThenFinish(MainActivity.class);
     }
 
-    @Bind(R.id.tmp)
-    Button tmp;
-    @OnClick((R.id.tmp))
-    void tmpButtonOnClick(){
-        jumpThenFinish(MainActivity.class);
-    }
+
 }

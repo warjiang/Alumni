@@ -96,6 +96,19 @@
             android:text="@string/login"
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/developer_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:background="#000000"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="开发者专属按钮"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
     <LinearLayout

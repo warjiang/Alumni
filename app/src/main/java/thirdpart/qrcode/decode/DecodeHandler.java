@@ -13,7 +13,7 @@ import com.google.zxing.PlanarYUVLuminanceSource;
 
 import java.io.ByteArrayOutputStream;
 
-import cn.edu.seu.alumni.activity.ScanActivity;
+import test.dwj.ScanActivity;
 import thirdpart.qrcode.camera.CameraManager;
 
 //import jiang.seu.edu.qrcode.ScanActivity;

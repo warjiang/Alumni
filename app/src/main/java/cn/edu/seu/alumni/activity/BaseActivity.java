@@ -2,10 +2,13 @@ package cn.edu.seu.alumni.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.edu.seu.alumni.R;
 
@@ -15,7 +18,7 @@ import cn.edu.seu.alumni.R;
 public abstract class BaseActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-
+    private TextView toolbarTitleTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +28,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getContentViewId());
         if(hasToolBar()){
             toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbarTitleTextView = (TextView) findViewById(R.id.toolbar_title);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            ActionBar actionBar = getSupportActionBar();
+            /**
+             * Toolbar左方不显示应用标题
+             */
+            actionBar.setDisplayShowTitleEnabled(false);
+            /**
+             *   是否显示返回图标
+             */
+            actionBar.setDisplayHomeAsUpEnabled(toolbarShowBackButton());
         }
 
         ButterKnife.bind(this);
@@ -44,6 +55,22 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 是否有ToolBar
      */
     protected abstract boolean hasToolBar();
+
+    /**
+     * toolBar是否显示返回图标
+     */
+    protected boolean toolbarShowBackButton(){
+        return false;
+    }
+
+    /**
+     * 设置toolbar标题
+     */
+    protected void setToolbarTitle(String title){
+        if(hasToolBar()){
+            toolbarTitleTextView.setText(title);
+        }
+    }
 
     /**
      * 初始化

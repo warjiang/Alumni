@@ -11,10 +11,16 @@ import cn.edu.seu.alumni.application.Constant;
 import cn.edu.seu.alumni.mvp.presenter.auth.ILoginPresenter;
 import cn.edu.seu.alumni.mvp.presenter.auth.LoginPresenter;
 import cn.edu.seu.alumni.mvp.view.auth.ILoginView;
+import test.zzk.DeveloperActivity;
 
 public class LoginActivity extends BaseActivity implements ILoginView{
 
     private ILoginPresenter iLoginPresenter;
+
+    /**
+     * 记录上一次按返回键的时间
+     */
+    private long exitTime = 0;
 
     @Bind(R.id.account_edittext)
     EditText accountEditText;
@@ -66,4 +72,24 @@ public class LoginActivity extends BaseActivity implements ILoginView{
     public void doLoginFailure(String reason) {
         showToast(reason);
     }
+
+    @Override
+    public void onBackPressed() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            showToast("再按一次退出校友圈");
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+        }
+    }
+
+
+
+    @Bind(R.id.developer_button)
+    Button developerButton;
+    @OnClick(R.id.developer_button)
+    public void developerButtonOnClick(){
+        jump(DeveloperActivity.class);
+    }
+
 }

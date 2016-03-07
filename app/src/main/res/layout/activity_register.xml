@@ -226,36 +226,8 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/tmp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginTop="@dimen/activity_24_margin"
-            android:text="点我跳转至MainActivity"
-            android:textSize="20sp" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btn_activity_qrcode_scan"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="二维码扫描"/>
-            <Button
-                android:id="@+id/btn_activity_qrcode_generate"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="生成二维码"/>
-            <Button
-                android:id="@+id/btn_activity_qrcode_decode"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="解码"/>
-        </LinearLayout>
+
+
+
     </LinearLayout>
 </LinearLayout>
