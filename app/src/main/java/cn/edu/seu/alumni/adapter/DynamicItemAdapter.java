@@ -25,7 +25,7 @@ import cn.edu.seu.alumni.widget.MyGridView;
 public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAdapter.viewHolder> {
 
     private Context context;
-    private int[] images = new int[10];
+    private int[] images = new int[9];
 
     //用于gridview的图片缓存
     private HashMap<String, Bitmap> bitmapBuff = new HashMap<>();
@@ -123,6 +123,9 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             }
 
             if(bitmapBuff.containsKey(Integer.toString(position))){
+                if(images.length>=3){
+                    imageView.setScaleType(ImageView.ScaleType.CENTER);
+                }
                 imageView.setImageBitmap(bitmapBuff.get(Integer.toString(position)));
             }else{
                 DisplayMetrics dm = imageView.getResources().getDisplayMetrics();
