@@ -72,7 +72,7 @@ public class InputChecker {
         if(CommonUtil.String.isEmpty(request.getPhone_num())){
             return new CheckResult(false, "手机号不能为空");
         }
-        if(!CommonUtil.Regex.match("^1\\d{10}$", request.getPhone_num())){
+        if(!CommonUtil.Regex.match("^1[0-9]{10}$", request.getPhone_num())){
             return new CheckResult(false, "手机号格式错误");
         }
         if(CommonUtil.String.isEmpty(request.getPassword())){

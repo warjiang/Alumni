@@ -20,10 +20,10 @@
     <string name="user_service_agree">《用户服务协议》</string>
     <string name="back">返回</string>
     <string name="phone">手机</string>
-    <string name="phone_hint">注册手机号码</string>
+    <string name="phone_hint">请填写手机号</string>
     <string name="password_hint">6-12位</string>
     <string name="school_year">入学</string>
-    <string name="school_year_hint">入学年份</string>
+    <string name="school_year_hint">请选择入学年份</string>
     <string name="college">学院</string>
     <string name="college_hint">请选择你的学院</string>
     <string name="major">专业</string>

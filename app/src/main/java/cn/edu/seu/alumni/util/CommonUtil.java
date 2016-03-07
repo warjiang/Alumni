@@ -22,6 +22,17 @@ public class CommonUtil {
     }
 
     /**
+     * 正则表达式
+     */
+    public static class Regex{
+        public static boolean match(java.lang.String regex, java.lang.String text){
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(text);
+            return matcher.find();
+        }
+    }
+
+    /**
      * Retrofit错误处理
      */
     public static class Retrofit{
@@ -30,7 +41,7 @@ public class CommonUtil {
                 return "未知错误";
             }
             cn.edu.seu.alumni.javabean.Error error = (Error) retrofitError.getBodyAs(Error.class);
-            if(error == null || error.getReason() == null || error.getReason().equals(""))
+            if(error == null || String.isEmpty(error.getReason()))
                 return "未知错误";
             return error.getReason();
         }
@@ -85,16 +96,7 @@ public class CommonUtil {
         }
     }
 
-    /**
-     * 正则表达式
-     */
-    public static class Regex{
-        public static boolean match(java.lang.String regex, java.lang.String text){
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(text);
-            return matcher.find();
-        }
-    }
+
 
 
 
