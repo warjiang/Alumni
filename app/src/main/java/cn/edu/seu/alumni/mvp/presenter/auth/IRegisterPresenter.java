@@ -7,7 +7,7 @@ public interface IRegisterPresenter {
     /**
      * 本应用注册
      */
-    public void registerAlumni(RegisterAlumniRequest registerAlumniRequest);
+    public void registerAlumni(RegisterAlumniRequest registerAlumniRequest, boolean agreeWithProtocol);
 
 //    /**
 //     * 使用微博信息注册

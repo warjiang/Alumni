@@ -27,7 +27,17 @@ public class RegisterPresenter implements  IRegisterPresenter{
     }
 
     @Override
-    public void registerAlumni(RegisterAlumniRequest registerAlumniRequest) {
+    public void registerAlumni(RegisterAlumniRequest registerAlumniRequest, boolean agreeWithProtocol) {
+
+        if(!agreeWithProtocol){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    iRegisterView.doRegisterFailure("请先同意校友圈注册协议");
+                }
+            });
+            return;
+        }
 
         final InputChecker.CheckResult checkResult = InputChecker.check(registerAlumniRequest);
         if(!checkResult.isLegal()){

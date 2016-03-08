@@ -24,8 +24,8 @@
     <string name="password_hint">6-12位</string>
     <string name="school_year">入学</string>
     <string name="school_year_hint">请选择入学年份</string>
-    <string name="college">学院</string>
-    <string name="college_hint">请选择你的学院</string>
+    <string name="college">院系</string>
+    <string name="college_hint">请选择你的院系</string>
     <string name="major">专业</string>
     <string name="major_hint">请选择你的专业</string>
     <string name="register">注册</string>
