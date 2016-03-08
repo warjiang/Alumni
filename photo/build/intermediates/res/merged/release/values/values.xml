@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -20,7 +20,7 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="albumback">#E1E0DE</color>
     <color name="aliceblue">#f0f8ff</color>
@@ -28,13 +28,13 @@
     <color name="aqua">#00ffff</color>
     <color name="aquamarine">#7fffd4</color>
     <color name="azure">#f0ffff</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="beige">#f5f5dc</color>
     <color name="bisque">#ffe4c4</color>
@@ -42,7 +42,7 @@
     <color name="blanchedalmond">#ffebcd</color>
     <color name="blue">#0000ff</color>
     <color name="blueviolet">#8a2be2</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -50,15 +50,15 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="brown">#a52a2a</color>
     <color name="burlywood">#deb887</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="cadetblue">#5f9ea0</color>
     <color name="chartreuse">#7fff00</color>
@@ -89,24 +89,24 @@
     <color name="darkviolet">#9400d3</color>
     <color name="deeppink">#ff1493</color>
     <color name="deepskyblue">#00bfff</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="dimgray">#696969</color>
     <color name="dimgrey">#696969</color>
     <color name="dodgerblue">#1e90ff</color>
     <color name="firebrick">#b22222</color>
     <color name="floralwhite">#fffaf0</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="forestgreen">#228b22</color>
     <color name="fuchsia">#ff00ff</color>
@@ -118,13 +118,13 @@
     <color name="green">#008000</color>
     <color name="greenyellow">#adff2f</color>
     <color name="grey">#808080</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="honeydew">#f0fff0</color>
     <color name="hotpink">#ff69b4</color>
@@ -156,7 +156,7 @@
     <color name="linen">#faf0e6</color>
     <color name="magenta">#ff00ff</color>
     <color name="maroon">#800000</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
@@ -170,7 +170,7 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="mediumaquamarine">#66cdaa</color>
     <color name="mediumblue">#0000cd</color>
@@ -205,7 +205,7 @@
     <color name="plugin_camera_black">#000000</color>
     <color name="plum">#dda0dd</color>
     <color name="powderblue">#b0e0e6</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
@@ -215,15 +215,15 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="purple">#800080</color>
     <color name="red">#ff0000</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="rosybrown">#bc8f8f</color>
     <color name="royalblue">#4169e1</color>
@@ -232,13 +232,13 @@
     <color name="sandybrown">#f4a460</color>
     <color name="seaShell">#fff5ee</color>
     <color name="seagreen">#2e8b57</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="sienna">#a0522d</color>
     <color name="silver">#c0c0c0</color>
@@ -251,13 +251,13 @@
     <color name="steelblue">#4682b4</color>
     <color name="style_divider_color">#C9C7CD</color>
     <color name="style_red">#ff4c41</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/color.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="tan">#d2b48c</color>
     <color name="teal">#008080</color>
@@ -299,7 +299,7 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -368,11 +368,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/dimens.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
@@ -382,10 +382,10 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/dimens.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="ui_10_dip">10dip</dimen>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -421,7 +421,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="album">相册</string>
     <string name="app_name">SharePhoto</string>
@@ -432,13 +432,13 @@
     <string name="only_choose_num">超出可选图片张数</string>
     <string name="photo">选择相册</string>
     <string name="preview">预览</string>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="unfinished">完成</string>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/styles.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#008cc9</item>
@@ -448,7 +448,7 @@
     <style name="ActivityThemeSwipeBack" parent="ActivityTheme">
         <item name="android:windowIsTranslucent">true</item>
     </style>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
@@ -1487,7 +1487,7 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Spinner"/>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/styles.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style mce_bogus="1" name="PopupAnimation" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/activity_translate_in</item>
@@ -1497,7 +1497,7 @@
         <item name="android:windowEnterAnimation">@anim/popup_enter</item>     
         <item name="android:windowExitAnimation">@anim/popup_exit</item>     
     </style>
-    <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
