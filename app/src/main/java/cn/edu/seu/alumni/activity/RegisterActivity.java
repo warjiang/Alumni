@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bigkoo.pickerview.OptionsPickerView;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
@@ -21,6 +24,7 @@ import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.presenter.auth.IRegisterPresenter;
 import cn.edu.seu.alumni.mvp.presenter.auth.RegisterPresenter;
 import cn.edu.seu.alumni.mvp.view.auth.IRegisterView;
+import cn.edu.seu.alumni.util.DataProvider;
 
 public class RegisterActivity extends BaseActivity implements IRegisterView{
 
@@ -41,6 +45,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     @Bind(R.id.major_textview)
     TextView majorTextView;
 
+    private OptionsPickerView departmentAndMajorOptionsPickerView;
+
+    private DataProvider.SeuMajors seuMajors;
+
     @Override
     protected int getContentViewId() {
         return R.layout.activity_register;
@@ -55,6 +63,31 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     protected void initial() {
         setToolbarTitle(getString(R.string.register));
         iRegisterPresenter = new RegisterPresenter(this);
+
+        seuMajors = DataProvider.getSeuMajorsData();
+
+
+
+        departmentAndMajorOptionsPickerView = new OptionsPickerView(this);
+        departmentAndMajorOptionsPickerView.setPicker(seuMajors.getDepartments(), seuMajors.getMajors(), true);
+        departmentAndMajorOptionsPickerView.setTitle("选择学院/专业");
+        departmentAndMajorOptionsPickerView.setCyclic(true, false, false);
+        departmentAndMajorOptionsPickerView.setSelectOptions(0, 0);
+        departmentAndMajorOptionsPickerView.setCancelable(true);
+
+
+
+        departmentAndMajorOptionsPickerView.setOnoptionsSelectListener(new OptionsPickerView.OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int option1, int option2, int option3) {
+                String department = seuMajors.getDepartments().get(option1);
+                String major = seuMajors.getMajors().get(option1).get(option2);
+                departmentTextView.setText(department);
+                majorTextView.setText(major);
+            }
+        });
+
+
     }
 
     /**
@@ -86,20 +119,13 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
                 .show();
     }
 
-    /**
-     * 设置学院
-     */
-    @OnClick(R.id.department_linearlayout)
-    public void departmentLinearLayoutOnClick(){
-
-    }
 
     /**
-     * 设置专业
+     * 设置学院、专业
      */
-    @OnClick({R.id.major_linearlayout})
-    public void majorLinearLayoutOnClick() {
-
+    @OnClick({R.id.major_linearlayout,R.id.department_linearlayout})
+    public void setDepartmentAndMajor() {
+        departmentAndMajorOptionsPickerView.show();
     }
 
     /**
@@ -124,6 +150,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
         showToast("注册成功");
         jumpThenFinish(MainActivity.class);
     }
+
+
 
 
 }

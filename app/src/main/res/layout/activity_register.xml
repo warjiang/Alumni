@@ -89,9 +89,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/text_bg"
-            android:paddingBottom="@dimen/activity_8_margin"
+            android:paddingBottom="15dp"
             android:paddingLeft="@dimen/activity_16_margin"
-            android:paddingTop="@dimen/activity_8_margin">
+            android:paddingTop="15dp">
 
             <LinearLayout
                 android:id="@+id/enroll_year_linearlayout"
@@ -133,9 +133,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/text_bg"
-            android:paddingBottom="@dimen/activity_8_margin"
+            android:paddingBottom="15dp"
             android:paddingLeft="@dimen/activity_16_margin"
-            android:paddingTop="@dimen/activity_8_margin">
+            android:paddingTop="15dp">
 
             <LinearLayout
                 android:id="@+id/department_linearlayout"
@@ -177,9 +177,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/text_bg"
-            android:paddingBottom="@dimen/activity_8_margin"
+            android:paddingBottom="15dp"
             android:paddingLeft="@dimen/activity_16_margin"
-            android:paddingTop="@dimen/activity_8_margin">
+            android:paddingTop="15dp">
 
             <LinearLayout
                 android:id="@+id/major_linearlayout"
