@@ -174,6 +174,14 @@
     <string name="unfinished">完成</string>
     <!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/values/styles.xml -->
     <eat-comment/>
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#008cc9</item>
+        <item name="colorPrimaryDark">#008cc9</item>
+        <item name="colorAccent">#008cc9</item>
+    </style>
+    <style name="ActivityThemeSwipeBack" parent="ActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
     <style mce_bogus="1" name="PopupAnimation" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/activity_translate_in</item>
         <item name="android:windowExitAnimation">@anim/activity_translate_out</item>

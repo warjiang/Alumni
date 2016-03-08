@@ -58,8 +58,6 @@ public class CircleTopicActivity extends SwipeBackBaseActivity {
             case android.R.id.home:
                 finish();
                 break;
-            case R.id.list:
-                break;
         }
         return super.onOptionsItemSelected(item);
     }

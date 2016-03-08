@@ -20,7 +20,8 @@
         >
         <activity
             android:name=".activity.PublishDynamicActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/ActivityThemeSwipeBack">
         </activity>
         <activity
             android:name="com.king.photo.activity.AlbumActivity"

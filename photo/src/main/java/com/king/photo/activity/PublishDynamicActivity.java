@@ -13,10 +13,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -47,7 +51,7 @@ import com.king.photo.util.Res;
  * @version 2014年10月18日  下午11:48:34
  * @QQ:595163260
  */
-public class PublishDynamicActivity extends Activity {
+public class PublishDynamicActivity extends AppCompatActivity {
 
     private GridView noScrollgridview;
     private GridAdapter adapter;
@@ -55,6 +59,7 @@ public class PublishDynamicActivity extends Activity {
     private PopupWindow pop = null;
     private LinearLayout ll_popup;
     public static Bitmap bimap;
+    private Toolbar toolbar;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +73,23 @@ public class PublishDynamicActivity extends Activity {
         Init();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void Init() {
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         pop = new PopupWindow(PublishDynamicActivity.this);
 
