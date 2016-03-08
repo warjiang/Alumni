@@ -8,14 +8,14 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <!-- qrcode-->
+    <!-- qrcode -->
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:name=".application.App"
@@ -25,31 +25,34 @@
         android:supportsRtl="true">
 
         <!-- 欢迎页 -->
-        <activity android:name=".activity.WelcomeActivity"
+        <activity
+            android:name=".activity.WelcomeActivity"
             android:theme="@style/ActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <!-- 登录 -->
-        <activity android:name=".activity.LoginActivity"
-            android:theme="@style/ActivityTheme">
-        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/ActivityTheme"></activity>
 
         <!-- 注册 -->
-        <activity android:name=".activity.RegisterActivity"
-            android:theme="@style/ActivityTheme">
-        </activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:theme="@style/ActivityTheme"></activity>
 
         <!-- 主页面 -->
-        <activity android:name=".activity.MainActivity"
-            android:theme="@style/ActivityTheme">
-        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/ActivityTheme"></activity>
 
         <!-- 实时通信模块、推送 START -->
         <service android:name="com.avos.avoscloud.PushService" />
+
         <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -60,28 +63,38 @@
 
 
         <!-- 反馈组件 START -->
-        <activity android:name="com.avos.avoscloud.feedback.ThreadActivity"
-            android:theme="@style/ActivityTheme"/>
+        <activity
+            android:name="com.avos.avoscloud.feedback.ThreadActivity"
+            android:theme="@style/ActivityTheme" />
         <!-- 反馈组件 END -->
 
 
-        <!-- test START-->
-        <activity android:name="thirdpart.leancloud.MyLeanCloudDemoMainActivity"
-            android:theme="@style/ActivityTheme"/>
-        <activity android:name="thirdpart.leancloud.ConversationListActivity"
-            android:theme="@style/ActivityTheme"/>
-        <activity android:name="test.dwj.DecodeActivity"
-            android:theme="@style/ActivityTheme"/>
-        <activity android:name="test.dwj.ScanActivity"
-            android:theme="@style/ActivityTheme"/>
-        <activity android:name="test.dwj.GenerateActivity"
-            android:theme="@style/ActivityTheme"/>
-        <activity android:name="test.dwj.ResultActivity"
-            android:theme="@style/ActivityTheme"/>
-        <activity android:name="test.zzk.DeveloperActivity"
-            android:theme="@style/ActivityTheme"/>
-        <!-- test END-->
+        <!-- test START -->
+        <activity
+            android:name="thirdpart.leancloud.MyLeanCloudDemoMainActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="thirdpart.leancloud.ConversationListActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.DecodeActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.ScanActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.GenerateActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.ResultActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.zzk.DeveloperActivity"
+            android:theme="@style/ActivityTheme" />
+        <!-- test END -->
 
+        <activity android:name=".activity.CircleTopicActivity"
+            android:theme="@style/ActivityThemeSwipeBack"></activity>
     </application>
 
 </manifest>

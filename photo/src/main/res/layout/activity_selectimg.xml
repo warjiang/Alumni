@@ -5,31 +5,36 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/black">
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <TextView
+            android:id="@+id/write_dynamic_toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_gravity="center"
             android:text="写动态"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
 
         <TextView
-            android:id="@+id/activity_selectimg_send"
+            android:id="@+id/send_text_view"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/ui_10_dip"
             android:text="发送"
-            android:textColor="@drawable/text_while"
-            android:textSize="20sp" />
-    </RelativeLayout>
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
+
+    </android.support.v7.widget.Toolbar>
 
     <EditText
         android:layout_width="fill_parent"

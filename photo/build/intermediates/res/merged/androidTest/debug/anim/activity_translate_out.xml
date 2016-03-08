@@ -5,4 +5,4 @@
     android:fromYDelta="0%"
     android:toYDelta="100%"
     android:interpolator="@android:anim/accelerate_decelerate_interpolator" >
-</translate><!-- From: file:/D:/Workspace/Alumni/photo/src/main/res/anim/activity_translate_out.xml --><!-- From: file:/D:/Workspace/Alumni/photo/build/intermediates/bundles/debug/res/anim/activity_translate_out.xml -->
+</translate><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/src/main/res/anim/activity_translate_out.xml --><!-- From: file:/D:/Android/AndroidStudioProjects/Alumni/photo/build/intermediates/bundles/debug/res/anim/activity_translate_out.xml -->
