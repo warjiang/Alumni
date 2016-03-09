@@ -50,6 +50,13 @@
             android:name=".activity.MainActivity"
             android:theme="@style/ActivityTheme" />
 
+        <!-- 人脉 START -->
+        <activity android:name=".activity.AddFriendsActivity"
+            android:theme="@style/ActivityTheme"/>
+        <activity android:name=".activity.NewFriendsActivity"
+            android:theme="@style/ActivityTheme"/>
+        <!-- 人脉 END-->
+
         <!-- 实时通信模块、推送 START -->
         <service android:name="com.avos.avoscloud.PushService" />
 
