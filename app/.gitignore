@@ -1,0 +1,11 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/build/
+/app/build/
+/app/app.iml
+/swipeback_library/build/
+/swipeback_library/*.iml
+/photo/build/
+/photo/photo.iml

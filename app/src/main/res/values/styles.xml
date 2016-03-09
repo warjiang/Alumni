@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- 该主题为非SwipeBackActivity使用 -->
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 该主题为SwipeBackActivity使用 -->
+    <style name="ActivityThemeSwipeBack" parent="ActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+</resources>
