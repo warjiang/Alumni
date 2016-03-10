@@ -195,7 +195,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 jump(PublishDynamicActivity.class);
                 break;
             case R.id.add_friend:
-//                jump(AddFriendsActivity.class);
+                jump(AddFriendsActivity.class);
                 break;
         }
 

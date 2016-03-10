@@ -52,9 +52,9 @@
 
         <!-- 人脉 START -->
         <activity android:name=".activity.AddFriendsActivity"
-            android:theme="@style/ActivityTheme"/>
+            android:theme="@style/ActivityThemeSwipeBack"/>
         <activity android:name=".activity.NewFriendsActivity"
-            android:theme="@style/ActivityTheme"/>
+            android:theme="@style/ActivityThemeSwipeBack"/>
         <!-- 人脉 END-->
 
         <!-- 实时通信模块、推送 START -->

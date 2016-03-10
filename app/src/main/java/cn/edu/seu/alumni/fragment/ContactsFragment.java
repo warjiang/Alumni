@@ -21,6 +21,7 @@ import java.util.List;
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
 //import cn.edu.seu.alumni.activity.NewFriendsActivity;
+import cn.edu.seu.alumni.activity.NewFriendsActivity;
 import cn.edu.seu.alumni.adapter.ContactsListAdapter;
 import cn.edu.seu.alumni.javabean.Friend;
 import cn.edu.seu.alumni.util.CharacterParser;
@@ -219,8 +220,9 @@ public class ContactsFragment extends BaseFragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.contacts_new_friends_relative_layout:
-            //    readyGo(NewFriendsActivity.class);
+//                readyGo(NewFriendsActivity.class);
 //                startActivity(new Intent(getContext(),NewFriendsActivity.class));
+                jump(NewFriendsActivity.class);
                 break;
             case R.id.contacts_alumni_good_relative_layout:
            //     readyGo(AlumniGoodActivity.class);
