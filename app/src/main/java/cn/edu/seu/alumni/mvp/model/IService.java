@@ -2,21 +2,28 @@ package cn.edu.seu.alumni.mvp.model;
 
 
 
-import android.telecom.Call;
-
-import cn.edu.seu.alumni.javabean.http.AuthResponse;
-import cn.edu.seu.alumni.javabean.http.LoginAlumniRequest;
-import cn.edu.seu.alumni.javabean.http.LoginWeiboRequest;
-import cn.edu.seu.alumni.javabean.http.LoginWeixinRequest;
-import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.AuthResponse;
+import cn.edu.seu.alumni.javabean.auth.LoginAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginWeiboRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginWeixinRequest;
+import cn.edu.seu.alumni.javabean.auth.RegisterAlumniRequest;
+import cn.edu.seu.alumni.javabean.user_info.UserBasicInfo;
+import cn.edu.seu.alumni.javabean.user_info.UserDetailedInfo;
 import retrofit.Callback;
 import retrofit.http.Body;
+import retrofit.http.GET;
 import retrofit.http.POST;
+import retrofit.http.PUT;
+import retrofit.http.Path;
 
 /**
  * 定义http请求与后台的交互接口
  */
 public interface IService {
+
+    /**
+     *  auth模块
+     */
 
     //Alumni注册
     @POST("/v1.0/user/")
@@ -35,6 +42,39 @@ public interface IService {
     void loginWeixin(@Body LoginWeixinRequest request, Callback<AuthResponse> callback);
 
 
+    /**
+     * user_info模块
+     */
+
+    //获取基本资料
+    @GET("/v1.0/user/{user_id}")
+    void getUserBasicInfo(@Path("user_id") String user_id, Callback<UserBasicInfo> callback);
+
+    //更新基本资料，下同
+    @PUT("/v1.0/user/")
+    void updateUserName(@Body String name);
+
+    @PUT("/v1.0/user/")
+    void updateUserImageUrl(@Body String image);
+
+    @PUT("/v1.0/user/")
+    void updateUserEnrollYear(@Body String enroll_year);
+
+    @PUT("/v1.0/user/")
+    void updateUserSchool(@Body String school);
+
+    @PUT("/v1.0/user/")
+    void updateUserMajor(@Body String major);
+
+    @PUT("/v1.0/user/")
+    void updateUserStudentNum(@Body String student_num);
+
+    @PUT("/v1.0/user/")
+    void updateUserLocation(@Body String location);
+
+    //获取详细资料
+    @GET("/v1.0/user/info/{user_id}")
+    void getUserDetailedInfo(@Path("user_id") String user_id, Callback<UserDetailedInfo> callback);
 
 
 //    //创建七牛上传凭证
@@ -45,9 +85,6 @@ public interface IService {
 //    @POST("/v1.0/user/")
 //    void register(@Body RegisterReq req, Callback<LoginRes> cb);
 //
-//    //登录
-//    @POST("/v1.0/auth/login/")
-//    void login(@Body LoginReq req, Callback<LoginRes> cb);
 //
 //    //获取用户信息
 //    @GET("/v1.0/user/{user_id}")

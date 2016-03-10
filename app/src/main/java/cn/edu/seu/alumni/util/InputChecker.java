@@ -1,9 +1,9 @@
 package cn.edu.seu.alumni.util;
 
-import cn.edu.seu.alumni.javabean.http.LoginAlumniRequest;
-import cn.edu.seu.alumni.javabean.http.LoginWeiboRequest;
-import cn.edu.seu.alumni.javabean.http.LoginWeixinRequest;
-import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginWeiboRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginWeixinRequest;
+import cn.edu.seu.alumni.javabean.auth.RegisterAlumniRequest;
 
 public class InputChecker {
 

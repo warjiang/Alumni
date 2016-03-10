@@ -1,12 +1,5 @@
 package cn.edu.seu.alumni.activity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,12 +7,11 @@ import android.widget.TextView;
 import com.bigkoo.pickerview.OptionsPickerView;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.presenter.auth.IRegisterPresenter;
 import cn.edu.seu.alumni.mvp.presenter.auth.RegisterPresenter;
 import cn.edu.seu.alumni.mvp.view.auth.IRegisterView;
