@@ -77,11 +77,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
          * 初始化数据
          */
         seuMajors = DataProvider.getSeuMajorsData();
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-        enrollYears = new ArrayList<>();
-        for(int i = year - 80; i <= year; i++){
-            enrollYears.add(Integer.toString(i));
-        }
+        enrollYears = DataProvider.getEnrollYearsData();
 
     }
 

@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.lang.Throwable;
 import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -39,6 +40,15 @@ public class DataProvider {
         }
     }
 
+    public static ArrayList<String> getEnrollYearsData(){
+        ArrayList<String> enrollYears = new ArrayList<>();
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        for(int i = year - 80; i <= year; i++){
+            enrollYears.add(Integer.toString(i));
+        }
+        return enrollYears;
+    }
+
     public static SeuMajors getSeuMajorsData(){
 
         ArrayList<String> departments = new ArrayList<>();
@@ -65,6 +75,7 @@ public class DataProvider {
             JSONArray major = null;
             JSONObject obj = null;
             String departmentName = null;
+            ArrayList<String> majorList = null;
 
             Comparator chineseSort = Collator.getInstance(java.util.Locale.CHINA);
             for(int i = 0; i < array.length(); i++){
@@ -72,7 +83,7 @@ public class DataProvider {
                 major = obj.getJSONArray("majors");
                 departmentName = obj.getString("department_name");
                 departments.add(departmentName);
-                ArrayList<String> majorList = new ArrayList<>();
+                majorList = new ArrayList<>();
                 for(int j = 0; j < major.length(); j++){
                     majorList.add(major.getString(j));
                 }
@@ -85,8 +96,6 @@ public class DataProvider {
                 for(int j = 0; j < majorMap.get(departments.get(i)).size(); j++){
                     System.out.println(majorMap.get(departments.get(i)).get(j));
                 }
-
-
                 majors.add(majorMap.get(departments.get(i)));
             }
             return new SeuMajors(departments, majors);

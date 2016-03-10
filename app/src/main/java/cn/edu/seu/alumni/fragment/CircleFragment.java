@@ -1,6 +1,5 @@
 package cn.edu.seu.alumni.fragment;
 
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -17,6 +16,7 @@ import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.CircleTopicActivity;
+import cn.edu.seu.alumni.activity.PublishDynamicActivity;
 import cn.edu.seu.alumni.adapter.BasisAdapter;
 import cn.edu.seu.alumni.adapter.DynamicItemAdapter;
 import cn.edu.seu.alumni.javabean.DynamicItem;
@@ -94,7 +94,7 @@ public class CircleFragment extends BaseFragment {
         topicCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), CircleTopicActivity.class));
+                jump(CircleTopicActivity.class);
             }
         });
 

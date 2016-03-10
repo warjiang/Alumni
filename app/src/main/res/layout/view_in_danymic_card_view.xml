@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="@dimen/activity_32_margin"
-                android:layout_toRightOf="@+id/circle_dynamic_item_photo_cv">
+                android:layout_toRightOf="@id/circle_dynamic_item_photo_cv">
 
                 <TextView
                     android:id="@+id/circle_dynamic_item_name_tv"
@@ -41,9 +41,9 @@
                     android:id="@+id/circle_dynamic_item_pro_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/circle_dynamic_item_name_tv"
+                    android:layout_alignBottom="@id/circle_dynamic_item_name_tv"
                     android:layout_marginLeft="@dimen/activity_6_margin"
-                    android:layout_toRightOf="@+id/circle_dynamic_item_name_tv"
+                    android:layout_toRightOf="@id/circle_dynamic_item_name_tv"
                     android:text="播音主持"
                     android:textColor="@color/text_help" />
 
@@ -51,8 +51,8 @@
                     android:id="@+id/circle_dynamic_item_college_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/circle_dynamic_item_name_tv"
-                    android:layout_below="@+id/circle_dynamic_item_name_tv"
+                    android:layout_alignLeft="@id/circle_dynamic_item_name_tv"
+                    android:layout_below="@id/circle_dynamic_item_name_tv"
                     android:layout_marginTop="@dimen/activity_4_margin"
                     android:text="2012届艺术学院"
                     android:textColor="@color/text_help" />

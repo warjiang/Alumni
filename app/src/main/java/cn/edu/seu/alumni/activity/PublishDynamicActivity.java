@@ -1,4 +1,4 @@
-package com.king.photo.activity;
+package cn.edu.seu.alumni.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,7 +13,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -36,6 +35,8 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
 import com.king.photo.R;
+import com.king.photo.activity.AlbumActivity;
+import com.king.photo.activity.GalleryActivity;
 import com.king.photo.util.Bimp;
 import com.king.photo.util.FileUtils;
 import com.king.photo.util.ImageItem;
@@ -50,7 +51,7 @@ import com.king.photo.util.Res;
  * @version 2014年10月18日  下午11:48:34
  * @QQ:595163260
  */
-public class PublishDynamicActivity extends AppCompatActivity {
+public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
     private GridView noScrollgridview;
     private GridAdapter adapter;
@@ -70,6 +71,21 @@ public class PublishDynamicActivity extends AppCompatActivity {
         parentView = getLayoutInflater().inflate(R.layout.activity_selectimg, null);
         setContentView(parentView);
         Init();
+    }
+
+    @Override
+    protected int getContentViewId() {
+        return R.layout.activity_selectimg;
+    }
+
+    @Override
+    protected boolean hasToolBar() {
+        return false;
+    }
+
+    @Override
+    protected void initial() {
+
     }
 
     @Override

@@ -57,7 +57,7 @@ public class InputChecker {
             return new CheckResult(false, "入学年份格式错误");
         }
         if(CommonUtil.String.isEmpty(request.getSchool())){
-            return new CheckResult(false, "学院不能为空");
+            return new CheckResult(false, "院系不能为空");
         }
         if(CommonUtil.String.isEmpty(request.getMajor())){
             return new CheckResult(false, "专业不能为空");

@@ -186,4 +186,16 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
+    <!-- 该主题为非SwipeBackActivity使用 -->
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#008cc9</item>
+        <item name="colorPrimaryDark">#008cc9</item>
+        <item name="colorAccent">#008cc9</item>
+    </style>
+
+    <!-- 该主题为SwipeBackActivity使用 -->
+    <style name="ActivityThemeSwipeBack" parent="ActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

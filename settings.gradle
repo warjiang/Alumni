@@ -1,1 +1,1 @@
-include ':photo', ':app', ':leanchatlib', ':swipeback_library', ':pickerview'
+include ':pickerview', ':app', ':leanchatlib', ':photo', ':swipeback_library'

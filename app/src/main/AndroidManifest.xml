@@ -38,17 +38,24 @@
         <!-- 登录 -->
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/ActivityTheme"></activity>
+            android:theme="@style/ActivityTheme" />
 
         <!-- 注册 -->
         <activity
             android:name=".activity.RegisterActivity"
-            android:theme="@style/ActivityTheme"></activity>
+            android:theme="@style/ActivityTheme" />
 
         <!-- 主页面 -->
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/ActivityTheme"></activity>
+            android:theme="@style/ActivityTheme" />
+
+        <!-- 人脉 START -->
+        <activity android:name=".activity.AddFriendsActivity"
+            android:theme="@style/ActivityTheme"/>
+        <activity android:name=".activity.NewFriendsActivity"
+            android:theme="@style/ActivityTheme"/>
+        <!-- 人脉 END-->
 
         <!-- 实时通信模块、推送 START -->
         <service android:name="com.avos.avoscloud.PushService" />
@@ -75,7 +82,7 @@
             android:theme="@style/ActivityTheme" />
         <activity
             android:name="thirdpart.leancloud.ConversationListActivity"
-            android:theme="@style/ActivityTheme" />
+            android:theme="@style/ActivityThemeSwipeBack" />
         <activity
             android:name="test.dwj.DecodeActivity"
             android:theme="@style/ActivityTheme" />
@@ -93,8 +100,12 @@
             android:theme="@style/ActivityTheme" />
         <!-- test END -->
 
-        <activity android:name=".activity.CircleTopicActivity"
-            android:theme="@style/ActivityThemeSwipeBack"></activity>
+        <activity
+            android:name=".activity.CircleTopicActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
     </application>
 
 </manifest>

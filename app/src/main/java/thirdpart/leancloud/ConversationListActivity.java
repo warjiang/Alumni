@@ -2,10 +2,12 @@ package thirdpart.leancloud;
 
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.avos.avoscloud.AVException;
@@ -28,9 +30,10 @@ import java.util.Comparator;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 import de.greenrobot.event.EventBus;
 
-public class ConversationListActivity extends AppCompatActivity {
+public class ConversationListActivity extends SwipeBackBaseActivity {
 
     View imClientStateView;
     private SwipeRefreshLayout refreshLayout;
@@ -38,11 +41,18 @@ public class ConversationListActivity extends AppCompatActivity {
     private CommonListAdapter<Room> itemAdapter;
     private LinearLayoutManager layoutManager;
     private ConversationManager conversationManager;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation_list);
+
+        toolbar = (Toolbar)findViewById(R.id.conversation_list_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         imClientStateView = (View)findViewById(R.id.im_client_state_view);
         conversationManager = ConversationManager.getInstance();
@@ -55,6 +65,31 @@ public class ConversationListActivity extends AppCompatActivity {
         itemAdapter = new CommonListAdapter<Room>(ConversationItemHolder.class);
         recyclerView.setAdapter(itemAdapter);
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected int getContentViewId() {
+        return R.layout.activity_conversation_list;
+    }
+
+    @Override
+    protected boolean hasToolBar() {
+        return false;
+    }
+
+    @Override
+    protected void initial() {
+
     }
 
     @Override

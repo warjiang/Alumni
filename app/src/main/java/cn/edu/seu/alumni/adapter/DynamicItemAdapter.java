@@ -1,6 +1,7 @@
 package cn.edu.seu.alumni.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.UserInfoActivity;
 import cn.edu.seu.alumni.javabean.DynamicItem;
 import cn.edu.seu.alumni.widget.MyGridView;
 
@@ -84,6 +86,15 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
 
                 }
             });
+
+            RelativeLayout userInfoRelativeLayout= (RelativeLayout)convertView.findViewById(R.id.circle_dynamic_item_person_info_relative_layout);
+            userInfoRelativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getContext().startActivity(new Intent(getContext(), UserInfoActivity.class));
+                }
+            });
+
         }
         return convertView;
     }
