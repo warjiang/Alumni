@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.javabean.http;
+package cn.edu.seu.alumni.javabean.auth;
 
 public class RegisterAlumniRequest {
     private String phone_num;

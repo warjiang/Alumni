@@ -3,7 +3,8 @@ package cn.edu.seu.alumni.mvp.model;
 import android.content.Context;
 
 
-import cn.edu.seu.alumni.util.PreferenceUtils;
+import cn.edu.seu.alumni.application.App;
+import cn.edu.seu.alumni.util.Preference;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 
@@ -16,39 +17,27 @@ public final class ServiceProvider {
     private ServiceProvider() {
     }
 
-    private static RestAdapter getRestAdapter(final Context mContext) {
-        if (restAdapter == null) {
-            synchronized (ServiceProvider.class) {
-                if (restAdapter == null) {
-                    RequestInterceptor requestInterceptor = new RequestInterceptor() {
-                        @Override
-                        public void intercept(RequestFacade request) {
-                            if(!PreferenceUtils.hasKey(mContext, PreferenceUtils.Key.LOGIN)
-                                    || !PreferenceUtils.getBoolean(mContext,PreferenceUtils.Key.LOGIN)) {
-                                //没有登录,游客身份访问
-                                request.addHeader(PreferenceUtils.Key.ACCESS,"guest");
-                            }else{
-                                //登录过
-                                request.addHeader(PreferenceUtils.Key.ACCESS, PreferenceUtils.getString(mContext, PreferenceUtils.Key.ACCESS));
-                            }
-                        }
-                    };
-                    restAdapter = new RestAdapter.Builder().setEndpoint(ServiceProvider.BASE).setLogLevel(RestAdapter.LogLevel.FULL).setRequestInterceptor(requestInterceptor).build();
-                }
-            }
-        }
-        return restAdapter;
-    }
-
-    public static IService getService(Context mContext) {
+    public static IService getService() {
+        final Context context = App.getContext();
         if (service == null) {
             synchronized (ServiceProvider.class) {
                 if (service == null) {
-                    service = getRestAdapter(mContext).create(IService.class);
+                    if(restAdapter == null){
+                        restAdapter = new RestAdapter.Builder().setEndpoint(ServiceProvider.BASE).setLogLevel(RestAdapter.LogLevel.FULL).setRequestInterceptor(new RequestInterceptor() {
+                            @Override
+                            public void intercept(RequestFacade request) {
+                                boolean isAccessTokenValid = Preference.getBoolean(context, Preference.Key.IS_ACCESS_TOKEN_VALID, false);
+                                if(isAccessTokenValid){
+                                    String accessToken = Preference.getString(context, Preference.Key.ACCESS_TOKEN, null);
+                                    request.addHeader("access_token", accessToken);
+                                }
+                            }
+                        }).build();
+                    }
+                    service = restAdapter.create(IService.class);
                 }
             }
         }
         return service;
     }
-
 }

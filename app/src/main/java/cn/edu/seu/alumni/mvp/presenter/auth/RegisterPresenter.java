@@ -5,8 +5,8 @@ import android.os.Looper;
 
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.application.App;
-import cn.edu.seu.alumni.javabean.http.AuthResponse;
-import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.AuthResponse;
+import cn.edu.seu.alumni.javabean.auth.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.model.IService;
 import cn.edu.seu.alumni.mvp.model.ServiceProvider;
 import cn.edu.seu.alumni.mvp.view.auth.IRegisterView;
@@ -60,7 +60,7 @@ public class RegisterPresenter implements  IRegisterPresenter{
             return;
         }
 
-        IService service = ServiceProvider.getService(App.getContext());
+        IService service = ServiceProvider.getService();
         service.registerAlumni(registerAlumniRequest, new Callback<AuthResponse>() {
             @Override
             public void success(AuthResponse authResponse, Response response) {

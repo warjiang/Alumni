@@ -1,6 +1,6 @@
 package cn.edu.seu.alumni.mvp.presenter.auth;
 
-import cn.edu.seu.alumni.javabean.http.RegisterAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.RegisterAlumniRequest;
 
 public interface IRegisterPresenter {
 

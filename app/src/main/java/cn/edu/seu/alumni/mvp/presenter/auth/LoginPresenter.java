@@ -6,10 +6,10 @@ import android.os.Looper;
 
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.application.App;
-import cn.edu.seu.alumni.javabean.http.AuthResponse;
-import cn.edu.seu.alumni.javabean.http.LoginAlumniRequest;
-import cn.edu.seu.alumni.javabean.http.LoginWeiboRequest;
-import cn.edu.seu.alumni.javabean.http.LoginWeixinRequest;
+import cn.edu.seu.alumni.javabean.auth.AuthResponse;
+import cn.edu.seu.alumni.javabean.auth.LoginAlumniRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginWeiboRequest;
+import cn.edu.seu.alumni.javabean.auth.LoginWeixinRequest;
 import cn.edu.seu.alumni.mvp.model.IService;
 import cn.edu.seu.alumni.mvp.model.ServiceProvider;
 import cn.edu.seu.alumni.mvp.view.auth.ILoginView;
@@ -45,7 +45,7 @@ public class LoginPresenter implements ILoginPresenter {
             return;
         }
 
-        IService service = ServiceProvider.getService(App.getContext());
+        IService service = ServiceProvider.getService();
         Callback<AuthResponse> callback = new Callback<AuthResponse>() {
             @Override
             public void success(AuthResponse authResponse, Response response) {

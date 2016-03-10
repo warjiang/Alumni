@@ -130,7 +130,6 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 pop.dismiss();
                 ll_popup.clearAnimation();
             }
