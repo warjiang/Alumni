@@ -135,11 +135,11 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             int height;
             switch (images.length) {
                 case 1:
-                    width = height = (screenWidthDip - 24) * 2 / 3;
+                    width = height = (screenWidthDip-24) * 2 / 3;
                     imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                     break;
                 default:
-                    width = height = (screenWidthDip - 24) / 3;
+                    width = height = (screenWidthDip-24) / 3;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             if (imageBuff.containsKey(images[pos])) {
