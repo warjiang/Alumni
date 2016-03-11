@@ -28,8 +28,8 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
 
     private Context context;
     private String[] images = {
-            //"http://img3.imgtn.bdimg.com/it/u=2671181954,1302198727&fm=21&gp=0.jpg",
-            //"http://img3.imgtn.bdimg.com/it/u=2284434357,2830498318&fm=21&gp=0.jpg",
+            "http://img3.imgtn.bdimg.com/it/u=2671181954,1302198727&fm=21&gp=0.jpg",
+            "http://img3.imgtn.bdimg.com/it/u=2284434357,2830498318&fm=21&gp=0.jpg",
             "http://img4.imgtn.bdimg.com/it/u=2015527637,3623972403&fm=21&gp=0.jpg",
             "http://img1.imgtn.bdimg.com/it/u=3527020364,2054046693&fm=23&gp=0.jpg",
     };
@@ -135,11 +135,11 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             int height;
             switch (images.length) {
                 case 1:
-                    width = height = (screenWidthDip-24) * 2 / 3;
-                    imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                    width = height = (int) (screenWidthDip * 0.9f) * 2 / 3;
+                    imageView.setScaleType(ImageView.ScaleType.FIT_START);
                     break;
                 default:
-                    width = height = (screenWidthDip-24) / 3;
+                    width = height = (int) (screenWidthDip * 0.9f) / 3;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             if (imageBuff.containsKey(images[pos])) {
