@@ -104,7 +104,7 @@
             android:name=".activity.CircleTopicActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
         <activity
-            android:name=".activity.UserInfoActivity"
+            android:name=".activity.UserBasicInfoActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
     </application>
 

@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/me_my_information_relative_layout"
+        android:id="@+id/user_basic_info_relativelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_12_margin"
@@ -13,7 +13,7 @@
         android:clickable="true">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/my_photo_cv"
+            android:id="@+id/user_img"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginBottom="@dimen/activity_12_margin"
@@ -22,12 +22,13 @@
             android:src="@drawable/logo" />
 
         <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/activity_16_margin"
-            android:layout_toRightOf="@+id/my_photo_cv"
-            android:text="童小星"
+            android:layout_toRightOf="@+id/user_img"
+            android:text="未设置姓名"
             android:textColor="@color/text_main" />
 
         <ImageView
@@ -47,7 +48,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/me_edit_information_relative_layout"
+            android:id="@+id/update_user_detailed_info_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_item_bg"
@@ -91,7 +92,7 @@
             android:background="@color/divider_high" />
 
         <RelativeLayout
-            android:id="@+id/me_my_qrcode_relative_layout"
+            android:id="@+id/my_qrcode_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_item_bg"
@@ -137,7 +138,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/me_my_dynamic_relative_layout"
+            android:id="@+id/my_status_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_item_bg"
@@ -154,13 +155,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_24_margin"
+                    android:layout_marginLeft="@dimen/activity_28_margin"
                     android:src="@drawable/my_dynamics" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_28_margin"
+                    android:layout_marginLeft="@dimen/activity_24_margin"
                     android:text="@string/my_dynamic"
                     android:textColor="@color/text_main" />
             </LinearLayout>
@@ -181,14 +182,13 @@
             android:background="@color/divider_high" />
 
         <RelativeLayout
-            android:id="@+id/me_my_message_relative_layout"
+            android:id="@+id/my_message_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_item_bg"
             android:clickable="true">
 
             <LinearLayout
-                android:id="@+id/me_my_message_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_12_margin"
@@ -226,7 +226,7 @@
             android:background="@color/divider_high" />
 
         <RelativeLayout
-            android:id="@+id/me_my_collection_relative_layout"
+            android:id="@+id/my_collection_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_item_bg"
@@ -272,7 +272,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/me_setting_relative_layout"
+            android:id="@+id/settings_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/list_item_bg"

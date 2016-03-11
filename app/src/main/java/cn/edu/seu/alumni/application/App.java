@@ -17,6 +17,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import cn.edu.seu.alumni.util.Preference;
 import thirdpart.leancloud.CustomUserProvider;
 
 public class App extends Application {
@@ -31,6 +32,8 @@ public class App extends Application {
         super.onCreate();
 
         App.context = getApplicationContext();
+
+        Preference.putBoolean(Preference.Key.IS_ACCESS_TOKEN_VALID, false);
 
         initialLeanCloud();
 

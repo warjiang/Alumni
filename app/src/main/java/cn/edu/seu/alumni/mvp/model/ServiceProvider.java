@@ -26,9 +26,9 @@ public final class ServiceProvider {
                         restAdapter = new RestAdapter.Builder().setEndpoint(ServiceProvider.BASE).setLogLevel(RestAdapter.LogLevel.FULL).setRequestInterceptor(new RequestInterceptor() {
                             @Override
                             public void intercept(RequestFacade request) {
-                                boolean isAccessTokenValid = Preference.getBoolean(context, Preference.Key.IS_ACCESS_TOKEN_VALID, false);
+                                boolean isAccessTokenValid = Preference.getBoolean(Preference.Key.IS_ACCESS_TOKEN_VALID, false);
                                 if(isAccessTokenValid){
-                                    String accessToken = Preference.getString(context, Preference.Key.ACCESS_TOKEN, null);
+                                    String accessToken = Preference.getString(Preference.Key.ACCESS_TOKEN, null);
                                     request.addHeader("access_token", accessToken);
                                 }
                             }
