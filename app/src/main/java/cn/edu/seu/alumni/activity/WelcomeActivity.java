@@ -31,6 +31,11 @@ public class WelcomeActivity extends BaseActivity{
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return false;
+    }
+
+    @Override
     protected void initial() {
         runnable = new Jump(2000);
         new Thread(runnable).start();

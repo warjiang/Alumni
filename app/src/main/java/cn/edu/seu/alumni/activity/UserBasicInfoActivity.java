@@ -68,6 +68,11 @@ public class UserBasicInfoActivity extends SwipeBackBaseActivity {
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

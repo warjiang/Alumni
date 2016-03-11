@@ -17,11 +17,13 @@ import test.dwj.ScanActivity;
 
 public class DeveloperActivity extends BaseActivity{
 
-    @Bind(R.id.toolbar_title)
-    protected TextView toolbarTitle;
-
     @Override
     protected boolean hasToolBar() {
+        return true;
+    }
+
+    @Override
+    protected boolean hasToolBarBackButton() {
         return true;
     }
 
@@ -32,11 +34,7 @@ public class DeveloperActivity extends BaseActivity{
 
     @Override
     protected void initial() {
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbarTitle.setVisibility(View.VISIBLE);
-        toolbarTitle.setText("开发者专属");
+        setToolbarTitle("开发者专属");
     }
 
     @Bind(R.id.btn_activity_qrcode_decode)

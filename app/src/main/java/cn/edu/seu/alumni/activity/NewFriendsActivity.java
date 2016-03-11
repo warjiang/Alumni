@@ -42,6 +42,11 @@ public class NewFriendsActivity extends SwipeBackBaseActivity {
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
         //设置Toolbar标题
         setToolbarTitle(getString(R.string.new_friend));

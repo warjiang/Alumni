@@ -48,6 +48,11 @@ public class LoginActivity extends BaseActivity implements ILoginView{
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return false;
+    }
+
+    @Override
     protected void initial() {
         iLoginPresenter = new LoginPresenter(this);
     }

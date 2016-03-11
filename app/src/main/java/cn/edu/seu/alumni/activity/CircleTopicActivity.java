@@ -37,8 +37,12 @@ public class CircleTopicActivity extends SwipeBackBaseActivity {
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         topicRecyclerView.setLayoutManager(new CustomLinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         topicRecyclerView.setAdapter(new CircleTopicRecyclerViewAdapter());

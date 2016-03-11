@@ -61,6 +61,11 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return true;
+    }
+
+    @Override
     protected void initial() {
         setToolbarTitle(getString(R.string.register));
         iRegisterPresenter = new RegisterPresenter(this);

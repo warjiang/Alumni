@@ -74,6 +74,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return false;
+    }
+
+    @Override
     protected void initial() {
 
         fragments.add(new CircleFragment());

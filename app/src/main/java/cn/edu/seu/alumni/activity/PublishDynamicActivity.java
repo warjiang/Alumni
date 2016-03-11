@@ -84,6 +84,11 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
     }
 
     @Override
+    protected boolean hasToolBarBackButton() {
+        return false;
+    }
+
+    @Override
     protected void initial() {
 
     }
