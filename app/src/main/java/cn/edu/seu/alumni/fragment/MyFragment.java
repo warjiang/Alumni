@@ -9,6 +9,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.UserBasicInfoActivity;
 import cn.edu.seu.alumni.util.Preference;
 import de.hdodenhof.circleimageview.CircleImageView;
 import thirdpart.leancloud.ConversationListActivity;
@@ -32,7 +33,7 @@ public class MyFragment extends BaseFragment {
 
     @OnClick(R.id.user_basic_info_relativelayout)
     protected void userBasicInfoRelativeLayoutOnClick(){
-
+        jump(UserBasicInfoActivity.class);
     }
 
     /**
@@ -86,7 +87,7 @@ public class MyFragment extends BaseFragment {
          * 开发者
          */
         if(!isAccessTokenValid){
-            userNameTextView.setText("开发" + (int) (11 * Math.random()) +"番队队长");
+            userNameTextView.setText("开发" + (int) (11 * Math.random() + 1) +"番队队长");
             userImageView.setImageResource(R.drawable.developer_img);
 
         }

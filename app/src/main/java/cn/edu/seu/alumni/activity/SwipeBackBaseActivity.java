@@ -27,15 +27,14 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbarTitleTextView = (TextView) findViewById(R.id.toolbar_title);
             setSupportActionBar(toolbar);
-            ActionBar actionBar = getSupportActionBar();
             /**
              * Toolbar左方不显示应用标题
              */
-            actionBar.setDisplayShowTitleEnabled(false);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
             /**
              *   是否显示返回图标
              */
-            actionBar.setDisplayHomeAsUpEnabled(toolbarShowBackButton());
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
 
@@ -54,13 +53,6 @@ public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
      * 是否有ToolBar
      */
     protected abstract boolean hasToolBar();
-
-    /**
-     * toolBar是否显示返回图标
-     */
-    protected boolean toolbarShowBackButton(){
-        return false;
-    }
 
     /**
      * 设置toolbar标题
