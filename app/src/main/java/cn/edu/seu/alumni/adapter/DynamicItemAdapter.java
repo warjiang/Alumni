@@ -78,7 +78,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
         if (null == convertView) {
             convertView = LayoutInflater.from(context).inflate(getItemLayout(), null);
             MyGridView gridView = (MyGridView) convertView.findViewById(R.id.circle_dynamic_list_card_view_grid_view);
-            gridView.setNumColumns(images.length >= 3 ? 3 : images.length);
+            gridView.setNumColumns(images.length >= 2 ? 3 : images.length);
             gridView.setAdapter(new ImageAdapter(context));
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -87,7 +87,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
                 }
             });
 
-            RelativeLayout userInfoRelativeLayout= (RelativeLayout)convertView.findViewById(R.id.circle_dynamic_item_person_info_relative_layout);
+            RelativeLayout userInfoRelativeLayout = (RelativeLayout) convertView.findViewById(R.id.circle_dynamic_item_person_info_relative_layout);
             userInfoRelativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -135,15 +135,11 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             int height;
             switch (images.length) {
                 case 1:
-                    width = height = screenWidthDip;
+                    width = height = (screenWidthDip - 24) * 2 / 3;
                     imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                     break;
-                case 2:
-                    width = height = screenWidthDip / 2;
-                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                    break;
                 default:
-                    width = height = screenWidthDip / 3;
+                    width = height = (screenWidthDip - 24) / 3;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             if (imageBuff.containsKey(images[pos])) {
