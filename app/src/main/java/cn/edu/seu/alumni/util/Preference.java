@@ -1,11 +1,25 @@
 package cn.edu.seu.alumni.util;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 
+import cn.edu.seu.alumni.application.App;
+
 public class Preference {
+
+    private static SharedPreferences preference = null;
+
+    private static SharedPreferences getSharedPreferences(){
+        if (preference == null) {
+            synchronized (Preference.class) {
+                if (preference == null) {
+                   preference = PreferenceManager.getDefaultSharedPreferences(App.getContext());
+                }
+            }
+        }
+        return preference;
+    }
 
     public static class Key {
 
@@ -50,52 +64,52 @@ public class Preference {
 //        public static final String PHOTO_PATH="PHOTO_Path";
     }
 
-    public static boolean containsKey(Context context, String key) {
-        return PreferenceManager.getDefaultSharedPreferences(context).contains(key);
+    public static boolean containsKey(String key) {
+        return getSharedPreferences().contains(key);
     }
 
-    public static String getString(Context context, String key, String defaultValue) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getString(key, defaultValue);
+    public static String getString(String key, String defaultValue) {
+        return getSharedPreferences().getString(key, defaultValue);
     }
 
-    public static boolean getBoolean(Context context, String key, boolean defaultValue) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, defaultValue);
+    public static boolean getBoolean(String key, boolean defaultValue) {
+        return getSharedPreferences().getBoolean(key, defaultValue);
     }
 
-    public static int getInt(Context context, String key, int defaultValue) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getInt(key, defaultValue);
+    public static int getInt(String key, int defaultValue) {
+        return getSharedPreferences().getInt(key, defaultValue);
     }
 
-    public static float getFloat(Context context, String key, float defaultValue) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getFloat(key, defaultValue);
+    public static float getFloat(String key, float defaultValue) {
+        return getSharedPreferences().getFloat(key, defaultValue);
     }
 
-    public static long getLong(Context context,  String key, long defalultValue) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getLong(key, defalultValue);
+    public static long getLong(String key, long defalultValue) {
+        return getSharedPreferences().getLong(key, defalultValue);
     }
 
-    public static void putString(Context context, String key, String value) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putString(key, value).commit();
+    public static void putString(String key, String value) {
+        getSharedPreferences().edit().putString(key, value).commit();
     }
 
-    public static void putBoolean(Context context, String key, boolean value) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(key, value).commit();
+    public static void putBoolean(String key, boolean value) {
+        getSharedPreferences().edit().putBoolean(key, value).commit();
     }
 
-    public static void putInt(Context context, String key, int value) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putInt(key, value).commit();
+    public static void putInt(String key, int value) {
+        getSharedPreferences().edit().putInt(key, value).commit();
     }
 
-    public static void putFloat(Context context, String key, float value) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putFloat(key, value).commit();
+    public static void putFloat(String key, float value) {
+        getSharedPreferences().edit().putFloat(key, value).commit();
     }
 
-    public static void putLong(Context context, String key, long value) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit().putLong(key, value).commit();
+    public static void putLong(String key, long value) {
+        getSharedPreferences().edit().putLong(key, value).commit();
     }
 
-    public static void clearAll(Context context) {
-        Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+    public static void clearAll() {
+        Editor editor = getSharedPreferences().edit();
         editor.clear();
         editor.commit();
     }
