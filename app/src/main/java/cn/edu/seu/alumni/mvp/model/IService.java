@@ -52,25 +52,25 @@ public interface IService {
 
     //更新基本资料，下同
     @PUT("/v1.0/user/")
-    void updateUserName(@Body String name);
+    void updateUserName(@Body String name, Callback callback);
 
     @PUT("/v1.0/user/")
-    void updateUserImageUrl(@Body String image);
+    void updateUserImageUrl(@Body String image, Callback callback);
 
     @PUT("/v1.0/user/")
-    void updateUserEnrollYear(@Body String enroll_year);
+    void updateUserEnrollYear(@Body String enroll_year, Callback callback);
 
     @PUT("/v1.0/user/")
-    void updateUserSchool(@Body String school);
+    void updateUserSchool(@Body String school, Callback callback);
 
     @PUT("/v1.0/user/")
-    void updateUserMajor(@Body String major);
+    void updateUserMajor(@Body String major, Callback callback);
 
     @PUT("/v1.0/user/")
-    void updateUserStudentNum(@Body String student_num);
+    void updateUserStudentNum(@Body String student_num, Callback callback);
 
     @PUT("/v1.0/user/")
-    void updateUserLocation(@Body String location);
+    void updateUserLocation(@Body String location, Callback callback);
 
     //获取详细资料
     @GET("/v1.0/user/info/{user_id}")
