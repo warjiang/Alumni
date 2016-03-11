@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.activity.UserInfoActivity;
+import cn.edu.seu.alumni.activity.UserBasicInfoActivity;
 import cn.edu.seu.alumni.javabean.DynamicItem;
 import cn.edu.seu.alumni.widget.MyGridView;
 
@@ -91,7 +91,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             userInfoRelativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    getContext().startActivity(new Intent(getContext(), UserInfoActivity.class));
+                    getContext().startActivity(new Intent(getContext(), UserBasicInfoActivity.class));
                 }
             });
 

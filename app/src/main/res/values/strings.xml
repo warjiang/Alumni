@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">校友圈</string>
-    <string name="error_reason_network">当前网络不可用，请检查网络设置</string>
+    <string name="error_reason_network">当前网络不给力，请稍后再试</string>
 
     <string name="common_empty_msg">抱歉,暂未获取到数据!\n请点击屏幕重试~</string>
     <string name="common_error_msg">抱歉,系统出错了!\n请点击屏幕重试~</string>
@@ -62,7 +62,7 @@
     <string name="add_friend_">添加好友</string>
     <string name="alumni_number">校友号:</string>
     <string name="person_introduction">个人简介:</string>
-    <string name="dynamic">动态:</string>
+    <string name="dynamic">最新动态:</string>
     <string name="label">标签:</string>
     <string name="professional_experience">职业经历:</string>
     <string name="educational_experience">教育经历:</string>

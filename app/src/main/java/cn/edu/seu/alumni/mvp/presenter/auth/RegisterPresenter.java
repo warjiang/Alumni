@@ -12,6 +12,7 @@ import cn.edu.seu.alumni.mvp.model.ServiceProvider;
 import cn.edu.seu.alumni.mvp.view.auth.IRegisterView;
 import cn.edu.seu.alumni.util.CommonUtil;
 import cn.edu.seu.alumni.util.InputChecker;
+import cn.edu.seu.alumni.util.Preference;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -63,10 +64,13 @@ public class RegisterPresenter implements  IRegisterPresenter{
         IService service = ServiceProvider.getService();
         service.registerAlumni(registerAlumniRequest, new Callback<AuthResponse>() {
             @Override
-            public void success(AuthResponse authResponse, Response response) {
+            public void success(final AuthResponse authResponse, Response response) {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+                        Preference.putString(Preference.Key.USER_ID, authResponse.getUser_id());
+                        Preference.putString(Preference.Key.ACCESS_TOKEN, authResponse.getAccess_token());
+                        Preference.putBoolean(Preference.Key.IS_ACCESS_TOKEN_VALID, true);
                         iRegisterView.doRegisterSucceed();
                     }
                 });
