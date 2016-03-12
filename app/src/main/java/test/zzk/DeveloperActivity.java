@@ -2,9 +2,7 @@ package test.zzk;
 
 import android.content.Intent;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -12,7 +10,7 @@ import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.BaseActivity;
 import test.dwj.DecodeActivity;
 import test.dwj.GenerateActivity;
-import cn.edu.seu.alumni.activity.MainActivity;
+import cn.edu.seu.alumni.activity.other.MainActivity;
 import test.dwj.ScanActivity;
 
 public class DeveloperActivity extends BaseActivity{

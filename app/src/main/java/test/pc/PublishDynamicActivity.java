@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package test.pc;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -43,14 +42,9 @@ import com.king.photo.util.ImageItem;
 import com.king.photo.util.PublicWay;
 import com.king.photo.util.Res;
 
+import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 
-/**
- * 首页面activity
- *
- * @author king
- * @version 2014年10月18日  下午11:48:34
- * @QQ:595163260
- */
+
 public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
     private GridView noScrollgridview;
@@ -336,14 +330,14 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finishWithAnimation();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        if (item.getItemId() == android.R.id.home) {
+//            finishWithAnimation();
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 }
 

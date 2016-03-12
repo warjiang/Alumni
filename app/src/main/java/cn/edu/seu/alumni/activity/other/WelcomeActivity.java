@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.other;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -7,8 +7,9 @@ import android.widget.Button;
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.BaseActivity;
 
-public class WelcomeActivity extends BaseActivity{
+public class WelcomeActivity extends BaseActivity {
 
     private Jump runnable;
 

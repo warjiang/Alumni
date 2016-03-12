@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.circle;
 
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,10 +10,11 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 import cn.edu.seu.alumni.adapter.CircleTopicRecyclerViewAdapter;
 import cn.edu.seu.alumni.util.CustomLinearLayoutManager;
 
-public class CircleTopicActivity extends SwipeBackBaseActivity {
+public class TopicActivity extends SwipeBackBaseActivity {
 
     @Bind(R.id.circle_topic_text_view)
     protected TextView circleTopicTextView;
