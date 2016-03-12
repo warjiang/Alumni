@@ -17,11 +17,11 @@ import java.util.List;
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.BaseActivity;
+import cn.edu.seu.alumni.activity.circle.PublishNewStatusActivity;
 import cn.edu.seu.alumni.activity.contacts.AddFriendsActivity;
 import cn.edu.seu.alumni.fragment.CircleFragment;
 import cn.edu.seu.alumni.fragment.ContactsFragment;
 import cn.edu.seu.alumni.fragment.MyFragment;
-import test.pc.PublishDynamicActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -198,7 +198,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.send_new_status:
-                jump(PublishDynamicActivity.class);
+                jump(PublishNewStatusActivity.class);
                 break;
             case R.id.add_friend:
                 jump(AddFriendsActivity.class);

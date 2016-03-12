@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TableRow
-                android:id="@+id/me_edit_info_photo_tr"
+                android:id="@+id/update_user_img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_12_margin"
@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/me_edit_info_photo_cv"
+                            android:id="@+id/user_img"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_centerVertical="true"
@@ -77,7 +77,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_name_tr"
+                android:id="@+id/update_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -105,7 +105,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_name_tv"
+                            android:id="@+id/user_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -131,7 +131,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_sex_tr"
+                android:id="@+id/update_user_sex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -159,7 +159,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_sex_tv"
+                            android:id="@+id/user_sex"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -186,7 +186,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_birth_date_tr"
+                android:id="@+id/update_user_birthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -214,7 +214,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_birth_date_tv"
+                            android:id="@+id/user_birthday"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -240,7 +240,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_work_city_tr"
+                android:id="@+id/update_user_workcity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -268,7 +268,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_work_city_tv"
+                            android:id="@+id/user_work_city"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -294,7 +294,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_job_prof_tr"
+                android:id="@+id/update_user_profession"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -322,7 +322,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_job_prof_tv"
+                            android:id="@+id/user_profession"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -348,7 +348,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_company_tr"
+                android:id="@+id/update_user_company"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -376,7 +376,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_company_tv"
+                            android:id="@+id/user_company"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -402,7 +402,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_prof_tr"
+                android:id="@+id/update_user_job"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -430,7 +430,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_job_tv"
+                            android:id="@+id/user_job"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -456,7 +456,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_person_intro_tr"
+                android:id="@+id/update_user_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -484,7 +484,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_person_intro_tv"
+                            android:id="@+id/user_description"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -510,7 +510,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_prof_exper_tr"
+                android:id="@+id/update_user_profession_experience"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -538,7 +538,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_prof_exper_tv"
+                            android:id="@+id/user_profession_experience"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
@@ -564,7 +564,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/me_edit_info_educ_exper_tr"
+                android:id="@+id/update_user_education_experience"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_item_bg"
@@ -593,7 +593,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/me_edit_info_educ_exper_tv"
+                            android:id="@+id/user_education_experience"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/activity_8_margin"
