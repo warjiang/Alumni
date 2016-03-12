@@ -93,15 +93,6 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     public void Init() {
 
@@ -343,6 +334,15 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finishWithAnimation();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -570,6 +570,7 @@
                 android:background="@drawable/list_item_bg"
                 android:clickable="true"
                 android:paddingTop="@dimen/activity_12_margin"
+                android:paddingBottom="12dp"
                 android:weightSum="5">
 
                 <TextView

@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.my;
 
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 import cn.edu.seu.alumni.util.Preference;
 import de.hdodenhof.circleimageview.CircleImageView;
 

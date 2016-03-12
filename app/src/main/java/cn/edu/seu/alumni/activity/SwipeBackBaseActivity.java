@@ -1,9 +1,7 @@
 package cn.edu.seu.alumni.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.Utils;
@@ -12,8 +10,6 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
 
 public abstract class SwipeBackBaseActivity extends BaseActivity implements SwipeBackActivityBase {
 
-    private Toolbar toolbar;
-    private TextView toolbarTitleTextView;
     private SwipeBackActivityHelper mHelper;
 
     @Override
@@ -22,7 +18,6 @@ public abstract class SwipeBackBaseActivity extends BaseActivity implements Swip
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
-
     }
 
     @Override
@@ -54,6 +49,4 @@ public abstract class SwipeBackBaseActivity extends BaseActivity implements Swip
         Utils.convertActivityToTranslucent(this);
         getSwipeBackLayout().scrollToFinishActivity();
     }
-
-
 }

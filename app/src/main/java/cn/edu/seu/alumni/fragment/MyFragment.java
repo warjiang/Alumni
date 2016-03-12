@@ -2,14 +2,14 @@ package cn.edu.seu.alumni.fragment;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.activity.UserBasicInfoActivity;
+import cn.edu.seu.alumni.activity.my.EditDetailedInfoActivity;
+import cn.edu.seu.alumni.activity.my.UserBasicInfoActivity;
 import cn.edu.seu.alumni.util.Preference;
 import de.hdodenhof.circleimageview.CircleImageView;
 import thirdpart.leancloud.ConversationListActivity;
@@ -28,8 +28,8 @@ public class MyFragment extends BaseFragment {
     @Bind(R.id.user_name)
     protected TextView userNameTextView;
 
-    @Bind(R.id.user_basic_info_relativelayout)
-    protected RelativeLayout userBasicInfoRelativeLayout;
+//    @Bind(R.id.user_basic_info_relativelayout)
+//    protected RelativeLayout userBasicInfoRelativeLayout;
 
     @OnClick(R.id.user_basic_info_relativelayout)
     protected void userBasicInfoRelativeLayoutOnClick(){
@@ -39,10 +39,12 @@ public class MyFragment extends BaseFragment {
     /**
      * 编辑资料
      */
-    @Bind(R.id.update_user_detailed_info_relativelayout)
-    protected RelativeLayout updateUserDetailedInfoRelativeLayout;
-
-
+//    @Bind(R.id.update_user_detailed_info_relativelayout)
+//    protected RelativeLayout updateUserDetailedInfoRelativeLayout;
+    @OnClick(R.id.update_user_detailed_info_relativelayout)
+    protected void updateUserDetailedInfoRelativeLayoutOnClick(){
+        jump(EditDetailedInfoActivity.class);
+    }
 
     /**
      * 我的二维码
