@@ -1,11 +1,11 @@
 package cn.edu.seu.alumni.activity.circle;
 
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -18,8 +18,8 @@ public class TopicActivity extends SwipeBackBaseActivity {
 
     @Bind(R.id.circle_topic_text_view)
     protected TextView circleTopicTextView;
-    @Bind(R.id.cirlce_topic_nested_scroll_view)
-    protected NestedScrollView nestedScrollView;
+    @Bind(R.id.circle_topic_scroll_view)
+    protected ScrollView scrollView;
     @Bind(R.id.circle_topic_content_text_view)
     protected TextView topicContentTextView;
     @Bind(R.id.circle_join_topic_button)
@@ -49,6 +49,9 @@ public class TopicActivity extends SwipeBackBaseActivity {
         topicRecyclerView.setAdapter(new CircleTopicRecyclerViewAdapter());
         topicRecyclerView.setNestedScrollingEnabled(false);
         topicRecyclerView.setHasFixedSize(false);
+        topicRecyclerView.setFocusable(false);
+
+        setToolbarTitle("话题");
     }
 
     @Override
