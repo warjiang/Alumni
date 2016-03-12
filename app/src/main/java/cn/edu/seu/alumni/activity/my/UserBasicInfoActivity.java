@@ -13,6 +13,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserBasicInfoActivity extends SwipeBackBaseActivity {
 
+    @Override
+    protected int getContentViewId() {
+        return R.layout.activity_user_basic_info;
+    }
+
     /**
      * 用户头像、姓名、入学年份学院、专业
      */
@@ -57,11 +62,6 @@ public class UserBasicInfoActivity extends SwipeBackBaseActivity {
      */
     @Bind(R.id.educational_experiment_listview)
     protected ListView educationalExperimentListView;
-
-    @Override
-    protected int getContentViewId() {
-        return R.layout.activity_user_basic_info;
-    }
 
     @Override
     protected boolean hasToolBar() {

@@ -78,12 +78,6 @@
 
         <!-- test START -->
         <activity
-            android:name="thirdpart.leancloud.MyLeanCloudDemoMainActivity"
-            android:theme="@style/ActivityTheme" />
-        <activity
-            android:name="thirdpart.leancloud.ConversationListActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
             android:name="test.dwj.DecodeActivity"
             android:theme="@style/ActivityTheme" />
         <activity
@@ -108,6 +102,22 @@
             android:theme="@style/ActivityThemeSwipeBack" />
         <activity
             android:name=".activity.my.EditDetailedInfoActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+
+        <activity
+            android:name=".activity.my.MyCollectionActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.MyMessageActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.MyQrCodeActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.MyStatusActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.SettingActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
 
 

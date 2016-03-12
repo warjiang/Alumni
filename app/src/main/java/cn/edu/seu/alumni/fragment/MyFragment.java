@@ -9,10 +9,14 @@ import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.my.EditDetailedInfoActivity;
+import cn.edu.seu.alumni.activity.my.MyCollectionActivity;
+import cn.edu.seu.alumni.activity.my.MyMessageActivity;
+import cn.edu.seu.alumni.activity.my.MyQrCodeActivity;
+import cn.edu.seu.alumni.activity.my.MyStatusActivity;
+import cn.edu.seu.alumni.activity.my.SettingActivity;
 import cn.edu.seu.alumni.activity.my.UserBasicInfoActivity;
 import cn.edu.seu.alumni.util.Preference;
 import de.hdodenhof.circleimageview.CircleImageView;
-import thirdpart.leancloud.ConversationListActivity;
 
 /**
  * 我
@@ -28,9 +32,6 @@ public class MyFragment extends BaseFragment {
     @Bind(R.id.user_name)
     protected TextView userNameTextView;
 
-//    @Bind(R.id.user_basic_info_relativelayout)
-//    protected RelativeLayout userBasicInfoRelativeLayout;
-
     @OnClick(R.id.user_basic_info_relativelayout)
     protected void userBasicInfoRelativeLayoutOnClick(){
         jump(UserBasicInfoActivity.class);
@@ -39,8 +40,6 @@ public class MyFragment extends BaseFragment {
     /**
      * 编辑资料
      */
-//    @Bind(R.id.update_user_detailed_info_relativelayout)
-//    protected RelativeLayout updateUserDetailedInfoRelativeLayout;
     @OnClick(R.id.update_user_detailed_info_relativelayout)
     protected void updateUserDetailedInfoRelativeLayoutOnClick(){
         jump(EditDetailedInfoActivity.class);
@@ -49,36 +48,43 @@ public class MyFragment extends BaseFragment {
     /**
      * 我的二维码
      */
-    @Bind(R.id.my_qrcode_relativelayout)
-    protected RelativeLayout myQrcodeRelativeLayout;
+    @OnClick(R.id.my_qrcode_relativelayout)
+    protected void myQrcodeRelativeLayoutOnClick(){
+        jump(MyQrCodeActivity.class);
+    }
 
     /**
      * 我的动态
      */
-    @Bind(R.id.my_status_relativelayout)
-    protected RelativeLayout myStatusRelativeLayout;
+    @OnClick(R.id.my_status_relativelayout)
+    protected void myStatusRelativeLayoutOnClick(){
+        jump(MyStatusActivity.class);
+    }
 
     /**
      * 我的信息
      */
-    @Bind(R.id.my_message_relativelayout)
-    protected RelativeLayout myMessageRelativeLayout;
     @OnClick(R.id.my_message_relativelayout)
     public void myMessageRelativeLayoutOnClick(View v){
-        getActivity().startActivity(new Intent(getActivity(), ConversationListActivity.class));
+        jump(MyMessageActivity.class);
     }
 
     /**
      * 我的收藏
      */
-    @Bind(R.id.my_collection_relativelayout)
-    protected RelativeLayout myCollectionRelativeLayout;
+    @OnClick(R.id.my_collection_relativelayout)
+    public void myCollectionRelativeLayoutOnClick(View v){
+        jump(MyCollectionActivity.class);
+    }
+
 
     /**
      * 设置
      */
-    @Bind(R.id.settings_relativelayout)
-    protected RelativeLayout settingsRelativeLayout;
+    @OnClick(R.id.settings_relativelayout)
+    public void settingsRelativeLayoutOnClick(View v){
+        jump(SettingActivity.class);
+    }
 
 
     @Override

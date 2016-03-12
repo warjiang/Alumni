@@ -6,6 +6,11 @@ import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 
 public class EditDetailedInfoActivity extends SwipeBackBaseActivity {
 
+    @Override
+    protected int getContentViewId() {
+        return R.layout.activity_edit_detailed_info;
+    }
+
     @OnClick(R.id.me_edit_info_photo_tr)
     public void click1(){
 //          jump(PhotoPickerActivity.class);
@@ -15,10 +20,7 @@ public class EditDetailedInfoActivity extends SwipeBackBaseActivity {
 //        intent.setShowCamera(true);
     }
 
-    @Override
-    protected int getContentViewId() {
-        return R.layout.activity_edit_detailed_info;
-    }
+
 
     @Override
     protected boolean hasToolBar() {

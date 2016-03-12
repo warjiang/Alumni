@@ -1,8 +1,8 @@
-package thirdpart.leancloud;
+package cn.edu.seu.alumni.activity.my;
 
 import android.content.Intent;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -32,8 +32,9 @@ import java.util.List;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 import de.greenrobot.event.EventBus;
+import thirdpart.leancloud.ConversationFragmentUpdateEvent;
 
-public class ConversationListActivity extends SwipeBackBaseActivity {
+public class MyMessageActivity extends SwipeBackBaseActivity {
 
     View imClientStateView;
     private SwipeRefreshLayout refreshLayout;
@@ -41,19 +42,25 @@ public class ConversationListActivity extends SwipeBackBaseActivity {
     private CommonListAdapter<Room> itemAdapter;
     private LinearLayoutManager layoutManager;
     private ConversationManager conversationManager;
-    private Toolbar toolbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_conversation_list);
+    protected int getContentViewId() {
+        return R.layout.activity_my_message;
+    }
 
-        toolbar = (Toolbar)findViewById(R.id.conversation_list_toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+    @Override
+    protected boolean hasToolBar() {
+        return true;
+    }
 
+    @Override
+    protected boolean hasToolBarBackButton() {
+        return true;
+    }
+
+    @Override
+    protected void initial() {
+        setToolbarTitle("我的信息");
         imClientStateView = (View)findViewById(R.id.im_client_state_view);
         conversationManager = ConversationManager.getInstance();
         refreshLayout = (SwipeRefreshLayout)findViewById(R.id.fragment_conversation_srl_pullrefresh);
@@ -65,36 +72,6 @@ public class ConversationListActivity extends SwipeBackBaseActivity {
         itemAdapter = new CommonListAdapter<Room>(ConversationItemHolder.class);
         recyclerView.setAdapter(itemAdapter);
         EventBus.getDefault().register(this);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected int getContentViewId() {
-        return R.layout.activity_conversation_list;
-    }
-
-    @Override
-    protected boolean hasToolBar() {
-        return false;
-    }
-
-    @Override
-    protected boolean hasToolBarBackButton() {
-        return false;
-    }
-
-    @Override
-    protected void initial() {
-
     }
 
     @Override

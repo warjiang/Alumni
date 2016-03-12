@@ -74,11 +74,13 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <com.seu.wufan.alumnicircle.ui.view.ScrollLoadMoreListView
-                android:id="@+id/me_my_dynamic_load_lv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
+    <!--<com.seu.wufan.alumnicircle.ui.view.ScrollLoadMoreListView-->
+    <!--android:id="@+id/me_my_dynamic_load_lv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" />-->
