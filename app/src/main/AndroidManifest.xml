@@ -51,11 +51,14 @@
             android:theme="@style/ActivityTheme" />
 
         <!-- 人脉 START -->
-        <activity android:name=".activity.AddFriendsActivity"
-            android:theme="@style/ActivityThemeSwipeBack"/>
-        <activity android:name=".activity.NewFriendsActivity"
-            android:theme="@style/ActivityThemeSwipeBack"/>
-        <!-- 人脉 END-->
+        <activity
+            android:name=".activity.AddFriendsActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.NewFriendsActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <!-- 人脉 END -->
+
 
         <!-- 实时通信模块、推送 START -->
         <service android:name="com.avos.avoscloud.PushService" />
@@ -103,7 +106,6 @@
         <activity
             android:name=".activity.my.EditDetailedInfoActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
-
         <activity
             android:name=".activity.my.MyCollectionActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
@@ -119,8 +121,8 @@
         <activity
             android:name=".activity.my.SettingActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
-
-
+        <activity android:name=".activity.DynamicTextActivity"
+            android:theme="@style/ActivityThemeSwipeBack"/>
     </application>
 
 </manifest>

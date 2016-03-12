@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.DynamicTextActivity;
 import cn.edu.seu.alumni.activity.my.UserBasicInfoActivity;
 import cn.edu.seu.alumni.javabean.DynamicItem;
 import cn.edu.seu.alumni.widget.MyGridView;
@@ -75,6 +76,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final View view;
         if (null == convertView) {
             convertView = LayoutInflater.from(context).inflate(getItemLayout(), null);
             MyGridView gridView = (MyGridView) convertView.findViewById(R.id.circle_dynamic_list_card_view_grid_view);
@@ -96,7 +98,18 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             });
 
         }
-        return convertView;
+
+        view = convertView;
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), DynamicTextActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+        return view;
     }
 
     private class ImageAdapter extends BaseAdapter {
