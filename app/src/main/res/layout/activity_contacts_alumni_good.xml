@@ -6,10 +6,10 @@
 
     <include layout="@layout/toolbar" />
 
-    <ScrollView
+<!--    <ScrollView
         android:id="@+id/contacts_alumni_good_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content">-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,11 +40,19 @@
                     android:textColor="@color/text_hint" />
             </LinearLayout>
 
-            <com.seu.wufan.alumnicircle.ui.view.ScrollLoadMoreListView
+            <!--<com.seu.wufan.alumnicircle.ui.view.ScrollLoadMoreListView
                 android:id="@+id/contacts_alumni_good_lm_list_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_16_margin" />
+                android:layout_marginTop="@dimen/activity_16_margin" />-->
+
+            <ListView
+                android:id="@+id/contacts_alumni_good_lm_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_16_margin">
+
+            </ListView>
         </LinearLayout>
-    </ScrollView>
+    <!--</ScrollView>-->
 </LinearLayout>
