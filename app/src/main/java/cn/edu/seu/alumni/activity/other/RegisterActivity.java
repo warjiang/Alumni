@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.other;
 
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.BaseActivity;
 import cn.edu.seu.alumni.javabean.auth.RegisterAlumniRequest;
 import cn.edu.seu.alumni.mvp.presenter.auth.IRegisterPresenter;
 import cn.edu.seu.alumni.mvp.presenter.auth.RegisterPresenter;

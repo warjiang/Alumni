@@ -15,8 +15,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.activity.CircleTopicActivity;
-import cn.edu.seu.alumni.activity.PublishDynamicActivity;
+import cn.edu.seu.alumni.activity.circle.TopicActivity;
 import cn.edu.seu.alumni.adapter.BasisAdapter;
 import cn.edu.seu.alumni.adapter.DynamicItemAdapter;
 import cn.edu.seu.alumni.javabean.DynamicItem;
@@ -68,7 +67,7 @@ public class CircleFragment extends BaseFragment {
 
     @OnClick(R.id.circle_topic_cardview)
     void topTopicView() {
-//        readyGo(CircleTopicActivity.class);
+//        readyGo(TopicActivity.class);
     }
 
     @Override
@@ -94,7 +93,7 @@ public class CircleFragment extends BaseFragment {
         topicCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jump(CircleTopicActivity.class);
+                jump(TopicActivity.class);
             }
         });
 

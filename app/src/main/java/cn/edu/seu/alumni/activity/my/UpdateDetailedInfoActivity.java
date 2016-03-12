@@ -4,7 +4,7 @@ import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 
-public class EditDetailedInfoActivity extends SwipeBackBaseActivity {
+public class UpdateDetailedInfoActivity extends SwipeBackBaseActivity {
 
     @Override
     protected int getContentViewId() {

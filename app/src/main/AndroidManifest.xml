@@ -26,7 +26,7 @@
 
         <!-- 欢迎页 -->
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name=".activity.other.WelcomeActivity"
             android:theme="@style/ActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,27 +37,100 @@
 
         <!-- 登录 -->
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.other.LoginActivity"
             android:theme="@style/ActivityTheme" />
 
         <!-- 注册 -->
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".activity.other.RegisterActivity"
             android:theme="@style/ActivityTheme" />
 
         <!-- 主页面 -->
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.other.MainActivity"
             android:theme="@style/ActivityTheme" />
 
+        <!-- 圈子 START -->
+        <activity
+            android:name=".activity.circle.TopicActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.circle.PublishNewStatusActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <!-- 圈子 END -->
+
+
         <!-- 人脉 START -->
+        <activity android:name=".activity.contacts.AddFriendsActivity"
+            android:theme="@style/ActivityThemeSwipeBack"/>
+        <activity android:name=".activity.contacts.NewFriendsActivity"
+            android:theme="@style/ActivityThemeSwipeBack"/>
+        <!-- 人脉 END-->
+
+
+        <!-- 我 START -->
         <activity
-            android:name=".activity.AddFriendsActivity"
+            android:name=".activity.my.UserBasicInfoActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
         <activity
-            android:name=".activity.NewFriendsActivity"
+            android:name=".activity.my.UpdateDetailedInfoActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
-        <!-- 人脉 END -->
+        <activity
+            android:name=".activity.my.MyCollectionActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.MyMessageActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.MyQrCodeActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.MyStatusActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.SettingActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.UpdateUserCompanyActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.UpdateUserDecriptionActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.UpdateUserJobActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.UpdateUserNameActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <activity
+            android:name=".activity.my.AboutUsActivity"
+            android:theme="@style/ActivityThemeSwipeBack" />
+        <!-- 我 END -->
+
+
+        <!-- test START -->
+        <activity
+            android:name="test.dwj.DecodeActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.ScanActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.GenerateActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.dwj.ResultActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity
+            android:name="test.zzk.DeveloperActivity"
+            android:theme="@style/ActivityTheme" />
+        <!-- test END -->
+
+
+
+
+
+
 
 
         <!-- 实时通信模块、推送 START -->
@@ -79,50 +152,7 @@
         <!-- 反馈组件 END -->
 
 
-        <!-- test START -->
-        <activity
-            android:name="test.dwj.DecodeActivity"
-            android:theme="@style/ActivityTheme" />
-        <activity
-            android:name="test.dwj.ScanActivity"
-            android:theme="@style/ActivityTheme" />
-        <activity
-            android:name="test.dwj.GenerateActivity"
-            android:theme="@style/ActivityTheme" />
-        <activity
-            android:name="test.dwj.ResultActivity"
-            android:theme="@style/ActivityTheme" />
-        <activity
-            android:name="test.zzk.DeveloperActivity"
-            android:theme="@style/ActivityTheme" />
-        <!-- test END -->
 
-        <activity
-            android:name=".activity.CircleTopicActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.UserBasicInfoActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.EditDetailedInfoActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.MyCollectionActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.MyMessageActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.MyQrCodeActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.MyStatusActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity
-            android:name=".activity.my.SettingActivity"
-            android:theme="@style/ActivityThemeSwipeBack" />
-        <activity android:name=".activity.DynamicTextActivity"
-            android:theme="@style/ActivityThemeSwipeBack"/>
     </application>
 
 </manifest>

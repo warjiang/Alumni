@@ -1,14 +1,12 @@
 package cn.edu.seu.alumni.fragment;
 
-import android.content.Intent;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.activity.my.EditDetailedInfoActivity;
+import cn.edu.seu.alumni.activity.my.UpdateDetailedInfoActivity;
 import cn.edu.seu.alumni.activity.my.MyCollectionActivity;
 import cn.edu.seu.alumni.activity.my.MyMessageActivity;
 import cn.edu.seu.alumni.activity.my.MyQrCodeActivity;
@@ -42,7 +40,7 @@ public class MyFragment extends BaseFragment {
      */
     @OnClick(R.id.update_user_detailed_info_relativelayout)
     protected void updateUserDetailedInfoRelativeLayoutOnClick(){
-        jump(EditDetailedInfoActivity.class);
+        jump(UpdateDetailedInfoActivity.class);
     }
 
     /**

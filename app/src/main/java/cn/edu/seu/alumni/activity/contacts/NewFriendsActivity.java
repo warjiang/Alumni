@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.contacts;
 
 import android.widget.ListView;
 
@@ -7,6 +7,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 import cn.edu.seu.alumni.adapter.ContactsFriendsItemAdapter;
 import cn.edu.seu.alumni.javabean.ContactsFriendsItem;
 

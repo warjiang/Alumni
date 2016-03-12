@@ -1,6 +1,5 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.other;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,16 +10,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.king.photo.activity.PublishDynamicActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.BaseActivity;
+import cn.edu.seu.alumni.activity.contacts.AddFriendsActivity;
 import cn.edu.seu.alumni.fragment.CircleFragment;
 import cn.edu.seu.alumni.fragment.ContactsFragment;
 import cn.edu.seu.alumni.fragment.MyFragment;
+import test.pc.PublishDynamicActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 

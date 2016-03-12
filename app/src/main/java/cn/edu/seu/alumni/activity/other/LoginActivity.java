@@ -1,4 +1,4 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.other;
 
 import android.widget.Button;
 import android.widget.EditText;
@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.BaseActivity;
 import cn.edu.seu.alumni.application.Constant;
 import cn.edu.seu.alumni.mvp.presenter.auth.ILoginPresenter;
 import cn.edu.seu.alumni.mvp.presenter.auth.LoginPresenter;

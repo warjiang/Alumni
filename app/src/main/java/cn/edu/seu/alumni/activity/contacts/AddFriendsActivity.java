@@ -1,10 +1,11 @@
-package cn.edu.seu.alumni.activity;
+package cn.edu.seu.alumni.activity.contacts;
 
 import android.view.MenuItem;
 import android.view.View;
 
 import butterknife.OnClick;
 import cn.edu.seu.alumni.R;
+import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
 
 public class AddFriendsActivity extends SwipeBackBaseActivity {
 

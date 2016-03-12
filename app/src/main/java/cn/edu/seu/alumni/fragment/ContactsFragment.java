@@ -20,8 +20,8 @@ import java.util.List;
 
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
-//import cn.edu.seu.alumni.activity.NewFriendsActivity;
-import cn.edu.seu.alumni.activity.NewFriendsActivity;
+//import cn.edu.seu.alumni.activity.contacts.NewFriendsActivity;
+import cn.edu.seu.alumni.activity.contacts.NewFriendsActivity;
 import cn.edu.seu.alumni.adapter.ContactsListAdapter;
 import cn.edu.seu.alumni.javabean.Friend;
 import cn.edu.seu.alumni.util.CharacterParser;
