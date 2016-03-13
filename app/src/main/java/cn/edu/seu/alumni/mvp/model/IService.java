@@ -2,6 +2,8 @@ package cn.edu.seu.alumni.mvp.model;
 
 
 
+import cn.edu.seu.alumni.javabean.PostStatusRequest;
+import cn.edu.seu.alumni.javabean.PostStatusResponse;
 import cn.edu.seu.alumni.javabean.StatusItem;
 import cn.edu.seu.alumni.javabean.auth.AuthResponse;
 import cn.edu.seu.alumni.javabean.auth.LoginAlumniRequest;
@@ -13,7 +15,6 @@ import cn.edu.seu.alumni.javabean.user_info.UserDetailedInfo;
 import retrofit.Callback;
 import retrofit.http.Body;
 import retrofit.http.GET;
-import retrofit.http.Header;
 import retrofit.http.POST;
 import retrofit.http.PUT;
 import retrofit.http.Path;
@@ -96,5 +97,9 @@ public interface IService {
     //获取最新动态
     @GET("/v1.0/news/timeline/{page}")
     void getLatestStatus(@Path("page") int page, Callback<StatusItem[]> cb);
+
+    //发布动态
+    @POST("/v1.0/news/")
+    void postStatus(@Body PostStatusRequest request, Callback<PostStatusResponse> cb);
 
 }
