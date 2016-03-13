@@ -2,9 +2,7 @@ package cn.edu.seu.alumni.javabean;
 
 /**
  * @author wufan
- * @date 2016/2/1
+ * @date 2016/2/4
  */
-public class DynamicItem {
-
-
+public class StatusAgreeItem {
 }

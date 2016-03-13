@@ -18,7 +18,7 @@ import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.circle.TopicActivity;
 import cn.edu.seu.alumni.adapter.BasisAdapter;
 import cn.edu.seu.alumni.adapter.DynamicItemAdapter;
-import cn.edu.seu.alumni.javabean.DynamicItem;
+import cn.edu.seu.alumni.javabean.StatusItem;
 import cn.edu.seu.alumni.widget.LoadMoreListView;
 
 /**
@@ -127,9 +127,9 @@ public class CircleFragment extends BaseFragment {
             }
         });
 
-        List<DynamicItem> entities = new ArrayList<DynamicItem>();
+        List<StatusItem> entities = new ArrayList<StatusItem>();
         for (int i = 0; i < 5; i++) {
-            entities.add(new DynamicItem());
+            entities.add(new StatusItem());
         }
         adapter = new DynamicItemAdapter(getActivity());
         adapter.setEntities(entities);

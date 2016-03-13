@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.activity.DynamicTextActivity;
+import cn.edu.seu.alumni.activity.StatusTextActivity;
 import cn.edu.seu.alumni.activity.my.UserBasicInfoActivity;
-import cn.edu.seu.alumni.javabean.DynamicItem;
+import cn.edu.seu.alumni.javabean.StatusItem;
 import cn.edu.seu.alumni.widget.MyGridView;
 
-public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAdapter.viewHolder> {
+public class DynamicItemAdapter extends BasisAdapter<StatusItem, DynamicItemAdapter.viewHolder> {
 
     private Context context;
     private String[] images = {
@@ -41,17 +41,17 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
     private final int MAX_BUFF_SIZE = 5;
 
     public DynamicItemAdapter(Context mContext) {
-        super(mContext, new ArrayList<DynamicItem>(), viewHolder.class);
+        super(mContext, new ArrayList<StatusItem>(), viewHolder.class);
         context = mContext;
     }
 
-    public DynamicItemAdapter(Context mContext, List<DynamicItem> mEntities, Class<viewHolder> classType) {
+    public DynamicItemAdapter(Context mContext, List<StatusItem> mEntities, Class<viewHolder> classType) {
         super(mContext, mEntities, classType);
         context = mContext;
     }
 
     @Override
-    protected void setDataIntoView(viewHolder holder, DynamicItem entity) {
+    protected void setDataIntoView(viewHolder holder, StatusItem entity) {
 
     }
 
@@ -104,7 +104,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), DynamicTextActivity.class);
+                Intent intent = new Intent(getContext(), StatusTextActivity.class);
                 getContext().startActivity(intent);
             }
         });

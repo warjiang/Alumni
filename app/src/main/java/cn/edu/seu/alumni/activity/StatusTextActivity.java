@@ -10,7 +10,7 @@ import android.widget.ListView;
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
 
-public class DynamicTextActivity extends SwipeBackBaseActivity {
+public class StatusTextActivity extends SwipeBackBaseActivity {
 
     @Bind(R.id.comment_list_view)
     protected ListView commentListView;

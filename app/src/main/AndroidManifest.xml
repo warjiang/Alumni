@@ -58,7 +58,7 @@
             android:name=".activity.circle.PublishNewStatusActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
 
-        <activity android:name=".activity.DynamicTextActivity"
+        <activity android:name=".activity.StatusTextActivity"
             android:theme="@style/ActivityThemeSwipeBack"/>
 
         <!-- 圈子 END -->
