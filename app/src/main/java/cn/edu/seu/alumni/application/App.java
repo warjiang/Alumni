@@ -17,6 +17,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import cn.edu.seu.alumni.mvp.presenter.qiniu.QiniuPresenter;
 import cn.edu.seu.alumni.util.Preference;
 import thirdpart.leancloud.CustomUserProvider;
 
@@ -36,6 +37,8 @@ public class App extends Application {
         Preference.putBoolean(Preference.Key.IS_ACCESS_TOKEN_VALID, false);
 
         initialLeanCloud();
+
+        initQiniu();
 
     }
 
@@ -83,5 +86,9 @@ public class App extends Application {
             chatManager.setupManagerWithUserId(this, userId);
         }
         chatManager.setConversationEventHandler(ConversationEventHandler.getInstance());
+    }
+
+    private void initQiniu(){
+        new QiniuPresenter().getQiniuToken();
     }
 }

@@ -4,6 +4,7 @@ package cn.edu.seu.alumni.mvp.model;
 
 import cn.edu.seu.alumni.javabean.PostStatusRequest;
 import cn.edu.seu.alumni.javabean.PostStatusResponse;
+import cn.edu.seu.alumni.javabean.QiniuTokenResponse;
 import cn.edu.seu.alumni.javabean.StatusItem;
 import cn.edu.seu.alumni.javabean.auth.AuthResponse;
 import cn.edu.seu.alumni.javabean.auth.LoginAlumniRequest;
@@ -101,5 +102,9 @@ public interface IService {
     //发布动态
     @POST("/v1.0/news/")
     void postStatus(@Body PostStatusRequest request, Callback<PostStatusResponse> cb);
+
+    //获取七牛token
+    @POST("/v1.0/static/token/")
+    void getQiniuToken(Callback<QiniuTokenResponse> cb);
 
 }

@@ -54,9 +54,14 @@
         <activity
             android:name=".activity.circle.TopicActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
+        <!--
         <activity
             android:name=".activity.circle.PublishNewStatusActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
+        -->
+
+        <activity android:name="test.pc.PublishDynamicActivity"
+            android:theme="@style/ActivityThemeSwipeBack"/>
 
         <activity android:name=".activity.StatusTextActivity"
             android:theme="@style/ActivityThemeSwipeBack"/>

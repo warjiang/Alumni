@@ -27,11 +27,13 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.king.photo.R;
 import com.king.photo.activity.AlbumActivity;
@@ -42,11 +44,17 @@ import com.king.photo.util.ImageItem;
 import com.king.photo.util.PublicWay;
 import com.king.photo.util.Res;
 
+import java.util.ArrayList;
+
 import cn.edu.seu.alumni.activity.SwipeBackBaseActivity;
+import cn.edu.seu.alumni.mvp.presenter.status.IStatusPresenter;
+import cn.edu.seu.alumni.mvp.presenter.status.StatusPresenter;
+import cn.edu.seu.alumni.util.CommonUtil;
 
 
 public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
+    private IStatusPresenter statusPresenter;
     private GridView noScrollgridview;
     private GridAdapter adapter;
     private View parentView;
@@ -54,6 +62,8 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
     private LinearLayout ll_popup;
     public static Bitmap bimap;
     private Toolbar toolbar;
+    private TextView sendTextView;
+    private EditText sendTextEditText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +74,7 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
         PublicWay.activityList.add(this);
         parentView = getLayoutInflater().inflate(R.layout.activity_selectimg, null);
         setContentView(parentView);
+        statusPresenter = new StatusPresenter();
         Init();
     }
 
@@ -84,13 +95,12 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
     @Override
     protected void initial() {
-
     }
 
 
     public void Init() {
 
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
@@ -168,6 +178,24 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
                     intent.putExtra("ID", arg2);
                     startActivity(intent);
                 }
+            }
+        });
+
+
+        sendTextEditText = (EditText) findViewById(R.id.send_text_edit_text);
+        sendTextView = (TextView) findViewById(R.id.send_text_view);
+        sendTextView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+                final String statusText = sendTextEditText.getText().toString();
+                ArrayList<byte[]> imageDatas = new ArrayList<>();
+                int numImage = Bimp.tempSelectBitmap.size();
+                for (int i = 0; i < numImage; ++i) {
+                    imageDatas.add(CommonUtil.Image.bitmapToByteArray(Bimp.tempSelectBitmap.get(i).getBitmap()));
+                }
+
+                statusPresenter.postStatus(imageDatas, statusText);
             }
         });
 

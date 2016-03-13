@@ -37,12 +37,13 @@
     </android.support.v7.widget.Toolbar>
 
     <EditText
+        android:id="@+id/send_text_edit_text"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
         android:layout_margin="8dp"
         android:background="@null"
         android:gravity="left|top"
-        android:hint="说点什么吧..."></EditText>
+        android:hint="说点什么吧..."/>
 
     <GridView
         android:id="@+id/noScrollgridview"
@@ -52,6 +53,6 @@
         android:horizontalSpacing="3dp"
         android:numColumns="4"
         android:scrollbars="none"
-        android:verticalSpacing="5dp"></GridView>
+        android:verticalSpacing="5dp"/>
 
 </LinearLayout>

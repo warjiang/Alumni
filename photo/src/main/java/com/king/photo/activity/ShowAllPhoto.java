@@ -48,6 +48,13 @@ public class ShowAllPhoto extends Activity {
 	private Intent intent;
 	private Context mContext;
 	public static ArrayList<ImageItem> dataList = new ArrayList<ImageItem>();
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		unregisterReceiver(broadcastReceiver);
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,7 +86,7 @@ public class ShowAllPhoto extends Activity {
         public void onReceive(Context context, Intent intent) {  
             // TODO Auto-generated method stub  
         	gridImageAdapter.notifyDataSetChanged();
-        }  
+        }
     };  
 
 	private class PreviewListener implements OnClickListener {

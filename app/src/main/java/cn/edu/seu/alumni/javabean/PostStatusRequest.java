@@ -8,6 +8,11 @@ public class PostStatusRequest {
     private String news_text;
     private String[] image;
 
+    public PostStatusRequest(String news_text, String[] image) {
+        this.news_text = news_text;
+        this.image = image;
+    }
+
     public String getNews_text() {
         return news_text;
     }
