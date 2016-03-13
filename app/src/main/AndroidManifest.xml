@@ -69,6 +69,8 @@
             android:theme="@style/ActivityThemeSwipeBack"/>
         <activity android:name=".activity.contacts.NewFriendsActivity"
             android:theme="@style/ActivityThemeSwipeBack"/>
+        <activity android:name=".activity.contacts.AlumniGoodActivity"
+            android:theme="@style/ActivityThemeSwipeBack"/>
         <!-- 人脉 END-->
 
 

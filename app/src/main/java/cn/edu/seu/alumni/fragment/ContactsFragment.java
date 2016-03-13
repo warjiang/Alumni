@@ -21,6 +21,7 @@ import java.util.List;
 import butterknife.Bind;
 import cn.edu.seu.alumni.R;
 //import cn.edu.seu.alumni.activity.contacts.NewFriendsActivity;
+import cn.edu.seu.alumni.activity.contacts.AlumniGoodActivity;
 import cn.edu.seu.alumni.activity.contacts.NewFriendsActivity;
 import cn.edu.seu.alumni.adapter.ContactsListAdapter;
 import cn.edu.seu.alumni.javabean.Friend;
@@ -226,6 +227,7 @@ public class ContactsFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.contacts_alumni_good_relative_layout:
            //     readyGo(AlumniGoodActivity.class);
+                jump(AlumniGoodActivity.class);
                 break;
         }
     }
