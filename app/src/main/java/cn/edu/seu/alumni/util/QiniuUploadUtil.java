@@ -11,6 +11,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.edu.seu.alumni.mvp.presenter.qiniu.QiniuPresenter;
+
 /**
  * Created by 鹏程 on 2016/3/13.
  */
@@ -20,9 +22,16 @@ public class QiniuUploadUtil {
         void complete(List<String> imageHashcodes);
     }
 
-    private static UploadManager uploadManager = new UploadManager();
+    private static UploadManager uploadManager;
 
-    private static class MyUpCompletionHandler implements UpCompletionHandler{
+    public static UploadManager getUploadManager(){
+        if(null == uploadManager){
+            uploadManager = new UploadManager();
+        }
+        return uploadManager;
+    }
+
+    public static class MyUpCompletionHandler implements UpCompletionHandler{
         private int total;
         private Integer count = 0;
         private boolean failure = false;
@@ -37,31 +46,19 @@ public class QiniuUploadUtil {
 
             if(failure || !responseInfo.isOK()){
                 failure = true;
+                Log.i("MyUpCompletionHandler", responseInfo.toString());
                 return;
             }
+            Log.i("MyUpCompletionHandler", "hashcode = "+hashcode);
             hashcodes.add(hashcode);
-            synchronized (count){
+            synchronized (this){
                 count += 1;
                 if(count == total){
+                    Log.i("MyUpCompletionHandler", "all images upload complete");
                     handler.complete(hashcodes);
                 }
             }
-
         }
-    }
-
-    //传入图片数据，返回图片的hashcode，支持单张或多张图片
-    public static void upload(final List<byte[]> imageDatas, UploadAllCompleteHandler handler){
-        if(null==imageDatas||imageDatas.isEmpty()){
-            handler.complete(null);
-            return;
-        }
-        MyUpCompletionHandler myHandler = new MyUpCompletionHandler(imageDatas.size(), handler);
-        for(byte[] imagedata : imageDatas){
-            uploadManager.put(imagedata, null, Preference.getString("qiniu_token", ""), myHandler, null);
-            //uploadManager.put(imagedata, null, "b2cjWlox-DWUzF_7iGA2I1BAlD9lONBTUMY22wxu:4InDyn0aPXL73Gr8-zHxXrIsJbM=:eyJzY29wZSI6Imltb29jIiwiZGVhZGxpbmUiOjE0NTc4OTIxMjh9", myHandler, null);
-        }
-
     }
 
 }

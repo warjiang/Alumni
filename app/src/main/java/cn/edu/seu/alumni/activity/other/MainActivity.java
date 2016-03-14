@@ -199,8 +199,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.send_new_status:
-                //jump(PublishNewStatusActivity.class);
-                jump(PublishDynamicActivity.class);
+                jump(PublishNewStatusActivity.class);
                 break;
             case R.id.add_friend:
                 jump(AddFriendsActivity.class);

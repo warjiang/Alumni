@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.edu.seu.alumni">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -54,16 +53,15 @@
         <activity
             android:name=".activity.circle.TopicActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
-        <!--
+
         <activity
             android:name=".activity.circle.PublishNewStatusActivity"
             android:theme="@style/ActivityThemeSwipeBack" />
-        -->
-
-        <activity android:name="test.pc.PublishDynamicActivity"
-            android:theme="@style/ActivityThemeSwipeBack"/>
 
         <activity android:name=".activity.StatusTextActivity"
+            android:theme="@style/ActivityThemeSwipeBack"/>
+
+        <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
             android:theme="@style/ActivityThemeSwipeBack"/>
 
         <!-- 圈子 END -->

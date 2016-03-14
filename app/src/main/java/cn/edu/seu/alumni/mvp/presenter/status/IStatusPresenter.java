@@ -7,5 +7,5 @@ import java.util.List;
  */
 public interface IStatusPresenter {
 
-    void postStatus(List<byte[]> imageDatas, String statusText);
+    void postStatus(List<String> images, String statusText);
 }

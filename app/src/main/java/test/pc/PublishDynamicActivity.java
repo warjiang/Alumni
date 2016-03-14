@@ -182,7 +182,7 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
         });
 
 
-        sendTextEditText = (EditText) findViewById(R.id.send_text_edit_text);
+        /*sendTextEditText = (EditText) findViewById(R.id.send_text_edit_text);
         sendTextView = (TextView) findViewById(R.id.send_text_view);
         sendTextView.setOnClickListener(new OnClickListener() {
             @Override
@@ -197,7 +197,7 @@ public class PublishDynamicActivity extends SwipeBackBaseActivity {
 
                 statusPresenter.postStatus(imageDatas, statusText);
             }
-        });
+        });*/
 
     }
 

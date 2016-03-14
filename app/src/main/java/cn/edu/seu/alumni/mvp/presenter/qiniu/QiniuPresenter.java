@@ -2,6 +2,7 @@ package cn.edu.seu.alumni.mvp.presenter.qiniu;
 
 import android.util.Log;
 
+import cn.edu.seu.alumni.javabean.EmptyPostBody;
 import cn.edu.seu.alumni.javabean.QiniuTokenResponse;
 import cn.edu.seu.alumni.mvp.model.IService;
 import cn.edu.seu.alumni.mvp.model.ServiceProvider;
@@ -18,12 +19,13 @@ public class QiniuPresenter implements IQiniuPresenter{
     @Override
     public void getQiniuToken() {
         IService service = ServiceProvider.getService();
-        service.getQiniuToken(new Callback<QiniuTokenResponse>() {
+        service.getQiniuToken(new EmptyPostBody(), new Callback<QiniuTokenResponse>() {
             @Override
             public void success(QiniuTokenResponse qiniuTokenResponse, Response response) {
-                Log.i(TAG, "get qiniu token successfully");
+                Log.i(TAG, "get qiniu token successfully, token = "+qiniuTokenResponse.getToken());
                 Preference.putString("qiniu_token", qiniuTokenResponse.getToken());
                 Preference.putString("qiniu_key", qiniuTokenResponse.getKey());
+                Preference.putBoolean("qiniu_updated", true);
             }
 
             @Override

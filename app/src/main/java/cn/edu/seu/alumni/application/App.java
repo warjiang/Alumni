@@ -37,9 +37,6 @@ public class App extends Application {
         Preference.putBoolean(Preference.Key.IS_ACCESS_TOKEN_VALID, false);
 
         initialLeanCloud();
-
-        initQiniu();
-
     }
 
     public static Context getContext(){
@@ -88,7 +85,4 @@ public class App extends Application {
         chatManager.setConversationEventHandler(ConversationEventHandler.getInstance());
     }
 
-    private void initQiniu(){
-        new QiniuPresenter().getQiniuToken();
-    }
 }
