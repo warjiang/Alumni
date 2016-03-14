@@ -2,9 +2,7 @@ package test.zzk;
 
 import android.content.Intent;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -12,16 +10,18 @@ import cn.edu.seu.alumni.R;
 import cn.edu.seu.alumni.activity.BaseActivity;
 import test.dwj.DecodeActivity;
 import test.dwj.GenerateActivity;
-import cn.edu.seu.alumni.activity.MainActivity;
+import cn.edu.seu.alumni.activity.other.MainActivity;
 import test.dwj.ScanActivity;
 
 public class DeveloperActivity extends BaseActivity{
 
-    @Bind(R.id.toolbar_title)
-    protected TextView toolbarTitle;
-
     @Override
     protected boolean hasToolBar() {
+        return true;
+    }
+
+    @Override
+    protected boolean hasToolBarBackButton() {
         return true;
     }
 
@@ -32,11 +32,7 @@ public class DeveloperActivity extends BaseActivity{
 
     @Override
     protected void initial() {
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbarTitle.setVisibility(View.VISIBLE);
-        toolbarTitle.setText("开发者专属");
+        setToolbarTitle("开发者专属");
     }
 
     @Bind(R.id.btn_activity_qrcode_decode)

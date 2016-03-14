@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,15 +31,14 @@ public abstract class BaseActivity extends AppCompatActivity {
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbarTitleTextView = (TextView) findViewById(R.id.toolbar_title);
             setSupportActionBar(toolbar);
-            ActionBar actionBar = getSupportActionBar();
             /**
              * Toolbar左方不显示应用标题
              */
-            actionBar.setDisplayShowTitleEnabled(false);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
             /**
              *   是否显示返回图标
              */
-            actionBar.setDisplayHomeAsUpEnabled(toolbarShowBackButton());
+            getSupportActionBar().setDisplayHomeAsUpEnabled(hasToolBarBackButton());
         }
 
         ButterKnife.bind(this);
@@ -57,11 +57,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract boolean hasToolBar();
 
     /**
-     * toolBar是否显示返回图标
+     * 是否有返回按钮
      */
-    protected boolean toolbarShowBackButton(){
-        return false;
-    }
+    protected abstract boolean hasToolBarBackButton();
 
     /**
      * 设置toolbar标题
@@ -123,13 +121,22 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.unbind(this);
     }
 
-    /**
-     * 按返回键，实现从左向右切换Activity动画
-     * MainActivity需要覆盖该方法
-     */
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        finishWithAnimation();
+    }
+
+    public void finishWithAnimation(){
+        this.finish();
         overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finishWithAnimation();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

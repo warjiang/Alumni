@@ -20,16 +20,17 @@ import java.util.HashMap;
 import java.util.List;
 
 import cn.edu.seu.alumni.R;
-import cn.edu.seu.alumni.activity.UserBasicInfoActivity;
-import cn.edu.seu.alumni.javabean.DynamicItem;
+import cn.edu.seu.alumni.activity.StatusTextActivity;
+import cn.edu.seu.alumni.activity.my.UserBasicInfoActivity;
+import cn.edu.seu.alumni.javabean.StatusItem;
 import cn.edu.seu.alumni.widget.MyGridView;
 
-public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAdapter.viewHolder> {
+public class DynamicItemAdapter extends BasisAdapter<StatusItem, DynamicItemAdapter.viewHolder> {
 
     private Context context;
     private String[] images = {
-            "http://img3.imgtn.bdimg.com/it/u=2671181954,1302198727&fm=21&gp=0.jpg",
-            "http://img3.imgtn.bdimg.com/it/u=2284434357,2830498318&fm=21&gp=0.jpg",
+//            "http://img3.imgtn.bdimg.com/it/u=2671181954,1302198727&fm=21&gp=0.jpg",
+//            "http://img3.imgtn.bdimg.com/it/u=2284434357,2830498318&fm=21&gp=0.jpg",
             "http://img4.imgtn.bdimg.com/it/u=2015527637,3623972403&fm=21&gp=0.jpg",
             "http://img1.imgtn.bdimg.com/it/u=3527020364,2054046693&fm=23&gp=0.jpg",
     };
@@ -40,17 +41,17 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
     private final int MAX_BUFF_SIZE = 5;
 
     public DynamicItemAdapter(Context mContext) {
-        super(mContext, new ArrayList<DynamicItem>(), viewHolder.class);
+        super(mContext, new ArrayList<StatusItem>(), viewHolder.class);
         context = mContext;
     }
 
-    public DynamicItemAdapter(Context mContext, List<DynamicItem> mEntities, Class<viewHolder> classType) {
+    public DynamicItemAdapter(Context mContext, List<StatusItem> mEntities, Class<viewHolder> classType) {
         super(mContext, mEntities, classType);
         context = mContext;
     }
 
     @Override
-    protected void setDataIntoView(viewHolder holder, DynamicItem entity) {
+    protected void setDataIntoView(viewHolder holder, StatusItem entity) {
 
     }
 
@@ -75,6 +76,7 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final View view;
         if (null == convertView) {
             convertView = LayoutInflater.from(context).inflate(getItemLayout(), null);
             MyGridView gridView = (MyGridView) convertView.findViewById(R.id.circle_dynamic_list_card_view_grid_view);
@@ -96,7 +98,18 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             });
 
         }
-        return convertView;
+
+        view = convertView;
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), StatusTextActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+        return view;
     }
 
     private class ImageAdapter extends BaseAdapter {
@@ -135,11 +148,12 @@ public class DynamicItemAdapter extends BasisAdapter<DynamicItem, DynamicItemAda
             int height;
             switch (images.length) {
                 case 1:
-                    width = height = (int) (screenWidthDip * 0.9f) * 2 / 3;
+                    width = height = (int)(screenWidthDip * 0.9f) *2 / 3 ;
                     imageView.setScaleType(ImageView.ScaleType.FIT_START);
                     break;
                 default:
-                    width = height = (int) (screenWidthDip * 0.9f) / 3;
+                    width = height = (int)(screenWidthDip * 0.9f) / 3 ;
+//                    (screenWidthDip-100) / 3;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
             if (imageBuff.containsKey(images[pos])) {

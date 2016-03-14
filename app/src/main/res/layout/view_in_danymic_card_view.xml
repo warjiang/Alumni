@@ -58,6 +58,7 @@
                     android:textColor="@color/text_help" />
 
                 <TextView
+                    android:id="@+id/circle_dynamic_item_time_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -76,6 +77,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/circle_dynamic_item_content_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="万能的校友圈！我是2012级播音主持毕业的！如果大家喜欢我，加我好友哦！附图一张！"

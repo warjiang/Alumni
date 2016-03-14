@@ -1,122 +1,52 @@
 package cn.edu.seu.alumni.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
 
-import butterknife.ButterKnife;
-import cn.edu.seu.alumni.R;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.Utils;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivityBase;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivityHelper;
 
-public abstract class SwipeBackBaseActivity extends SwipeBackActivity{
+public abstract class SwipeBackBaseActivity extends BaseActivity implements SwipeBackActivityBase {
 
-    private Toolbar toolbar;
-    private TextView toolbarTitleTextView;
+    private SwipeBackActivityHelper mHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-        setContentView(getContentViewId());
-
-        if(hasToolBar()){
-            toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbarTitleTextView = (TextView) findViewById(R.id.toolbar_title);
-            setSupportActionBar(toolbar);
-            /**
-             * Toolbar左方不显示应用标题
-             */
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-            /**
-             *   是否显示返回图标
-             */
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        }
-
-
-        ButterKnife.bind(this);
-
-        initial();
-
-    }
-
-    /**
-     * 设置布局文件
-     */
-    protected abstract int getContentViewId();
-
-    /**
-     * 是否有ToolBar
-     */
-    protected abstract boolean hasToolBar();
-
-    /**
-     * 设置toolbar标题
-     */
-    protected void setToolbarTitle(String title){
-        if(hasToolBar()){
-            toolbarTitleTextView.setText(title);
-        }
-    }
-
-    /**
-     * 初始化
-     */
-    protected abstract void initial();
-
-    public void jump(Class<?> clazz, Bundle bundle) {
-        Intent intent = new Intent(this, clazz);
-        if (bundle != null) {
-            intent.putExtras(bundle);
-        }
-        startActivity(intent);
-        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
-    }
-
-    public void jump(Class<?> clazz) {
-        this.jump(clazz, null);
-    }
-
-    public void jumpThenFinish(Class<?> clazz, Bundle bundle) {
-        this.jump(clazz, bundle);
-        this.finish();
-    }
-
-
-    public void jumpThenFinish(Class<?> clazz) {
-        this.jumpThenFinish(clazz, null);
-    }
-
-    public void jumpForResult(Class<?> clazz, int requestCode, Bundle bundle) {
-        Intent intent = new Intent(this, clazz);
-        if (null != bundle) {
-            intent.putExtras(bundle);
-        }
-        startActivityForResult(intent, requestCode);
-        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
-    }
-
-    public void jumpForResult(Class<?> clazz, int requestCode) {
-        this.jumpForResult(clazz, requestCode, null);
-    }
-
-    protected void showToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        mHelper = new SwipeBackActivityHelper(this);
+        mHelper.onActivityCreate();
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ButterKnife.unbind(this);
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mHelper.onPostCreate();
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
+    public View findViewById(int id) {
+        View v = super.findViewById(id);
+        if (v == null && mHelper != null)
+            return mHelper.findViewById(id);
+        return v;
+    }
+
+    @Override
+    public SwipeBackLayout getSwipeBackLayout() {
+        return mHelper.getSwipeBackLayout();
+    }
+
+    @Override
+    public void setSwipeBackEnable(boolean enable) {
+        getSwipeBackLayout().setEnableGesture(enable);
+    }
+
+    @Override
+    public void scrollToFinishActivity() {
+        Utils.convertActivityToTranslucent(this);
+        getSwipeBackLayout().scrollToFinishActivity();
     }
 }
