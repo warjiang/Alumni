@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="PopupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/activity_translate_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_translate_out</item>
+    </style>
+	
+	<style name="PopupAnimation1" parent="android:Animation" mce_bogus="1">          
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>     
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>     
+    </style>
+
+    <!-- 该主题为非SwipeBackActivity使用 -->
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#008cc9</item>
+        <item name="colorPrimaryDark">#008cc9</item>
+        <item name="colorAccent">#008cc9</item>
+    </style>
+
+    <!-- 该主题为SwipeBackActivity使用 -->
+    <style name="ActivityThemeSwipeBack" parent="ActivityTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    
+</resources>

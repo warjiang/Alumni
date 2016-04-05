@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <EditText
+        android:id="@+id/publish_new_status_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="top|left"
+        android:textSize="16sp"
+        android:hint="说点什么吧......"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/publish_new_status_add_pic_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chat_add_picture_normal"/>
+
+        <Button
+            android:id="@+id/publish_new_status_send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

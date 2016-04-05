@@ -1,0 +1,17 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries/
+/build/
+/app/build/
+/app/app.iml
+/swipeback_library/build/
+/swipeback_library/*.iml
+/photo/build/
+/photo/photo.iml
+/leanchatlib/build/
+/leanchatlib/libs/
+/leanchatlib/leanchatlib.iml
+/Alumni.iml
+/pickerview/build/
+/pickerview/pickerview.iml

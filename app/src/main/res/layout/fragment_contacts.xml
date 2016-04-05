@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/contacts_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:dividerHeight="0.6dp" />
+
+    <TextView
+        android:id="@+id/letter"
+        android:layout_width="80.0dip"
+        android:layout_height="80.0dip"
+        android:layout_gravity="center"
+        android:background="@drawable/rc_bg_toast"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textSize="30dp"
+        android:visibility="invisible" />
+
+    <cn.edu.seu.alumni.widget.SideBar
+        android:id="@+id/sidebar"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center" />
+
+</FrameLayout>
